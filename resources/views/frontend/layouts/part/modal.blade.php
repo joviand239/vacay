@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="bookingFormModal" tabindex="-1" role="dialog" aria-labelledby="bookingFormModal" aria-hidden="true">
+<div class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
@@ -14,11 +14,10 @@
 
                     <img class="icon" src="{!! url('/') !!}/assets/frontend/images/send-email-icon.png" alt="Send Email Icon">
 
-                    <h3 class="title">Thankyou for booking the course</h3>
+                    <h3 class="title">Thankyou for contacting us!</h3>
 
                     <p class="summary">
-                        check your email within 2x24 hours,<br>
-                        we will send you approval letter
+                        we will contact you shortly
                     </p>
 
 

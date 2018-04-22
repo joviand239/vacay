@@ -646,6 +646,28 @@ input.custom-control {
 .form-section .form-group {
   position: relative; }
 
+.modal .body-wrapper {
+  text-align: center;
+  padding: 50px 0px 15px; }
+  .modal .body-wrapper .icon {
+    width: 110px;
+    margin-bottom: 15px; }
+  .modal .body-wrapper .summary {
+    margin-bottom: 30px; }
+  .modal .body-wrapper .text-btn {
+    color: #a2a1a1;
+    justify-content: center;
+    margin-bottom: 30px; }
+  .modal .body-wrapper .share-wrapper {
+    margin-bottom: 0px;
+    justify-content: center; }
+    .modal .body-wrapper .share-wrapper .item {
+      padding: 0px 15px;
+      margin: 0px; }
+  .modal .body-wrapper .small-text {
+    font-size: 12px;
+    margin-bottom: 0px; }
+
 #home .banner {
   background-size: cover !important;
   background-repeat: no-repeat !important;
