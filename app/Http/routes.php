@@ -43,6 +43,12 @@ Route::get('/', 'Frontend\HomeController@index')->name('home');
 
 Route::get('/about-us', 'Frontend\AboutController@index')->name('about');
 
+Route::get('/our-services', 'Frontend\ServiceController@index')->name('services');
+
+Route::get('/how-it-works', 'Frontend\HowController@index')->name('how-it-works');
+
+Route::get('/contact-us', 'Frontend\ContactController@index')->name('contact');
+
 
 
 

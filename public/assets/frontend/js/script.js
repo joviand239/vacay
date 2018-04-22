@@ -65,6 +65,21 @@ $(document).ready(function () {
 
     $('.custom-select').select2();
 
+
+    $('.custom-control').focusin(function (e) {
+        e.preventDefault();
+        $(this).prev().addClass('active');
+    });
+
+    $('.custom-control').focusout(function (e) {
+        e.preventDefault();
+        if ($(this).val() == ''){
+            $(this).prev().removeClass('active');
+        }
+    });
+
+
+
     scrollNav();
 
 });

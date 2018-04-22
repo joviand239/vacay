@@ -13,19 +13,19 @@
                     <a class="nav-link {!! isActiveRoute(['about']) !!}" href="{!! route('about') !!}">ABOUT US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">OUR SERVICES</a>
+                    <a class="nav-link {!! isActiveRoute(['services']) !!}" href="{!! route('services') !!}">OUR SERVICES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">DESTINATIONS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">HOW IT WORKS</a>
+                    <a class="nav-link {!! isActiveRoute(['how-it-works']) !!}" href="{!! route('how-it-works') !!}">HOW IT WORKS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">VACAY PALS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-btn btn main-btn transparent" href="#">CONTACT US!</a>
+                    <a class="nav-btn btn main-btn transparent" href="{!! route('contact') !!}">CONTACT US!</a>
                 </li>
             </ul>
 

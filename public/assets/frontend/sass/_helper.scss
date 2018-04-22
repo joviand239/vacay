@@ -175,13 +175,15 @@
 
 
 .label-form {
-  color: $secondary-color;
+  color: $main-color;
   position: absolute;
   top: 0px;
+  left: 1px;
+  font-weight: 700;
   @include transition(all, 0.5s, ease);
 
   &.active {
-    top: -25px;
+    top: -20px;
   }
 }
 
@@ -243,4 +245,39 @@ input {
   .default-title {
     margin-bottom: 0px;
   }
+}
+
+
+.form-section {
+
+  .header {
+    font-size: 16px;
+    color: $main-color;
+    font-weight: 700;
+  }
+
+  form {
+    padding: 30px 0px;
+
+    .select2-container--default .select2-selection--single {
+      height: 40px;
+
+      .select2-selection__rendered {
+        line-height: 40px;
+      }
+
+      .select2-selection__arrow {
+        height: 40px;
+      }
+    }
+
+    .row {
+      margin-bottom: 25px;
+    }
+  }
+
+  .form-group {
+    position: relative;
+  }
+
 }

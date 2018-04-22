@@ -62,7 +62,7 @@
                     <img src="{!! url('/') !!}/assets/frontend/images/image-about-section-2.jpg" alt="About Image Featured">
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 order-md-1 order-6">
                     <div class="center-wrapper">
                         <div class="info-wrapper">
                             <h1 class="default-title">VISION & MISSION</h1>
@@ -140,7 +140,7 @@
                     <img src="{!! url('/') !!}/assets/frontend/images/image-about-section-4.jpg" alt="About Image Featured">
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 order-md-1 order-6">
                     <div class="center-wrapper">
                         <div class="info-wrapper">
                             <h1 class="default-title">OUR LOCAL PALS</h1>
