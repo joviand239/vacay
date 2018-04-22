@@ -1,0 +1,62 @@
+#about {
+
+
+
+  .full-section {
+
+
+    .center-wrapper {
+      @extend .display-flex;
+      height: 100%;
+      align-items: center;
+      padding: 30px 7%;
+    }
+
+    .info-wrapper {
+
+      .default-title {
+        font-size: 28px;
+      }
+
+      .italic {
+        letter-spacing: 5px;
+        font-style: italic;
+        font-weight: 500;
+      }
+
+
+      .content-section {
+
+        p {
+          line-height: 26px;
+        }
+
+
+
+        .table {
+
+          .title {
+            color: $main-color;
+            font-weight: 700;
+            width: 20%;
+          }
+
+          td {
+            border: none;
+            padding: 5px 5px;
+          }
+
+        }
+
+      }
+
+
+    }
+
+
+
+
+  }
+
+
+}

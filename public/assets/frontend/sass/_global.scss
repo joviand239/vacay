@@ -1,0 +1,346 @@
+
+
+
+
+.display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+
+// NAVBAR
+nav.navbar {
+  background: #f2f2f2;
+
+  &.transparent {
+    background: rgba(#f2f2f2, .5);
+    position: fixed;
+    width: 100%;
+    z-index: 1100;
+  }
+
+  .navbar-brand {
+    margin-right: 30px;
+
+    .logo {
+      width: 75px;
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+
+      .nav-link {
+        padding-left: 15px;
+        padding-right: 15px;
+        @include transition(all, 0.5s, ease);
+
+        &:hover {
+          color: $main-color;
+          font-weight: 700;
+        }
+
+        &.active {
+          color: $main-color;
+          font-weight: 700;
+        }
+      }
+
+      .nav-btn {
+        margin: 0px 15px;
+      }
+    }
+  }
+
+
+}
+// NAVBAR
+
+
+
+// Slider
+.slider {
+
+
+
+}
+// Slider
+
+
+// FOOTER
+#footer {
+  background: $main-color-dark;
+  color: white;
+  font-size: 10px;
+
+  p {
+    font-size: 10px;
+    margin-bottom: 3px;
+  }
+
+  .col-wrapper {
+    padding: 25px 0px;
+    @extend .display-flex;
+    justify-content: space-between;
+  }
+
+
+  .info-wrapper {
+    @extend .display-flex;
+
+    ul {
+      padding-left: 25px;
+      margin-bottom: 0px;
+
+      li {
+        margin-bottom: 2.5px;
+      }
+
+      a {
+        color: white;
+        font-weight: 700;
+      }
+    }
+  }
+
+
+  .copyright {
+    border-top: 1px solid #ffffff6e;
+    padding: 10px;
+    text-align: center;
+  }
+
+}
+// FOOTER
+
+
+.socmed-wrapper {
+  margin: 0px;
+  @extend .display-flex;
+
+  .item {
+    margin-right: 7.5px;
+  }
+
+  .link {
+    width: 30px;
+    height: 30px;
+    background: $secondary-color;
+    border-radius: 50px;
+    color: $main-color-dark;
+    @extend .display-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+
+    &.light {
+      background: $main-color-light;
+      color: white;
+    }
+  }
+}
+
+.destination-card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  &:hover {
+
+    .text-wrapper {
+      bottom: 0px;
+
+      .country {
+        margin-bottom: 10px;
+      }
+    }
+
+    .image-hover {
+      left: 0px
+    }
+  }
+
+  .place {
+    font-family: 'TimmanaRegular';
+    font-size: 28px;
+    margin-bottom: 0px;
+  }
+
+  .image-hover {
+    position: absolute;
+    top: 0;
+    left: -500px;
+    height: 100%;
+    @include transition(all, 0.5s, ease);
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .text-wrapper {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    color: white;
+    bottom: -40px;
+    padding: 15px 0px;
+    @include transition(all, 0.5s, ease);
+
+    .country {
+      margin-bottom: 20px;
+      @include transition(all, 0.5s, ease);
+    }
+
+    .link-caret {
+      color: white;
+    }
+  }
+}
+
+
+.photo-slider {
+
+
+  .prev {
+    position: absolute;
+    bottom: -50px;
+    left: 40%;
+  }
+
+  .next {
+    position: absolute;
+    bottom: -50px;
+    right: 40%;
+  }
+
+
+}
+
+
+.default-banner {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  padding: 50px 0px 10px;
+
+
+  .inline-wrapper {
+    @extend .display-flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+
+
+    .title {
+      font-family: 'TimmanaRegular';
+      font-size: 56px;
+      margin-bottom: 15px;
+      margin-top: 30px;
+    }
+
+    .anchor-list {
+      @extend .display-flex;
+      list-style: none;
+      margin: 0px;
+      padding: 10px 0px;
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+
+      li {
+
+      }
+
+      .anchor {
+        padding: 10px;
+        color: white;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+    }
+  }
+
+}
+
+
+.default-card {
+  text-align: center;
+
+  .image-wrapper {
+    margin: auto;
+    margin-bottom: 25px;
+    width: 220px;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+
+      .hoverlay {
+        opacity: 1;
+      }
+    }
+
+    .hoverlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      border-radius: 50%;
+      @extend .display-flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      @include transition(all, 0.5s, ease);
+
+      .icon {
+        width: 60px;
+      }
+    }
+  }
+
+  .title {
+    color: $main-color;
+    margin-bottom: 10px;
+  }
+
+  .summary {
+    font-size: 12px;
+  }
+
+}
+
+
+// RESPONSIVE
+@media screen and (max-width: 480px) {
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

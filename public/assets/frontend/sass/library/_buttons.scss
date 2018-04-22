@@ -1,0 +1,183 @@
+/**
+ *  BUTTONS
+ */
+
+
+.btn {
+  padding: 7.5px 12.5px;
+  border-radius: 0px;
+  background: $main-color;
+  color: white;
+  text-decoration: none;
+  @include transition(all, 0.5s, ease);
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: white;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &.light {
+    background: $main-color-light;
+  }
+
+  &.dark {
+    background: $main-color-dark;
+  }
+
+  &.disabled {
+    cursor: default;
+    opacity: .4;
+    transform: none;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.btn-full {
+    width: 100%;
+    font-weight: 700;
+  }
+
+  &.form-btn {
+    padding: 15px;
+    width: 250px;
+    font-weight: 700;
+  }
+}
+
+
+.secondary-btn {
+  background: $secondary-color;
+  color: white;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-text {
+
+  label {
+    margin-right: 7.5px;
+    font-weight: 700;
+  }
+}
+
+.simple-btn {
+  background: transparent;
+  color: $main-color-dark;
+  border: 1px solid $main-color-dark;
+  border-radius: 50%;
+  font-size: 22px;
+  padding: 0px;
+  width: 35px;
+  height: 35px;
+
+  &:hover {
+    background: $main-color-dark;
+    color: white;
+  }
+}
+
+.main-btn {
+  background: $main-color;
+  color: white;
+  font-weight: 400;
+  border-radius: 50px;
+
+  &.transparent {
+    background: transparent;
+    border: 1px solid $main-color;
+    color: $main-color;
+
+    &:hover {
+      color: white;
+      background: $main-color;
+    }
+  }
+
+  &.white {
+    background: white;
+    color: $main-color;
+    border: none;
+
+    .fa {
+      color: $text-color;
+    }
+  }
+
+  .fa {
+    font-size: 16px;
+    margin-left: 10px;
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+
+}
+
+
+.transparent-btn {
+  background: transparent;
+  border: 1px solid;
+
+  &:hover {
+    background: $third-color;
+    color: $main-color;
+  }
+}
+
+.third-btn {
+  background: $third-color;
+  color: $main-color;
+
+  &:hover {
+    background: $main-color;
+    color: white;
+  }
+}
+
+.text-btn {
+  @extend .display-flex;
+  align-items: center;
+  color: $main-color;
+  font-size: 18px;
+  font-weight: 700;
+  @include transition(all, 0.5s, ease);
+
+  &.small {
+    font-size: 14px;
+
+    .fa {
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    color: $main-color;
+
+    .fa {
+      margin-left: 30px;
+    }
+  }
+
+  .fa {
+    font-size: 30px;
+    margin-left: 15px;
+    @include transition(all, 0.5s, ease);
+  }
+}
+
+

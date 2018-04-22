@@ -1,0 +1,162 @@
+#home {
+
+
+  .banner {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    padding: 325px 0px 150px;
+
+
+    .title, .subtitle{
+      font-family: 'TimmanaRegular';
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .title {
+      width: 100%;
+      font-size: 42px;
+      line-height: 30px;
+    }
+
+    .subtitle {
+      font-size: 27px;
+
+    }
+  }
+
+
+  .search-wrapper {
+    padding: 30px;
+    box-shadow: 0px 0px 20px 0px;
+    width: 90%;
+    margin: auto;
+    margin-top: -60px;
+    position: relative;
+    background: white;
+    @extend .display-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .select2-container--default .select2-selection--single {
+      border: none;
+      border-bottom: 1px solid #a9a9a9;
+      border-radius: 0px;
+      height: 36px;
+      outline: none !important;
+
+      .select2-selection__rendered {
+        line-height: 36px;
+      }
+    }
+
+    .select2-container {
+
+    }
+
+
+    .select-wrapper {
+      @extend .display-flex;
+      width: 60%;
+
+      .item {
+        padding: 0px 15px;
+        width: 50%;
+
+        &:first-child {
+          border-right: 1px solid #a9a9a9;
+        }
+      }
+    }
+
+    .text {
+      font-size: 20px;
+      color: $main-color-dark;
+    }
+  }
+
+
+  .video-section {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    text-align: center;
+
+    .default-title {
+      font-weight: 500;
+    }
+
+    .video-image {
+      width: 550px;
+      margin-bottom: -100px;
+    }
+  }
+
+
+  .testimonial-section {
+    .lSSlideOuter .lSPager.lSpg {
+
+      &>li {
+
+        a {
+          background-color: #c8ccc6;
+          width: 35px;
+          height: 3px;
+        }
+
+        &.active a {
+          background-color: #6c8171;
+        }
+
+        &:hover a {
+          background-color: #6c8171;
+        }
+      }
+    }
+  }
+
+  #testimonial-slider {
+
+    .testi {
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    .owner {
+      color: $main-color;
+      font-size: 18px;
+    }
+  }
+
+
+  .gallery {
+
+    .slick-list {
+      padding: 30px;
+      margin-bottom: 25px;
+    }
+
+    .slick-slide {
+
+
+      .img-wrapper {
+        margin: 15px;
+        transform: scale(0.9);
+        @include transition(all, 0.5s, ease);
+      }
+
+      &.slick-current {
+
+        .img-wrapper {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+}
