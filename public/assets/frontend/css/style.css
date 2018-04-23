@@ -285,7 +285,7 @@ nav.navbar {
     position: absolute; }
   nav.navbar.active {
     position: fixed;
-    background: white; }
+    background: #f2f2f2; }
     nav.navbar.active .navbar-brand .logo {
       width: 50px; }
   nav.navbar .navbar-brand {
@@ -466,6 +466,22 @@ nav.navbar {
     margin-bottom: 10px; }
   .default-card .summary {
     font-size: 12px; }
+
+.cta-section {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  padding: 30px 0px;
+  text-align: center; }
+  .cta-section .icon {
+    width: 50px; }
+  .cta-section h2 {
+    color: #2c848e;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 25px; }
+  .cta-section .btn {
+    margin: 0px 15px; }
 
 .slick-slide:focus {
   outline: none; }

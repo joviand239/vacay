@@ -155,6 +155,28 @@
 
 
 
+        <div class="cta-section" style="background: url({!! url('/') !!}/assets/frontend/images/cta-bg.jpg)">
+            <div class="container">
+
+                <img class="icon" src="{!! url('/') !!}/assets/frontend/images/icon-plane.png" alt="CTA Icon">
+
+                <h2>So, what are you waiting for? go get yours now!</h2>
+
+                <div class="btn-wrapper">
+
+                    <a href="#" class="btn main-btn white">SEE OUR LOCALS <i class="fa fa-angle-right"></i></a>
+
+                    <a href="#" class="btn main-btn">LETS TALK TO US! <i class="fa fa-angle-right"></i></a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
     </section>
 
 

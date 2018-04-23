@@ -29,7 +29,7 @@ nav.navbar {
 
   &.active {
     position: fixed;
-    background: white;
+    background: #f2f2f2;
 
     .navbar-brand {
       .logo {
@@ -333,6 +333,30 @@ nav.navbar {
 
   .summary {
     font-size: 12px;
+  }
+}
+
+.cta-section {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  padding: 30px 0px;
+  text-align: center;
+
+
+  .icon {
+    width: 50px;
+  }
+
+  h2 {
+    color: $main-color;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    margin: 0px 15px;
   }
 }
 
