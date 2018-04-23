@@ -63,7 +63,10 @@ $(document).ready(function () {
         controls: false,
     });
 
-    $('.custom-select').select2();
+    $('.custom-select').select2().on('select2-open', function() {
+
+
+    });
 
 
     $('.custom-control').focusin(function (e) {
@@ -81,6 +84,16 @@ $(document).ready(function () {
 
 
     scrollNav();
+
+});
+
+$('body').on( 'scroll', function(){
+
+    if($(this).scrollTop() >= 300){
+        $('#main-navbar').addClass('active');
+    }else {
+        $('#main-navbar').removeClass('active');
+    }
 
 });
 

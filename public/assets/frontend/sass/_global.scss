@@ -17,20 +17,34 @@
 
 // NAVBAR
 nav.navbar {
+  z-index: 1200;
+  width: 100%;
   background: #f2f2f2;
+  @include transition(all, 0.5s, ease);
 
   &.transparent {
     background: rgba(#f2f2f2, .5);
-    position: fixed;
-    width: 100%;
-    z-index: 1100;
+    position: absolute;
   }
+
+  &.active {
+    position: fixed;
+    background: white;
+
+    .navbar-brand {
+      .logo {
+        width: 50px;
+      }
+    }
+  }
+
 
   .navbar-brand {
     margin-right: 30px;
 
     .logo {
       width: 75px;
+      @include transition(all, 0.5s, ease);
     }
   }
 
@@ -320,7 +334,6 @@ nav.navbar {
   .summary {
     font-size: 12px;
   }
-
 }
 
 

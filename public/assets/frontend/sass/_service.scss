@@ -1,0 +1,59 @@
+#service {
+
+
+  .gift-card {
+    margin-bottom: 30px;
+
+    .icon {
+      width: 50px;
+      margin-right: 15px;
+    }
+
+  }
+
+
+  .experience-testimoni {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    color: white;
+
+
+
+    .detail {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-style: italic;
+      position: relative;
+
+      &:before {
+        content: open-quote;
+        font-weight: bold;
+        font-size: 75px;
+        position: absolute;
+        left: -40px;
+        top: 10px;
+        line-height: 0px;
+        color: #606061;
+      }
+
+      &:after {
+        content: close-quote;
+        font-weight: bold;
+        font-size: 75px;
+        position: absolute;
+        bottom: -20px;
+        right: -15px;
+        line-height: 0px;
+        color: #606061;
+      }
+    }
+
+    .author {
+      font-size: 12px;
+    }
+  }
+
+}

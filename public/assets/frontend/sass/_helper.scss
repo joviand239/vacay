@@ -33,6 +33,12 @@
     background: $third-bg;
   }
 
+  &.with-bg {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+  }
+
   > .container {
     padding: 0px 50px;
 
@@ -278,6 +284,47 @@ input {
 
   .form-group {
     position: relative;
+  }
+
+}
+
+
+.icon-list {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+
+
+  &.inclusion {
+    li {
+      &:before {
+        content: '\f05d';
+        font-family: 'FontAwesome';
+        color: $main-color-light;
+        font-size: 26px;
+        margin-right: 20px;
+      }
+
+    }
+  }
+
+  &.exclusion {
+    li {
+      &:before {
+        content: '\f05c';
+        font-family: 'FontAwesome';
+        color: $color-error;
+        font-size: 26px;
+        margin-right: 20px;
+      }
+
+    }
+  }
+
+  li {
+    @extend .display-flex;
+    align-items: center;
+    line-height: 32px;
   }
 
 }

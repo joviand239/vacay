@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg {!! (@$headerTransparent) ? 'transparent' : '' !!}">
+<nav id="main-navbar" class="navbar navbar-expand-lg {!! (@$headerTransparent) ? 'transparent' : '' !!}">
     <div class="container">
         <a class="navbar-brand" href="{!! route('home') !!}">
             <img class="logo" src="{!! url('/') !!}/assets/frontend/images/logo.png" alt="Logo {!! env('PROJECT_NAME') !!}">
