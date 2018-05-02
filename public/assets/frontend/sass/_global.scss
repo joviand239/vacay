@@ -162,6 +162,7 @@ nav.navbar {
 }
 
 .destination-card {
+  display: block;
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
@@ -179,6 +180,10 @@ nav.navbar {
     .image-hover {
       left: 0px
     }
+  }
+
+  .image-wrapper {
+    @include transition(all, 0.5s, ease);
   }
 
   .place {

@@ -47,6 +47,8 @@ Route::get('/our-services', 'Frontend\ServiceController@index')->name('services'
 
 Route::get('/how-it-works', 'Frontend\HowController@index')->name('how-it-works');
 
+Route::get('/destinations', 'Frontend\DestinationController@index')->name('destinations');
+
 Route::get('/contact-us', 'Frontend\ContactController@index')->name('contact');
 
 

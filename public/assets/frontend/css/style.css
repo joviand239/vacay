@@ -141,11 +141,11 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent;
   border: 1px solid; }
   .transparent-btn:hover {
-    background: #efddac;
+    background: #fef7e4;
     color: #2c848e; }
 
 .third-btn {
-  background: #efddac;
+  background: #fef7e4;
   color: #2c848e; }
   .third-btn:hover {
     background: #2c848e;
@@ -262,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 .waves-effect .waves-ripple {
   z-index: -1; }
 
-.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .icon-list li, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper {
+.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .icon-list li, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -353,6 +353,7 @@ nav.navbar {
       color: white; }
 
 .destination-card {
+  display: block;
   position: relative;
   overflow: hidden;
   margin-bottom: 30px; }
@@ -362,6 +363,11 @@ nav.navbar {
       margin-bottom: 10px; }
   .destination-card:hover .image-hover {
     left: 0px; }
+  .destination-card .image-wrapper {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease; }
   .destination-card .place {
     font-family: 'TimmanaRegular';
     font-size: 28px;
@@ -873,5 +879,41 @@ input.custom-control {
     margin-bottom: 15px; }
   #how .step-wrapper .step-detail {
     line-height: 26px; }
+
+#destination .list-wrapper {
+  padding: 20px;
+  background: #fef7e4; }
+  #destination .list-wrapper ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px; }
+  #destination .list-wrapper .inline-link {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    padding: 10px 5px;
+    border-bottom: 1px solid #cacaca; }
+    #destination .list-wrapper .inline-link.active {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      border: none; }
+#destination .destination-card:hover .image-wrapper {
+  transform: scale(1.2); }
+#destination .destination-card .icon {
+  width: 45px;
+  margin-bottom: 15px; }
+#destination .destination-card .text-wrapper {
+  bottom: 0px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10%; }
+  #destination .destination-card .text-wrapper .country {
+    margin: 0px; }
+  #destination .destination-card .text-wrapper .name {
+    font-weight: 700;
+    font-style: italic; }
 
 /*# sourceMappingURL=style.css.map */

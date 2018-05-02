@@ -1,0 +1,67 @@
+#destination {
+
+
+  .list-wrapper {
+    padding: 20px;
+    background: $third-color;
+
+    ul {
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+    }
+
+
+    .inline-link {
+      @extend .display-flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      padding: 10px 5px;
+      border-bottom: 1px solid #cacaca;
+
+      &.active {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        border: none;
+      }
+
+
+    }
+  }
+
+  .destination-card {
+
+    &:hover {
+      .image-wrapper {
+        transform: scale(1.2);
+      }
+    }
+
+    .icon {
+      width: 45px;
+      margin-bottom: 15px;
+    }
+
+    .text-wrapper {
+      bottom: 0px;
+      height: 100%;
+      @extend .display-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10%;
+
+      .country {
+        margin: 0px;
+      }
+
+      .name {
+        font-weight: 700;
+        font-style: italic;
+      }
+    }
+
+  }
+}

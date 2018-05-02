@@ -7,8 +7,8 @@
 <!-- Ladda Loader -->
 <script src="{{ url('/') }}/assets/frontend/library/ladda/spin.min.js"></script>
 <script src="{{ url('/') }}/assets/frontend/library/ladda/ladda.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="{{ url('/') }}/assets/frontend/library/ladda/ladda.jquery.min.js"></script>
+{{--<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="{{ url('/') }}/assets/frontend/library/ladda/ladda.jquery.min.js"></script>--}}
 <!-- Ladda Loader -->
 
 <!-- Light Slider -->

@@ -16,7 +16,7 @@
                     <a class="nav-link {!! isActiveRoute(['services']) !!}" href="{!! route('services') !!}">OUR SERVICES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">DESTINATIONS</a>
+                    <a class="nav-link {!! isActiveRoute(['destinations']) !!}" href="{!! route('destinations') !!}">DESTINATIONS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {!! isActiveRoute(['how-it-works']) !!}" href="{!! route('how-it-works') !!}">HOW IT WORKS</a>
