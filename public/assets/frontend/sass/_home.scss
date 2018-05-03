@@ -6,6 +6,8 @@
     background-repeat: no-repeat !important;
     background-position: center center !important;
     padding: 325px 0px 150px;
+    position: relative;
+    z-index: 100;
 
 
     .title, .subtitle{
@@ -27,6 +29,19 @@
   }
 
 
+  .blue-line {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      left: 8%;
+      border-left: 1px solid $main-color;
+    }
+
+  }
+
   .search-wrapper {
     padding: 30px;
     box-shadow: 0px 0px 20px 0px;
@@ -34,6 +49,7 @@
     margin: auto;
     margin-top: -60px;
     position: relative;
+    z-index: 110;
     background: white;
     @extend .display-flex;
     align-items: center;
@@ -94,42 +110,6 @@
   }
 
 
-  .testimonial-section {
-    .lSSlideOuter .lSPager.lSpg {
-
-      &>li {
-
-        a {
-          background-color: #c8ccc6;
-          width: 35px;
-          height: 3px;
-        }
-
-        &.active a {
-          background-color: #6c8171;
-        }
-
-        &:hover a {
-          background-color: #6c8171;
-        }
-      }
-    }
-  }
-
-  #testimonial-slider {
-
-    .testi {
-      line-height: 30px;
-      margin-bottom: 20px;
-    }
-
-    .owner {
-      color: $main-color;
-      font-size: 18px;
-    }
-  }
-
-
   .gallery {
 
     .slick-list {
@@ -157,6 +137,11 @@
     img {
       width: 100%;
     }
+  }
+
+  .total-slider {
+    text-align: center;
+    font-weight: 500;
   }
 
 }

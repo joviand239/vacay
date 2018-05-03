@@ -189,63 +189,61 @@
 
 
 
+
                 <div class="row">
-                    <div class="col-md-4 col-12">
+                    <div class="col-md-6 col-12">
 
                         <div class="default-card">
 
-                            <a href="#">
-                                <div class="image-wrapper">
-                                    <img class="image" src="{!! url('/') !!}/assets/frontend/images/general-tour-image.png" alt="Featured Product Image">
-                                    <div class="hoverlay">
-                                        <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
-                                    </div>
 
+                            <div class="image-wrapper">
+                                <img class="image" src="{!! url('/') !!}/assets/frontend/images/personal-character-preferences-image.png" alt="Featured Product Image">
+                                <div class="hoverlay">
+                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/personal-character-preferences-icon.png" alt="Featured Product Icon">
                                 </div>
 
-
-                                <h3 class="title">AUTHENTIC Experience</h3>
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-4 col-12">
-
-                        <div class="default-card">
-
-                            <a href="#">
-                                <div class="image-wrapper">
-                                    <img class="image" src="{!! url('/') !!}/assets/frontend/images/personal-character-preferences-image.png" alt="Featured Product Image">
-                                    <div class="hoverlay">
-                                        <img class="icon" src="{!! url('/') !!}/assets/frontend/images/personal-character-preferences-icon.png" alt="Featured Product Icon">
-                                    </div>
-
-                                </div>
+                            </div>
 
 
+                            <div class="info-wrapper">
                                 <h3 class="title">THEMATIC Experience</h3>
-                            </a>
+
+                                <a href="#" class="btn-text">
+                                    <label>Explore More</label>
+                                    <span class="btn simple-btn">
+                                        <i class="fa fa-angle-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+
+
+
                         </div>
 
                     </div>
 
-                    <div class="col-md-4 col-12">
+                    <div class="col-md-6 col-12">
 
                         <div class="default-card">
 
-                            <a href="#">
-                                <div class="image-wrapper">
-                                    <img class="image" src="{!! url('/') !!}/assets/frontend/images/itenary-graphic-image.png" alt="Featured Product Image">
-                                    <div class="hoverlay">
-                                        <img class="icon" src="{!! url('/') !!}/assets/frontend/images/itenary-graphic-icon.png" alt="Featured Product Icon">
-                                    </div>
-
+                            <div class="image-wrapper">
+                                <img class="image" src="{!! url('/') !!}/assets/frontend/images/itenary-graphic-image.png" alt="Featured Product Image">
+                                <div class="hoverlay">
+                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/itenary-graphic-icon.png" alt="Featured Product Icon">
                                 </div>
 
+                            </div>
 
+                            <div class="info-wrapper">
                                 <h3 class="title">Itineraries-GRAPHICS</h3>
-                            </a>
+
+                                <a href="#" class="btn-text">
+                                    <label>Explore More</label>
+                                    <span class="btn simple-btn">
+                                        <i class="fa fa-angle-right"></i>
+                                    </span>
+                                </a>
+                            </div>
                         </div>
 
                     </div>

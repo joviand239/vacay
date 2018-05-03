@@ -127,7 +127,7 @@
                                             <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
                                         </div>
 
-    
+
                                         <div class="text-wrapper">
 
                                             <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">

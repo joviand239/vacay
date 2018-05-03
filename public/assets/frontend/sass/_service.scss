@@ -56,4 +56,77 @@
     }
   }
 
+
+  #service-tab {
+
+    .nav-tabs {
+
+      .nav-link {
+        border: none;
+        width: 50%;
+        background: #ebebeb;
+        text-align: center;
+        position: relative;
+
+
+        @extend .display-flex;
+        align-items: center;
+        flex-direction: column;
+
+
+        @include transition(background, 0.5s, ease);
+
+        .icon {
+          width: 60px;
+          margin-bottom: 5px;
+
+          @include transition(all, 0.5s, ease);
+        }
+
+        .iconblue {
+          position: absolute;
+          margin: auto;
+          opacity: 0;
+          top: -50px;
+          width: 60px;
+          margin-bottom: 5px;
+
+          @include transition(all, 0.5s, ease);
+        }
+
+        &.active {
+          border: none;
+          color: $main-color;
+          background: transparent;
+          border-bottom: 5px solid $main-color-dark;
+
+          .icon {
+            display: none;
+          }
+
+          .iconblue {
+            position: relative;
+            top: 0px;
+            opacity: 1;
+          }
+
+
+          &:before {
+            content: '\f0d7';
+            font-family: FontAwesome;
+            position: absolute;
+            bottom: -7px;
+            left: 50%;
+            font-size: 30px;
+            line-height: 0px;
+            color: $main-color-dark;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
 }

@@ -262,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 .waves-effect .waves-ripple {
   z-index: -1; }
 
-.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .icon-list li, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper {
+.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .icon-list li, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -273,7 +273,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; }
 
 nav.navbar {
-  z-index: 1200;
+  z-index: 1000;
   width: 100%;
   background: #f2f2f2;
   transition: all 0.5s ease;
@@ -403,14 +403,34 @@ nav.navbar {
     .destination-card .text-wrapper .link-caret {
       color: white; }
 
+.testimonial-section.text-center .lSSlideOuter .lSPager.lSpg {
+  text-align: center; }
+.testimonial-section .lSSlideOuter .lSPager.lSpg {
+  text-align: left; }
+  .testimonial-section .lSSlideOuter .lSPager.lSpg > li a {
+    background-color: #c8ccc6;
+    width: 35px;
+    height: 3px; }
+  .testimonial-section .lSSlideOuter .lSPager.lSpg > li.active a {
+    background-color: #6c8171; }
+  .testimonial-section .lSSlideOuter .lSPager.lSpg > li:hover a {
+    background-color: #6c8171; }
+
+#testimonial-slider .testi, .testimonial-slider .testi {
+  line-height: 30px;
+  margin-bottom: 20px; }
+#testimonial-slider .owner, .testimonial-slider .owner {
+  color: #2c848e;
+  font-size: 18px; }
+
 .photo-slider .prev {
   position: absolute;
-  bottom: -50px;
-  left: 40%; }
+  bottom: -55px;
+  left: 37%; }
 .photo-slider .next {
   position: absolute;
-  bottom: -50px;
-  right: 40%; }
+  bottom: -55px;
+  right: 37%; }
 
 .default-banner {
   background-size: cover !important;
@@ -443,10 +463,9 @@ nav.navbar {
         font-weight: 500; }
 
 .default-card {
-  text-align: center; }
+  align-items: center;
+  justify-content: space-evenly; }
   .default-card .image-wrapper {
-    margin: auto;
-    margin-bottom: 25px;
     width: 220px;
     position: relative;
     overflow: hidden; }
@@ -731,7 +750,9 @@ input.custom-control {
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
-  padding: 325px 0px 150px; }
+  padding: 325px 0px 150px;
+  position: relative;
+  z-index: 100; }
   #home .banner .title, #home .banner .subtitle {
     font-family: 'TimmanaRegular';
     color: white;
@@ -742,6 +763,14 @@ input.custom-control {
     line-height: 30px; }
   #home .banner .subtitle {
     font-size: 27px; }
+#home .blue-line {
+  position: relative; }
+  #home .blue-line:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    left: 8%;
+    border-left: 1px solid #2c848e; }
 #home .search-wrapper {
   padding: 30px;
   box-shadow: 0px 0px 20px 0px;
@@ -749,6 +778,7 @@ input.custom-control {
   margin: auto;
   margin-top: -60px;
   position: relative;
+  z-index: 110;
   background: white;
   align-items: center;
   justify-content: space-between; }
@@ -780,20 +810,6 @@ input.custom-control {
   #home .video-section .video-image {
     width: 550px;
     margin-bottom: -100px; }
-#home .testimonial-section .lSSlideOuter .lSPager.lSpg > li a {
-  background-color: #c8ccc6;
-  width: 35px;
-  height: 3px; }
-#home .testimonial-section .lSSlideOuter .lSPager.lSpg > li.active a {
-  background-color: #6c8171; }
-#home .testimonial-section .lSSlideOuter .lSPager.lSpg > li:hover a {
-  background-color: #6c8171; }
-#home #testimonial-slider .testi {
-  line-height: 30px;
-  margin-bottom: 20px; }
-#home #testimonial-slider .owner {
-  color: #2c848e;
-  font-size: 18px; }
 #home .gallery .slick-list {
   padding: 30px;
   margin-bottom: 25px; }
@@ -808,6 +824,9 @@ input.custom-control {
   transform: scale(1.1); }
 #home .gallery img {
   width: 100%; }
+#home .total-slider {
+  text-align: center;
+  font-weight: 500; }
 
 #about .full-section .center-wrapper {
   height: 100%;
@@ -866,6 +885,56 @@ input.custom-control {
       color: #606061; }
   #service .experience-testimoni .author {
     font-size: 12px; }
+#service #service-tab .nav-tabs .nav-link {
+  border: none;
+  width: 50%;
+  background: #ebebeb;
+  text-align: center;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  transition: background 0.5s ease;
+  -webkit-transition: background 0.5s ease;
+  -moz-transition: background 0.5s ease;
+  -o-transition: background 0.5s ease; }
+  #service #service-tab .nav-tabs .nav-link .icon {
+    width: 60px;
+    margin-bottom: 5px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease; }
+  #service #service-tab .nav-tabs .nav-link .iconblue {
+    position: absolute;
+    margin: auto;
+    opacity: 0;
+    top: -50px;
+    width: 60px;
+    margin-bottom: 5px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease; }
+  #service #service-tab .nav-tabs .nav-link.active {
+    border: none;
+    color: #2c848e;
+    background: transparent;
+    border-bottom: 5px solid #092d3f; }
+    #service #service-tab .nav-tabs .nav-link.active .icon {
+      display: none; }
+    #service #service-tab .nav-tabs .nav-link.active .iconblue {
+      position: relative;
+      top: 0px;
+      opacity: 1; }
+    #service #service-tab .nav-tabs .nav-link.active:before {
+      content: '\f0d7';
+      font-family: FontAwesome;
+      position: absolute;
+      bottom: -7px;
+      left: 50%;
+      font-size: 30px;
+      line-height: 0px;
+      color: #092d3f; }
 
 #how .step-wrapper {
   padding: 15px 0px; }

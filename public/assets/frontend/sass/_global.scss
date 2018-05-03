@@ -17,7 +17,7 @@
 
 // NAVBAR
 nav.navbar {
-  z-index: 1200;
+  z-index: 1000;
   width: 100%;
   background: #f2f2f2;
   @include transition(all, 0.5s, ease);
@@ -225,19 +225,63 @@ nav.navbar {
 }
 
 
+.testimonial-section {
+
+  &.text-center {
+    .lSSlideOuter .lSPager.lSpg {
+      text-align: center;
+    }
+  }
+
+  .lSSlideOuter .lSPager.lSpg {
+    text-align: left;
+
+    &>li {
+
+      a {
+        background-color: #c8ccc6;
+        width: 35px;
+        height: 3px;
+      }
+
+      &.active a {
+        background-color: #6c8171;
+      }
+
+      &:hover a {
+        background-color: #6c8171;
+      }
+    }
+  }
+}
+
+#testimonial-slider, .testimonial-slider{
+
+  .testi {
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+  .owner {
+    color: $main-color;
+    font-size: 18px;
+  }
+}
+
+
 .photo-slider {
 
 
   .prev {
     position: absolute;
-    bottom: -50px;
-    left: 40%;
+    bottom: -55px;
+    left: 37%;
   }
 
   .next {
     position: absolute;
-    bottom: -50px;
-    right: 40%;
+    bottom: -55px;
+    right: 37%;
   }
 
 
@@ -297,11 +341,11 @@ nav.navbar {
 
 
 .default-card {
-  text-align: center;
+  @extend .display-flex;
+  align-items: center;
+  justify-content: space-evenly;
 
   .image-wrapper {
-    margin: auto;
-    margin-bottom: 25px;
     width: 220px;
     position: relative;
     overflow: hidden;

@@ -22,12 +22,21 @@ $(document).ready(function () {
         variableWidth: true
     });*/
 
+    $('.info-guide-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.gallery'
+    });
+
 
     $('.gallery').slick({
         centerMode: true,
         centerPadding: '22.5%',
         slidesToShow: 1,
         infinite: true,
+        asNavFor: '.info-guide-slider',
         prevArrow: '<button type="button" class="btn simple-btn prev"><i class="fa fa-angle-left"></i></button>',
         nextArrow: '<button type="button" class="btn simple-btn next"><i class="fa fa-angle-right"></i></button>',
         responsive: [
@@ -49,7 +58,11 @@ $(document).ready(function () {
                     slidesToShow: 1
                 }
             }
-        ]
+        ],
+    });
+
+    $('.gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+         $('#gallery-wrapper .total-slider .index').html(nextSlide+1);
     });
 
 
