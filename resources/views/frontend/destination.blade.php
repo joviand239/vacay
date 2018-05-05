@@ -31,90 +31,126 @@
                                 <span>26</span>
                             </a>
 
-                            <ul>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>Bali</span>
-                                        <span>6</span>
+                            <ul id="main-collapse" class="main-list">
+                                <li class="item">
+                                    <a href="#collapse-asia" class="inline-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-asia">
+                                        <span>Asia</span>
+                                        <span class="show-icon"></span>
                                     </a>
+                                    <ul id="collapse-asia" class="sub-list collapse" data-parent="#main-collapse">
+                                        <li>
+                                            <a href="#">
+                                                Indoensia
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Japan
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Korea
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>Bangkok</span>
-                                        <span>2</span>
+
+
+
+                                <li class="item">
+                                    <a href="#collapse-america" class="inline-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-america">
+                                        <span>America</span>
+                                        <span class="show-icon"></span>
                                     </a>
+                                    <ul id="collapse-america" class="sub-list collapse" data-parent="#main-collapse">
+                                        <li>
+                                            <a href="#">
+                                                Canada
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Mexio
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                USA
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>Jerman</span>
-                                        <span>1</span>
+
+                                <li class="item">
+                                    <a href="#collapse-australia" class="inline-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-australia">
+                                        <span>Australia</span>
+                                        <span class="show-icon"></span>
                                     </a>
+                                    <ul id="collapse-australia" class="sub-list collapse" data-parent="#main-collapse">
+                                        <li>
+                                            <a href="#">
+                                                Australia
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Selandia Baru
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>Kyoto</span>
-                                        <span>4</span>
+
+                                <li class="item">
+                                    <a href="#collapse-europe" class="inline-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-europe">
+                                        <span>Europe</span>
+                                        <span class="show-icon"></span>
                                     </a>
+                                    <ul id="collapse-europe" class="sub-list collapse" data-parent="#main-collapse">
+                                        <li>
+                                            <a href="#">
+                                                Swedia
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Swiss
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>Macau</span>
-                                        <span>2</span>
+
+                                <li class="item">
+                                    <a href="#collapse-afrika" class="inline-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-afrika">
+                                        <span>Afrika</span>
+                                        <span class="show-icon"></span>
                                     </a>
+                                    <ul id="collapse-afrika" class="sub-list collapse" data-parent="#main-collapse">
+                                        <li>
+                                            <a href="#">
+                                                Ghana
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Mesir
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Nigeria
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>Melbourne</span>
-                                        <span>3</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>New York</span>
-                                        <span>5</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>New Zealand</span>
-                                        <span>7</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>Spain</span>
-                                        <span>1</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="inline-link">
-                                        <span>Sydney</span>
-                                        <span>2</span>
-                                    </a>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-md-8 col-12">
-                        <div class="row">
-                            <div class="col-md-8 col-12">
-                                <h1 class="default-title">All Journeys</h1>
-                            </div>
 
-                            <div class="col-md-4 col-12">
-
-                                <div class="form-group">
-                                    <select class="form-control" name="productType">
-                                        <option value="" selected>Type of Products</option>
-                                        <option value="" selected>Itinene</option>
-                                        <option value="" selected>Type of Products</option>
-                                    </select>
-                                </div>
-
-
-                            </div>
-                        </div>
+                        <h1 class="default-title">All Journeys</h1>
 
 
 

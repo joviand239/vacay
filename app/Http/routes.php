@@ -49,6 +49,15 @@ Route::get('/how-it-works', 'Frontend\HowController@index')->name('how-it-works'
 
 Route::get('/destinations', 'Frontend\DestinationController@index')->name('destinations');
 
+Route::get('/destination/{url?}', 'Frontend\DestinationController@details')->name('destination-detail');
+
+
+Route::get('/vacay-pals', 'Frontend\PalsController@index')->name('vacaypals');
+
+Route::get('/vacay-pal/{url?}', 'Frontend\PalsController@details')->name('vacaypals-detail');
+
+
+
 Route::get('/contact-us', 'Frontend\ContactController@index')->name('contact');
 
 

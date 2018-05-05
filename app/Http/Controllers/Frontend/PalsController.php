@@ -12,15 +12,15 @@ use App\Service\Image\ImageService;
 use App\Entity\CMS\Home;
 
 
-class DestinationController extends FrontendController {
+class PalsController extends FrontendController {
 
     public function index() {
 
-        return view('frontend.destination');
+        return view('frontend.vacaypals');
     }
 
     public function details($url = '') {
 
-        return view('frontend.destination-detail');
+        return view('frontend.vacaypals');
     }
 }

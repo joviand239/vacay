@@ -365,7 +365,7 @@
                 </div>
 
 
-                <div class="default-section with-bg" style="background: url({!! url('/') !!}/assets/frontend/images/essentials-banner.png)">
+                <div class="default-section with-bg" style="background: url({!! url('/') !!}/assets/frontend/images/essentials-banner.jpg)">
                     <div class="container">
 
                         <div class="row">

@@ -76,6 +76,23 @@ $(document).ready(function () {
         controls: false,
     });
 
+
+    $('.photo-slider').lightSlider({
+        item: 5,
+        loop: false,
+        slideMove: 5,
+        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+        speed: 600,
+        onSliderLoad: function(el) {
+            el.lightGallery({
+                selector: '.photo-slider .lslide'
+            });
+        }
+    });
+
+
+
+
     $('.custom-select').select2().on('select2-open', function() {
 
 
