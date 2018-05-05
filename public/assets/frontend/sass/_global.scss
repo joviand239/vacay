@@ -269,7 +269,7 @@ nav.navbar {
 }
 
 
-.photo-slider {
+.pals-gallery {
 
 
   .prev {
@@ -341,14 +341,31 @@ nav.navbar {
 
 
 .default-card {
-  @extend .display-flex;
-  align-items: center;
-  justify-content: space-evenly;
+  text-align: center;
+
+  &.service-card {
+    @extend .display-flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &.pals-card {
+    .title {
+      margin-bottom: 0px;
+    }
+
+    .subtitle {
+      margin-bottom: 20px;
+    }
+
+
+  }
 
   .image-wrapper {
     width: 220px;
+    margin: auto;
+    margin-bottom: 15px;
     position: relative;
-    overflow: hidden;
 
     &:hover {
 

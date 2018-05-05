@@ -21,6 +21,6 @@ class PalsController extends FrontendController {
 
     public function details($url = '') {
 
-        return view('frontend.vacaypals');
+        return view('frontend.vacaypals-detail');
     }
 }

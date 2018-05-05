@@ -1,0 +1,69 @@
+#vacaypals {
+
+  .review-wrapper {
+
+
+    .box {
+      @extend .display-flex;
+      align-items: center;
+      border: 1px solid #d8d8d8;
+      padding: 20px;
+      margin-bottom: 30px;
+
+
+      .reviewer {
+        @extend .display-flex;
+        align-items: center;
+        width: 30%;
+        padding: 15px;
+        border-right: 1px solid #d8d8d8;
+
+        .pic {
+          width: 70px;
+          margin-right: 15px;
+          border-radius: 50%;
+        }
+
+        .info {
+
+          .name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 0px;
+          }
+
+          .date {
+            margin-bottom: 0px;
+          }
+
+        }
+
+        .rating {
+          padding: 0px;
+          margin: 0px;
+          list-style: none;
+          @extend .display-flex;
+
+          li {
+            margin-right: 3px;
+
+            .fa {
+              font-size: 14px;
+              color: $pink;
+            }
+          }
+
+        }
+      }
+
+      .review-content {
+        width: 70%;
+        padding: 15px;
+      }
+
+
+    }
+
+  }
+
+}

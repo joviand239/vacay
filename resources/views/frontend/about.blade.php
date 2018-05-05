@@ -193,7 +193,7 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
 
-                        <div class="default-card">
+                        <div class="default-card service-card">
 
 
                             <div class="image-wrapper">
@@ -224,7 +224,7 @@
 
                     <div class="col-md-6 col-12">
 
-                        <div class="default-card">
+                        <div class="default-card service-card">
 
                             <div class="image-wrapper">
                                 <img class="image" src="{!! url('/') !!}/assets/frontend/images/itenary-graphic-image.png" alt="Featured Product Image">

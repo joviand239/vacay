@@ -262,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 .waves-effect .waves-ripple {
   z-index: -1; }
 
-.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .icon-list li, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper {
+.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .icon-list li, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -423,11 +423,11 @@ nav.navbar {
   color: #2c848e;
   font-size: 18px; }
 
-.photo-slider .prev {
+.pals-gallery .prev {
   position: absolute;
   bottom: -55px;
   left: 37%; }
-.photo-slider .next {
+.pals-gallery .next {
   position: absolute;
   bottom: -55px;
   right: 37%; }
@@ -463,12 +463,19 @@ nav.navbar {
         font-weight: 500; }
 
 .default-card {
-  align-items: center;
-  justify-content: space-evenly; }
+  text-align: center; }
+  .default-card.service-card {
+    align-items: center;
+    justify-content: space-evenly; }
+  .default-card.pals-card .title {
+    margin-bottom: 0px; }
+  .default-card.pals-card .subtitle {
+    margin-bottom: 20px; }
   .default-card .image-wrapper {
     width: 220px;
-    position: relative;
-    overflow: hidden; }
+    margin: auto;
+    margin-bottom: 15px;
+    position: relative; }
     .default-card .image-wrapper:hover .hoverlay {
       opacity: 1; }
     .default-card .image-wrapper .hoverlay {
@@ -1018,5 +1025,38 @@ input.custom-control {
     font-size: 14px;
     margin-bottom: 0px;
     line-height: 20px; }
+
+#vacaypals .review-wrapper .box {
+  align-items: center;
+  border: 1px solid #d8d8d8;
+  padding: 20px;
+  margin-bottom: 30px; }
+  #vacaypals .review-wrapper .box .reviewer {
+    align-items: center;
+    width: 30%;
+    padding: 15px;
+    border-right: 1px solid #d8d8d8; }
+    #vacaypals .review-wrapper .box .reviewer .pic {
+      width: 70px;
+      margin-right: 15px;
+      border-radius: 50%; }
+    #vacaypals .review-wrapper .box .reviewer .info .name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 0px; }
+    #vacaypals .review-wrapper .box .reviewer .info .date {
+      margin-bottom: 0px; }
+    #vacaypals .review-wrapper .box .reviewer .rating {
+      padding: 0px;
+      margin: 0px;
+      list-style: none; }
+      #vacaypals .review-wrapper .box .reviewer .rating li {
+        margin-right: 3px; }
+        #vacaypals .review-wrapper .box .reviewer .rating li .fa {
+          font-size: 14px;
+          color: #ed1b52; }
+  #vacaypals .review-wrapper .box .review-content {
+    width: 70%;
+    padding: 15px; }
 
 /*# sourceMappingURL=style.css.map */

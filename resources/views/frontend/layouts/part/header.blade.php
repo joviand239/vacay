@@ -22,7 +22,7 @@
                     <a class="nav-link {!! isActiveRoute(['how-it-works']) !!}" href="{!! route('how-it-works') !!}">HOW IT WORKS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">VACAY PALS</a>
+                    <a class="nav-link {!! isActiveRoute(['vacaypals']) !!}" href="{!! route('vacaypals') !!}">VACAY PALS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-btn btn main-btn transparent" href="{!! route('contact') !!}">CONTACT US!</a>

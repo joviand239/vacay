@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="col-md-6 col-12">
 
-                            <div class="default-card">
+                            <div class="default-card service-card">
 
 
                                 <div class="image-wrapper">
@@ -98,7 +98,7 @@
 
                         <div class="col-md-6 col-12">
 
-                            <div class="default-card">
+                            <div class="default-card service-card">
 
                                 <div class="image-wrapper">
                                     <img class="image" src="{!! url('/') !!}/assets/frontend/images/itenary-graphic-image.png" alt="Featured Product Image">
@@ -378,7 +378,7 @@
                         <div class="col-md-6 col-12">
 
 
-                            <div id="gallery-wrapper" class="photo-slider">
+                            <div id="gallery-wrapper" class="pals-gallery">
                                 <div class="gallery">
                                     @for($i = 0 ; $i < 5 ; $i++)
                                         <div>
