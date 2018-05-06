@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Entity\Category;
 
+use App\Entity\CMS\About;
 use App\Entity\CMS\WhyGerayPrint;
 use App\Entity\Product;
 
@@ -16,6 +17,10 @@ class AboutController extends FrontendController {
 
     public function index() {
 
-        return view('frontend.about');
+        $page = About::getPage();
+
+        return view('frontend.about', [
+            'page' => $page->json,
+        ]);
     }
 }

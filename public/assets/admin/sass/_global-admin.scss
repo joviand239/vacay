@@ -1,0 +1,133 @@
+.display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logo-admin {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+aside.app-sidebar {
+  .sidebar-menu ul.sidebar-nav > li > a {
+    @extend .display-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px;
+
+    .title {
+      font-weight: 700;
+    }
+
+    .icon {
+      width: 55px;
+      height: 55px;
+      margin-right: 10px;
+      margin-left: 0px;
+      margin-bottom: 0px;
+
+
+      i.fa {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+      }
+    }
+  }
+
+
+  .sidebar-header {
+    margin-bottom: 30px;
+  }
+}
+
+.app {
+  .app-login {
+    background: $main-color;
+  }
+
+  .logo-login {
+    max-width: 350px;
+  }
+
+  .form-header {
+    margin-bottom: 50px;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.main-color {
+  color: $main-color;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.btn {
+  &.btn-success {
+    border-color: $main-color;
+    border-bottom-color: $main-color;
+    background-color: $main-color;
+  }
+}
+
+
+aside {
+  &.app-sidebar {
+    height: auto;
+
+
+    .sidebar-menu ul.sidebar-nav {
+      padding: 0px;
+
+      > li.active {
+
+        > a .title {
+          color: $main-color;
+        }
+
+        > a .icon {
+          background-color: $main-color;
+          color: white;
+        }
+
+      }
+    }
+  }
+}
+
+.input-group {
+
+  .change, .cancel {
+    cursor: pointer;
+    transition: all 0.5s ease;
+    background-color: $main-color;
+    color: white;
+
+
+    &:hover {
+      transform: scaleX(1.1);
+    }
+  }
+}
+
+.pagination > li.active > a, .pagination > li.active > span {
+  border: 0;
+  border-bottom: 2px solid $main-color;
+  background-color: $main-color;
+}
+.note-editor.note-frame .note-editing-area .note-editable {
+  min-height: 100px;
+}

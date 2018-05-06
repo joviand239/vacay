@@ -14,7 +14,30 @@ class Home extends Page {
     const FORM_TYPE = [
         'metaTitle' => 'Text',
         'metaDescription' => 'TextArea',
-        'banner' => 'ListSortable',
+        'bannerImage' => 'Image_1',
+        'bannerTitle' => 'Text',
+        'bannerSubtitle' => 'Text',
+
+        'searchText' => 'Text',
+
+        'serviceSectionTitle' => 'Text',
+        'serviceSectionSubtitle' => 'Text',
+        'serviceSectionDescription' => 'TextArea',
+
+        'differentSectionTitle' => 'Text',
+        'differentSectionSubtitle' => 'Text',
+        'differentSectionDescription' => 'TextArea',
+        'differentSectionVideoLink' => 'Text',
+
+        'destinationSectionTitle' => 'Text',
+        'destinationSectionDescription' => 'TextArea',
+
+        'howSectionTitle' => 'Text',
+        'howSectionDescription' => 'TextArea',
+
+        'vacayPalsSectionTitle' => 'Text',
+
+        'stepHowItWorks' => 'ListSortable',
     ];
 
     const FORM_LABEL = [
@@ -25,15 +48,16 @@ class Home extends Page {
     const FORM_LABEL_HELP = [
         'metaTitle' => 'Untuk keperluan SEO',
         'metaDescription' => 'Untuk keperluan SEO',
+        'bannerImage' => 'Recommended size : 1366 x 600 px',
+        'picture' => 'Recommended size : 500 x 500 px',
     ];
 
     const FORM_LIST = [
-        'banner' => [
-            'background' => 'Image_1',
+        'stepHowItWorks' => [
+            'picture' => 'Image_1',
             'title' => 'Text',
-            'subtitle' => 'Text',
-            'link' => 'Text',
-        ]
+            'detail' => 'TextArea',
+        ],
     ];
 
     const FORM_SELECT_LIST = [

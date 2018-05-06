@@ -16,8 +16,11 @@ class HomeController extends FrontendController {
 
     public function index() {
 
+        $page = Home::getPage();
+
         return view('frontend.home', [
             'headerTransparent' => true,
+            'page' => $page->json,
         ]);
     }
 }

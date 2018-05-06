@@ -1,32 +1,80 @@
-.app-login {
-    background: #31828c;
-}
-.btn.btn-success {
-    border-color: #31828c;
-    border-bottom-color: #31828c;
-    background-color: #31828c;
-}
-aside.app-sidebar .sidebar-menu ul.sidebar-nav > li.active > a .icon {
-    background-color: #31828c;
-    color: white;
-}
-.pagination > li.active > a, .pagination > li.active > span {
-    border: 0;
-    border-bottom: 2px solid #31828c;
-    background-color: #31828c;
-}
-aside.app-sidebar .sidebar-menu ul.sidebar-nav > li.active > a .title {
-    color: #31828c;
-}
-.note-editor.note-frame .note-editing-area .note-editable {
-    min-height: 100px;
-}
+.display-flex, aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap; }
 
-aside.app-sidebar .sidebar-menu ul.sidebar-nav {
-    padding: 0px;
-}
+.logo-admin {
+  max-height: 100%;
+  max-width: 100%; }
+
+aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a {
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 10px; }
+  aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a .title {
+    font-weight: 700; }
+  aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a .icon {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px;
+    margin-left: 0px;
+    margin-bottom: 0px; }
+    aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a .icon i.fa {
+      width: 55px;
+      height: 55px;
+      font-size: 22px; }
+aside.app-sidebar .sidebar-header {
+  margin-bottom: 30px; }
+
+.app .app-login {
+  background: #2c848e; }
+.app .logo-login {
+  max-width: 350px; }
+.app .form-header {
+  margin-bottom: 50px; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
+
+.main-color {
+  color: #2c848e;
+  transition: all 0.5s ease; }
+  .main-color:hover {
+    color: #868b97; }
+
+.btn.btn-success {
+  border-color: #2c848e;
+  border-bottom-color: #2c848e;
+  background-color: #2c848e; }
 
 aside.app-sidebar {
-    height: auto;
-}
+  height: auto; }
+  aside.app-sidebar .sidebar-menu ul.sidebar-nav {
+    padding: 0px; }
+    aside.app-sidebar .sidebar-menu ul.sidebar-nav > li.active > a .title {
+      color: #2c848e; }
+    aside.app-sidebar .sidebar-menu ul.sidebar-nav > li.active > a .icon {
+      background-color: #2c848e;
+      color: white; }
 
+.input-group .change, .input-group .cancel {
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: #2c848e;
+  color: white; }
+  .input-group .change:hover, .input-group .cancel:hover {
+    transform: scaleX(1.1); }
+
+.pagination > li.active > a, .pagination > li.active > span {
+  border: 0;
+  border-bottom: 2px solid #2c848e;
+  background-color: #2c848e; }
+
+.note-editor.note-frame .note-editing-area .note-editable {
+  min-height: 100px; }
+
+/*# sourceMappingURL=style.css.map */
