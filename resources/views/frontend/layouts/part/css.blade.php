@@ -24,5 +24,9 @@
 <link rel="stylesheet" href="{{ url('/') }}/assets/frontend/library/select2/css/select2.min.css">
 <!-- Select 2 -->
 
+<!-- Air DatePicker -->
+<link rel="stylesheet" href="{{ url('/') }}/assets/frontend/library/datepicker/css/datepicker.min.css">
+<!-- Air DatePicker -->
+
 <link rel="stylesheet" href="{{ url('/') }}/assets/frontend/css/style.css">
 

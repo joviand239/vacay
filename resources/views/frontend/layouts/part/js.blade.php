@@ -24,9 +24,15 @@
 <!-- Slick Slider -->
 
 <!-- Select 2 -->
-<script src="{{ url('/') }}/assets/frontend/library/select2/js/select2.min.js"></script>
+<script src="{{ url('/') }}/assets/frontend/library/select2/js/select2.full.min.js"></script>
 <!-- Select 2 -->
 
+<!-- Air DatePicker -->
+<script src="{{ url('/') }}/assets/frontend/library/datepicker/js/datepicker.min.js"></script>
+
+<!-- Include English language -->
+<script src="{{ url('/') }}/assets/frontend/library/datepicker/js/datepicker.en.js"></script>
+<!-- Air DatePicker -->
 
 
 <script src="{{ url('/') }}/assets/frontend/js/script.js"></script>

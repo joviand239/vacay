@@ -57,6 +57,9 @@ Route::get('/vacay-pals', 'Frontend\PalsController@index')->name('vacaypals');
 Route::get('/vacay-pal/{url?}', 'Frontend\PalsController@details')->name('vacaypals-detail');
 
 
+Route::get('/booking/{url?}', 'Frontend\BookingController@details')->name('booking');
+
+
 
 Route::get('/contact-us', 'Frontend\ContactController@index')->name('contact');
 

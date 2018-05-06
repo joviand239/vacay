@@ -20,12 +20,14 @@
 /**
  *  TYPOGRAPHY
  */
+html {
+  overflow-x: hidden; }
+
 html, body {
   background-color: #ffffff;
   color: #555655;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 12px;
@@ -262,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
 .waves-effect .waves-ripple {
   z-index: -1; }
 
-.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .icon-list li, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating {
+.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -558,6 +560,13 @@ nav.navbar {
   .default-title.white {
     color: white; }
 
+.form-title {
+  font-size: 22px;
+  color: #2c848e;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-weight: 600; }
+
 .default-subtitle {
   font-size: 20px;
   font-weight: 900; }
@@ -650,18 +659,31 @@ nav.navbar {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease; }
   .label-form.active {
-    top: -20px; }
+    top: -15px; }
 
 input.custom-control {
   height: 40px; }
 
 .custom-control {
   border-radius: 0px;
-  border-color: rgba(44, 132, 142, 0.3); }
+  border-color: rgba(44, 132, 142, 0.3);
+  align-items: center; }
+  .custom-control::-webkit-input-placeholder {
+    font-style: italic; }
+  .custom-control:-moz-placeholder {
+    font-style: italic; }
+  .custom-control::-moz-placeholder {
+    font-style: italic; }
+  .custom-control:-ms-input-placeholder {
+    font-style: italic; }
   .custom-control:focus {
     outline: none;
     box-shadow: none;
     border-color: rgba(44, 132, 142, 0.3); }
+  .custom-control.custom-control-inline {
+    margin-right: 20%; }
+  .custom-control .custom-control-label {
+    font-size: 12px; }
 
 .nav-custom-tabs {
   padding: 0px;
@@ -698,10 +720,18 @@ input.custom-control {
   font-size: 16px;
   color: #2c848e;
   font-weight: 700; }
+.form-section .form-title:first-of-type {
+  margin-top: 0px; }
 .form-section form {
   padding: 30px 0px; }
+  .form-section form .select2-container {
+    box-shadow: none !important;
+    outline: none !important; }
   .form-section form .select2-container--default .select2-selection--single {
-    height: 40px; }
+    height: 40px;
+    border-color: rgba(44, 132, 142, 0.3);
+    box-shadow: none !important;
+    outline: none !important; }
     .form-section form .select2-container--default .select2-selection--single .select2-selection__rendered {
       line-height: 40px; }
     .form-section form .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -710,6 +740,16 @@ input.custom-control {
     margin-bottom: 25px; }
 .form-section .form-group {
   position: relative; }
+  .form-section .form-group .input-group .custom-control {
+    border-right: none; }
+  .form-section .form-group .input-group .input-group-prepend .input-group-text {
+    height: 40px;
+    align-items: center;
+    font-size: 20px;
+    background: white;
+    color: #bcced3;
+    border-color: #bcced3;
+    border-left: none; }
 
 .icon-list {
   list-style: none;
@@ -730,6 +770,9 @@ input.custom-control {
   .icon-list li {
     align-items: center;
     line-height: 32px; }
+
+.hidden {
+  display: none; }
 
 .modal .body-wrapper {
   text-align: center;
@@ -752,7 +795,49 @@ input.custom-control {
   .modal .body-wrapper .small-text {
     font-size: 12px;
     margin-bottom: 0px; }
+.modal .booking-result {
+  padding-left: 30px;
+  padding-right: 30px; }
+  .modal .booking-result .icon {
+    width: 75px;
+    margin-bottom: 15px; }
+  .modal .booking-result .table {
+    border: 2px solid #93c1c6;
+    text-align: left;
+    margin-bottom: 50px; }
+    .modal .booking-result .table strong {
+      font-weight: 700; }
+    .modal .booking-result .table td, .modal .booking-result .table th {
+      border-top: none;
+      padding: 10px 15px; }
+    .modal .booking-result .table thead {
+      background: #93c1c6;
+      color: white;
+      font-size: 22px; }
+      .modal .booking-result .table thead tr th {
+        padding: 10px 15px;
+        border-bottom: none; }
+    .modal .booking-result .table tbody {
+      border-left: 1px solid #93c1c6;
+      border-right: 1px solid #93c1c6; }
+      .modal .booking-result .table tbody tr td:last-of-type {
+        font-weight: 700; }
+      .modal .booking-result .table tbody tr:first-of-type td {
+        padding-top: 30px; }
+      .modal .booking-result .table tbody tr:last-of-type td {
+        padding-bottom: 30px; }
+      .modal .booking-result .table tbody td {
+        padding: 5px 15px; }
+    .modal .booking-result .table tfoot {
+      background: #93c1c6;
+      color: white;
+      font-size: 18px; }
+      .modal .booking-result .table tfoot .col-footer .col-half {
+        width: 50%; }
 
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 700px; } }
 #home .banner {
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -1058,5 +1143,23 @@ input.custom-control {
   #vacaypals .review-wrapper .box .review-content {
     width: 70%;
     padding: 15px; }
+
+#booking .pick-category-wrapper {
+  background: #f3f8fb;
+  padding: 15px; }
+  #booking .pick-category-wrapper #add-category-picker {
+    cursor: pointer;
+    text-align: center;
+    color: #bcced3; }
+    #booking .pick-category-wrapper #add-category-picker:after {
+      content: '+';
+      line-height: 0px;
+      padding: 2px 7px;
+      font-size: 16px;
+      border: 1px solid;
+      border-radius: 50%;
+      margin-left: 10px; }
+  #booking .pick-category-wrapper .pick-item {
+    margin-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */

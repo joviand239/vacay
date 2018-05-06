@@ -91,8 +91,6 @@ $(document).ready(function () {
     });
 
 
-
-
     $('.custom-select').select2().on('select2-open', function() {
 
 
@@ -110,6 +108,8 @@ $(document).ready(function () {
             $(this).prev().removeClass('active');
         }
     });
+
+
 
 
 

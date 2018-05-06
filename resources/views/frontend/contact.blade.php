@@ -99,7 +99,7 @@
 
 
                         <div class="text-center">
-                            <a href="#" class="btn main-btn" data-toggle="modal" data-target="#contactFormModal">GET IN TOUCH <i class="fa fa-angle-right"></i></a>
+                            <a href="#" class="btn main-btn" data-toggle="modal" data-target="#contactFormModal" data-backdrop="static">GET IN TOUCH <i class="fa fa-angle-right"></i></a>
                         </div>
 
 

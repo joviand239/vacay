@@ -68,6 +68,15 @@
   }
 }
 
+
+.form-title {
+  font-size: 22px;
+  color: $main-color;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-weight: 600;
+}
+
 .default-subtitle {
   font-size: 20px;
   font-weight: 900;
@@ -189,7 +198,7 @@
   @include transition(all, 0.5s, ease);
 
   &.active {
-    top: -20px;
+    top: -15px;
   }
 }
 
@@ -202,11 +211,33 @@ input {
 .custom-control {
   border-radius: 0px;
   border-color: rgba($main-color, .3);
+  align-items: center;
+
+  &::-webkit-input-placeholder {
+    font-style: italic;
+  }
+  &:-moz-placeholder {
+    font-style: italic;
+  }
+  &::-moz-placeholder {
+    font-style: italic;
+  }
+  &:-ms-input-placeholder {
+    font-style: italic;
+  }
 
   &:focus {
     outline: none;
     box-shadow: none;
     border-color: rgba($main-color, .3);
+  }
+
+  &.custom-control-inline {
+    margin-right: 20%;
+  }
+
+  .custom-control-label {
+    font-size: 12px;
   }
 }
 
@@ -262,11 +293,27 @@ input {
     font-weight: 700;
   }
 
+  .form-title {
+
+    &:first-of-type {
+      margin-top: 0px;
+    }
+
+  }
+
   form {
     padding: 30px 0px;
 
+    .select2-container {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
     .select2-container--default .select2-selection--single {
       height: 40px;
+      border-color: rgba($main-color, .3);
+      box-shadow: none !important;
+      outline: none !important;
 
       .select2-selection__rendered {
         line-height: 40px;
@@ -284,6 +331,32 @@ input {
 
   .form-group {
     position: relative;
+
+
+
+    .input-group {
+
+      .custom-control {
+        border-right: none;
+      }
+
+      .input-group-prepend {
+
+
+        .input-group-text {
+          height: 40px;
+          align-items: center;
+          @extend .display-flex;
+          font-size: 20px;
+          background: white;
+          color: $main-color-light;
+          border-color: $main-color-light;
+          border-left: none;
+        }
+      }
+
+    }
+
   }
 
 }
@@ -327,4 +400,9 @@ input {
     line-height: 32px;
   }
 
+}
+
+
+.hidden {
+  display: none;
 }
