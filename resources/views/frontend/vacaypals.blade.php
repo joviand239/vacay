@@ -13,7 +13,7 @@
 
                 <div class="inline-wrapper">
 
-                    <h1 class="title">VACAY PALS</h1>
+                    <h1 class="title">{!! @$page->bannerTitle !!}</h1>
 
                 </div>
 
@@ -26,10 +26,10 @@
 
             <div class="container">
 
-                <h1 class="default-title">Meet Our Pals</h1>
+                <h1 class="default-title">{!! @$page->title !!}</h1>
 
                 <p class="default-summary mb-50">
-                    We bestow authentic connection with stories with the locals through personalised travelling. We connect travellers with our native guides who know their localities more than anyone else.
+                    {!! @$page->description !!}
                 </p>
 
 

@@ -13,8 +13,6 @@ aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a {
   flex-wrap: nowrap;
   align-items: center;
   padding: 10px; }
-  aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a .title {
-    font-weight: 700; }
   aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a .icon {
     width: 55px;
     height: 55px;

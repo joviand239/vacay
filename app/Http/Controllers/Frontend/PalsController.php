@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Entity\Category;
 
+use App\Entity\CMS\Pals;
 use App\Entity\CMS\WhyGerayPrint;
 use App\Entity\Product;
 
@@ -15,8 +16,11 @@ use App\Entity\CMS\Home;
 class PalsController extends FrontendController {
 
     public function index() {
+        $page = Pals::getPage();
 
-        return view('frontend.vacaypals');
+        return view('frontend.vacaypals', [
+            'page' => $page->json
+        ]);
     }
 
     public function details($url = '') {

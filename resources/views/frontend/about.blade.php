@@ -13,7 +13,7 @@
 
                 <div class="inline-wrapper">
 
-                    <h1 class="title">ABOUT US</h1>
+                    <h1 class="title">{!! @$page->bannerTitle !!}</h1>
 
 
                     <ul class="anchor-list">

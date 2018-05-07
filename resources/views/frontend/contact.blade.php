@@ -13,7 +13,7 @@
 
                 <div class="inline-wrapper">
 
-                    <h1 class="title">CONTACT US</h1>
+                    <h1 class="title">{!! @$page->bannerTitle !!}</h1>
 
                 </div>
 
@@ -29,7 +29,7 @@
 
                 <div class="form-section">
 
-                    <h2 class="header">Ask further, we will get back in touch with you shortly!</h2>
+                    <h2 class="header">{!! @$page->title !!}</h2>
 
 
                     <form>

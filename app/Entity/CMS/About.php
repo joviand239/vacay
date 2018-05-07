@@ -15,6 +15,18 @@ class About extends Page {
         'metaTitle' => 'Text',
         'metaDescription' => 'TextArea',
 
+        'bannerTitle' => 'Text',
+        'bannerImage' => 'Image_1',
+
+
+        'email' => 'Text',
+        'phoneNumber' => 'Text',
+        'address' => 'TextArea',
+        'facebookLink' => 'Text',
+        'instagramLink' => 'Text',
+        'googlePlusLink' => 'Text',
+        'youtubeLink' => 'Text',
+
         'messageSectionImage' => 'Image_1',
         'messageSectionTitle' => 'Text',
         'messageSectionSubtitle' => 'Text',
