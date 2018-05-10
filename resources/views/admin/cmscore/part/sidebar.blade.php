@@ -15,6 +15,28 @@
                     <div class="title">Konten</div>
                 </a>
             </li>
+
+
+            <li class="dropdown {!! isActiveRoute(['admin.continents', 'admin.countries']) !!}">
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-map-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">Destination</div>
+                </a>
+
+                <div class="dropdown-menu">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="{{ route('admin.continents') }}">Continent</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{{ route('admin.countries') }}">Country</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
         </ul>
     </div>
 </aside>

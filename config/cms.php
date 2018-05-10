@@ -11,7 +11,7 @@
 
 return [
 	'secret' => env('JWT_SECRET', 'rRoqisZLV9aaepkDKZT9K9TmHNi1up7B'),
-	'Pages' => ['Home', 'About', 'Service', 'Experience', 'How', 'Pals', 'Contact'],
+	'Pages' => ['Home', 'About', 'Service', 'Experience', 'Essentials', 'How', 'Pals', 'Contact'],
 	'LANGUAGE' => ['en'],
     'LANGUAGE_MULTI' => ['ALL'],
 ];

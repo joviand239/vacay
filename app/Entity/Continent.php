@@ -7,29 +7,20 @@ use App\Entity\User\CustomerDetails;
 use App\Util\Constant;
 
 
-class Chef extends BaseEntity {
-    protected $table = 'chef';
-
-    public function courses(){
-        return $this->belongsToMany(Course::class, 'courseChef');
-    }
-
-    const FORM_REQUIRED = ['name'];
+class Continent extends BaseEntity {
+    protected $table = 'continent';
 
     const FORM_TYPE = [
         'name' => 'Text',
-        'picture' => 'Image_1',
-        'phone' => 'Text',
-        'email' => 'Text',
-        'address' => 'TextArea',
-        'description' => 'Wysiwyg'
+        'description' => 'TextArea'
     ];
 
     const INDEX_FIELD = [
         'name',
-        'phone',
-        'email',
+        'description',
     ];
+
+
     const FORM_SELECT_LIST = [
 
     ];

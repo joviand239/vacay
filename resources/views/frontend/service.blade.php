@@ -26,17 +26,17 @@
                 <nav id="service-tab">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="nav-experience-tab" data-toggle="tab" href="#nav-experience" role="tab" aria-controls="nav-experience" aria-selected="true">
-                            <img class="icon" src="{!! url('/') !!}/assets/frontend/images/personal-character-preferences-icon.png" alt="VACAY Experience">
-                            <img class="iconblue" src="{!! url('/') !!}/assets/frontend/images/vacay-experience-icon-active.png" alt="VACAY Experience">
+                            <img class="icon" src="{!! getImageUrlSize(@$experience->logo[0], 'full') !!}" alt="{!! @$experience->tabTitle !!}">
+                            <img class="iconblue" src="{!! getImageUrlSize(@$experience->logoHover[0], 'full') !!}" alt="{!! @$experience->tabTitle !!}">
 
 
-                            <h3>{!! @$experience->title !!}</h3>
+                            <h3>{!! @$experience->tabTitle !!}</h3>
                         </a>
 
                         <a class="nav-item nav-link" id="nav-essentials-tab" data-toggle="tab" href="#nav-essentials" role="tab" aria-controls="nav-essentials" aria-selected="false">
-                            <img class="icon" src="{!! url('/') !!}/assets/frontend/images/itenary-graphic-icon.png" alt="VACAY Essentials">
-                            <img class="iconblue" src="{!! url('/') !!}/assets/frontend/images/itenary-graphic-icon-active.png" alt="VACAY Essentials">
-                            <h3>VACAY Essentials</h3>
+                            <img class="icon" src="{!! getImageUrlSize(@$essentials->logo[0], 'full') !!}" alt="{!! @$essentials->tabTitle !!}">
+                            <img class="iconblue" src="{!! getImageUrlSize(@$essentials->logoHover[0], 'full') !!}" alt="{!! @$essentials->tabTitle !!}">
+                            <h3>{!! @$essentials->tabTitle !!}</h3>
                         </a>
                     </div>
                 </nav>
@@ -260,10 +260,10 @@
                 <div class="default-section">
                     <div class="container">
 
-                        <h1 class="default-title">About the Essentials</h1>
+                        <h1 class="default-title">{!! @$essentials->title !!}</h1>
 
                         <p class="default-summary">
-                            We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else. We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.
+                            {!! @$essentials->description !!}
                         </p>
 
                     </div>
@@ -276,56 +276,17 @@
                         <h1 class="default-title mb-30">What will you get</h1>
 
 
-                        <div class="media gift-card">
-                            <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/file-icon.png" alt="Essentials Icon">
-                            <div class="media-body">
-                                <h5 class="mt-0">Original File</h5>
-                                <p>
-                                    We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling.
-                                </p>
+                        @foreach(@$essentials->serviceList as $item)
+                            <div class="media gift-card">
+                                <img class="icon" src="{!!getImageUrlSize( @$item->icon[0], 'full') !!}" alt="{!! @$item->title !!}">
+                                <div class="media-body">
+                                    <h5 class="mt-0">{!! @$item->title !!}</h5>
+                                    <p>
+                                        {!! @$item->description !!}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="media gift-card">
-                            <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/map-icon.png" alt="Essentials Icon">
-                            <div class="media-body">
-                                <h5 class="mt-0">A Guidance Map</h5>
-                                <p>
-                                    We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media gift-card">
-                            <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/world-icon.png" alt="Essentials Icon">
-                            <div class="media-body">
-                                <h5 class="mt-0">Different Experience</h5>
-                                <p>
-                                    We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media gift-card">
-                            <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/instructions-icon.png" alt="Essentials Icon">
-                            <div class="media-body">
-                                <h5 class="mt-0">Information you need to know</h5>
-                                <p>
-                                    We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media gift-card">
-                            <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/question-icon.png" alt="Essentials Icon">
-                            <div class="media-body">
-                                <h5 class="mt-0">Anything You Ask</h5>
-                                <p>
-                                    We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling.
-                                </p>
-                            </div>
-                        </div>
-
+                        @endforeach
 
                     </div>
                 </div>
@@ -434,9 +395,16 @@
             });
 
 
-            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var hash = window.location.hash;
 
-                var target = $(e.target).attr("href") // activated tab
+            hash && $('a[href="' + hash + '"]').tab('show');
+
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                e.preventDefault();
+
+                window.location.hash = this.hash;
+
+                var target = $(e.target).attr("href"); // activated tab
 
                 if (target == '#nav-essentials') {
                     testimonialSlider.destroy();

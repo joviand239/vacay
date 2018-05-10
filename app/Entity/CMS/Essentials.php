@@ -4,27 +4,24 @@ namespace App\Entity\CMS;
 
 use App\Entity\Base\Page;
 
-class Experience extends Page {
-    const TITLE = 'Vacay Experience';
+class Essentials extends Page {
+    const TITLE = 'Vacay Essentials';
 
-    const CMS_NAME = 'Vacay Experience';
-    const CMS_INFO = 'Konten vacay experience';
-    const CMS_SITEMAP = 'Home -> Our Services -> Vacay Experience';
+    const CMS_NAME = 'Vacay Essentials';
+    const CMS_INFO = 'Konten vacay essentials';
+    const CMS_SITEMAP = 'Home -> Our Services -> Vacay Essentials';
 
     const FORM_TYPE = [
         'metaTitle' => 'Text',
         'metaDescription' => 'TextArea',
+
         'tabTitle' => 'Text',
         'logo' => 'Image_1',
         'logoHover' => 'Image_1',
         'title' => 'Text',
         'description' => 'TextArea',
-        'experienceTitle' => 'Text',
-        'experienceDescription' => 'TextArea',
-        'experienceQuote' => 'TextArea',
-        'experienceAuthor' => 'Text',
-        'inclusionList' => 'ListSortable',
-        'exclusionList' => 'ListSortable'
+
+        'serviceList' => 'ListSortable'
     ];
 
     const FORM_LABEL = [
@@ -38,11 +35,10 @@ class Experience extends Page {
     ];
 
     const FORM_LIST = [
-        'inclusionList' => [
-            'textName' => 'Text'
-        ],
-        'exclusionList' => [
-            'textName' => 'Text'
+        'serviceList' => [
+            'icon' => 'Image_1',
+            'title' => 'Text',
+            'description' => 'TextArea'
         ],
     ];
 

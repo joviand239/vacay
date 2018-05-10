@@ -7,7 +7,8 @@
 
             <div class="item">
                 <p>Contact Us</p>
-                <p class="font-bold mb-15">vacay.guide@gmail.com</p>
+                <p>Address : <span class="font-bold">Parramatta, New South Wales 2150</span></p>
+                <p class="mb-15">Email : <span class="font-bold">vacay.guide@gmail.com</span></p>
 
                 <p>Social Media</p>
 
@@ -42,28 +43,23 @@
 
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{!! route('about') !!}">
                                 About Us
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{!! route('how-it-works') !!}">
                                 How it Works
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{!! route('contact') !!}">
                                 Contact us
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 Terms and Conditions
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Privacy Policy
                             </a>
                         </li>
                     </ul>
@@ -76,18 +72,13 @@
 
                     <ul>
                         <li>
-                            <a href="#">
-                                General Tour
+                            <a href="{!! route('services') !!}">
+                                Vacay Experience
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                Personal Character Preference
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Itenary Graphic
+                            <a href="{!! route('services') !!}">
+                                Vacay Essentials
                             </a>
                         </li>
                     </ul>

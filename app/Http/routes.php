@@ -27,7 +27,8 @@ Route::group(['prefix'=>'admin'], function () {
 		Route::get('/order/delete/{id?}', 'Admin\OrderController@delete');
 
 
-		/*CMSCore::CRUDRoute('chef', 'chefs');*/
+		CMSCore::CRUDRoute('continent', 'continents');
+        CMSCore::CRUDRoute('country', 'countries');
 
 
 	});
