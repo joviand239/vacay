@@ -20,15 +20,17 @@ class ServiceController extends FrontendController {
     public function index() {
         $page = Service::getPage();
 
-
         $experience = Experience::getPage();
+
+        $categories = Category::all();
 
         $essentials = Essentials::getPage();
 
         return view('frontend.service', [
             'page' => $page->json,
             'experience' => $experience->json,
-            'essentials' => $essentials->json
+            'essentials' => $essentials->json,
+            'categories' => $categories
         ]);
     }
 }

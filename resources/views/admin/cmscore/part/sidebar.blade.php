@@ -17,7 +17,16 @@
             </li>
 
 
-            <li class="dropdown {!! isActiveRoute(['admin.continents', 'admin.countries']) !!}">
+            <li class="dropdown {!! isActiveRoute(['admin.categories']) !!}">
+                <a href="{{ route('admin.categories') }}">
+                    <div class="icon">
+                        <i class="fa fa-sitemap" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">Category</div>
+                </a>
+            </li>
+
+            <li class="dropdown {!! isActiveRoute(['admin.continents', 'admin.countries', 'admin.cities']) !!}">
                 <a href="#">
                     <div class="icon">
                         <i class="fa fa-map-o" aria-hidden="true"></i>
@@ -32,6 +41,9 @@
                         </li>
                         <li class="dropdown">
                             <a href="{{ route('admin.countries') }}">Country</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{{ route('admin.cities') }}">City</a>
                         </li>
                     </ul>
                 </div>

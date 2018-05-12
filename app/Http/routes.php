@@ -29,7 +29,17 @@ Route::group(['prefix'=>'admin'], function () {
 
 		CMSCore::CRUDRoute('continent', 'continents');
         CMSCore::CRUDRoute('country', 'countries');
+        CMSCore::CRUDRoute('category', 'categories');
+        CMSCore::CRUDRoute('city', 'cities');
 
+
+        Route::get('/city/{parentId}/testimonial/{id}', 'Admin\CityTestimonialController@details')->name('city-testimonial');
+        Route::post('/city/{parentId}/testimonial/{id}', 'Admin\CityTestimonialController@save')->name('city-testimonial-save');
+        Route::get('/city-testimonial/delete/{id}', 'Admin\CityTestimonialController@delete')->name('city-testimonial-delete');
+
+        Route::get('/city/{parentId}/category/{id}', 'Admin\CityCategoryController@details')->name('city-category');
+        Route::post('/city/{parentId}/category/{id}', 'Admin\CityCategoryController@save')->name('city-category-save');
+        Route::get('/city-category/delete/{id}', 'Admin\CityCategoryController@delete')->name('city-category-delete');
 
 	});
 });

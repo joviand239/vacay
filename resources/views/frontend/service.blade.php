@@ -62,138 +62,20 @@
 
 
                         <div class="row">
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/natureexcapist-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Nature Escapist</h5>
-                                        <p>
-                                            Go on an epic nature-filled escape and flirt closer with the trees of green and the sand grains of white!
-                                        </p>
+                            @foreach(@$categories as $item)
+                                <div class="col-md-6 col-12">
+                                    <div class="media gift-card">
+                                        <img class="icon" src="{!! getImageUrlSize(@$item->icon, 'full') !!}" alt="{!! @$item->name !!}">
+                                        <div class="media-body">
+                                            <h5 class="mt-0">{!! @$item->name !!}</h5>
+                                            <p>
+                                                {!! @$item->summary !!}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/ghostbooster-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Ghostbooster</h5>
-                                        <p>
-                                            Spotting spooky thing simply boost your mood? Get in our spooktakular trip and get ghost-boosted!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/bushwalker-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Bushwalker</h5>
-                                        <p>
-                                            There’ll be always nature walks for all walks of life. Unwind and recharge yourself in nature!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/adrenalinejunkie-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Adrenaline Junkie</h5>
-                                        <p>
-                                            Fuel your desire for excitement and adventure with adrenaline-rush activities around the world!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/beachholic-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Beachholic</h5>
-                                        <p>
-                                            Do the white grains of sand between toes keep teasing you to come back for more and more? Yes, you are a beachaholic!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/foodies-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Foodies</h5>
-                                        <p>
-                                            Nom… Nom…Nom… Get to see drool-worthy destinations and eat like the locals!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/greatestshowman-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Greatest Showman</h5>
-                                        <p>
-                                            Gently ease into the arty journey with countless of mankind's greatest creative achievements in fascinating destinations worldwide.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/lovebirds-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Lovebirds</h5>
-                                        <p>
-                                            Surprise your loved one with a romantic escape, look no further than snuggling up to your true love on a whirlwind romantic getaway!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/shopaholic-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Shopaholic</h5>
-                                        <p>
-                                            You could give up shopping, but you’re not a quitter? Shop 'til you drop!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/timetraveller-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Time Traveller</h5>
-                                        <p>
-                                            Move into certain points in time of history and immerse yourself in the fascinating past, dear fellow history buffs!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/architecture-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Architecture</h5>
-                                        <p>
-                                            Fascinated by the stories behind extraordinary buildings none told you about? Explore to the world's best architecture and discover cities in a different way!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="media gift-card">
-                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/citystroller-icon.png" alt="Category Icon">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">City Stroller</h5>
-                                        <p>
-                                            Stroll around the city’s highlights like a local and get the local vibe!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,9 @@ use App\Util\Constant;
 class Country extends BaseEntity {
     protected $table = 'country';
 
+    const ROUTE_INDEX = 'admin.countries';
+    const ROUTE_DETAILS = 'admin.country';
+
     const FORM_TYPE = [
         'continentId' => 'Select',
 

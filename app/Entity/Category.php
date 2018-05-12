@@ -2,34 +2,40 @@
 
 namespace App\Entity;
 
+use App\CMSTrait\SingleImageTrait;
 use App\Entity\Base\BaseEntity;
 use App\Entity\User\CustomerDetails;
 use App\Util\Constant;
 
 
 class Category extends BaseEntity {
+    use SingleImageTrait;
+
     protected $table = 'category';
 
-    const FORM_REQUIRED = ['name'];
+    const ROUTE_INDEX = 'admin.categories';
+    const ROUTE_DETAILS = 'admin.category';
 
     const FORM_TYPE = [
         'name' => 'Text',
-        'picture' => 'Image_1',
-        'phone' => 'Text',
-        'email' => 'Text',
-        'address' => 'TextArea',
-        'description' => 'Wysiwyg'
+        'icon' => 'Image_1',
+        'summary' => 'TextArea',
     ];
 
     const INDEX_FIELD = [
         'name',
-        'phone',
-        'email',
+        'summary',
     ];
     const FORM_SELECT_LIST = [
 
     ];
 
+
+    function getIconAttribute($value) {
+        if (empty($value)) return [];
+
+        return json_decode($value);
+    }
 
 
     public function getValue($key, $listItem, $language){
