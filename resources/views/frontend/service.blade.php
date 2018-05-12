@@ -8,18 +8,10 @@
 
     <section id="service">
 
-        <div class="default-banner" style="background: url({!! url('/') !!}/assets/frontend/images/default-banner.jpg)">
-            <div class="container">
 
-                <div class="inline-wrapper">
-
-                    <h1 class="title">{!! @$page->bannerTitle !!}</h1>
-
-                </div>
+        @include('frontend.section.default-banner')
 
 
-            </div>
-        </div>
 
         <div class="default-section">
             <div class="container">

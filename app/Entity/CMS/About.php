@@ -17,6 +17,7 @@ class About extends Page {
 
         'bannerTitle' => 'Text',
         'bannerImage' => 'Image_1',
+        'bannerAnchor' => 'Select',
 
 
         'email' => 'Text',
@@ -79,7 +80,7 @@ class About extends Page {
     ];
 
     const FORM_SELECT_LIST = [
-
+        'bannerAnchor' => 'GetYesOrNoSelect',
     ];
 
 

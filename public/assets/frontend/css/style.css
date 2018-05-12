@@ -540,6 +540,8 @@ nav.navbar {
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important; }
+  .default-section.normal > .container {
+    padding: 0px 15px; }
   .default-section > .container {
     padding: 0px 50px; }
     @media (max-width: 480px) {
@@ -559,6 +561,9 @@ nav.navbar {
     color: #868b97; }
   .default-title.white {
     color: white; }
+  .default-title.small {
+    font-size: 20px;
+    font-weight: 600; }
 
 .form-title {
   font-size: 22px;
@@ -581,6 +586,14 @@ nav.navbar {
   line-height: 26px; }
   .default-summary.white {
     color: white; }
+
+.default-content-wrapper {
+  line-height: 28px;
+  margin-bottom: 50px; }
+  .default-content-wrapper h3 {
+    color: #2c848e;
+    font-weight: 600;
+    font-size: 14px; }
 
 .container.small {
   width: 65%; }
@@ -736,10 +749,9 @@ input.custom-control {
       line-height: 40px; }
     .form-section form .select2-container--default .select2-selection--single .select2-selection__arrow {
       height: 40px; }
-  .form-section form .row {
-    margin-bottom: 25px; }
 .form-section .form-group {
-  position: relative; }
+  position: relative;
+  margin-bottom: 40px; }
   .form-section .form-group .input-group .custom-control {
     border-right: none; }
   .form-section .form-group .input-group .input-group-prepend .input-group-text {

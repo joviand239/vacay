@@ -8,19 +8,7 @@
 
     <section id="contact">
 
-        <div class="default-banner" style="background: url({!! url('/') !!}/assets/frontend/images/default-banner.jpg)">
-            <div class="container">
-
-                <div class="inline-wrapper">
-
-                    <h1 class="title">{!! @$page->bannerTitle !!}</h1>
-
-                </div>
-
-
-            </div>
-        </div>
-
+        @include('frontend.section.default-banner')
 
         <div class="default-section">
 
@@ -33,8 +21,6 @@
 
 
                     <form>
-
-
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
@@ -101,9 +87,6 @@
                         <div class="text-center">
                             <a href="#" class="btn main-btn" data-toggle="modal" data-target="#contactFormModal" data-backdrop="static">GET IN TOUCH <i class="fa fa-angle-right"></i></a>
                         </div>
-
-
-
 
                     </form>
 

@@ -39,6 +39,12 @@
     background-position: center center !important;
   }
 
+  &.normal {
+    > .container {
+      padding: 0px 15px;
+    }
+  }
+
   > .container {
     padding: 0px 50px;
 
@@ -65,6 +71,11 @@
 
   &.white {
     color: white;
+  }
+
+  &.small {
+    font-size: 20px;
+    font-weight: 600;
   }
 }
 
@@ -100,6 +111,19 @@
   &.white {
     color: white;
   }
+}
+
+
+.default-content-wrapper {
+  line-height: 28px;
+  margin-bottom: 50px;
+
+  h3 {
+    color: $main-color;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
 }
 
 .container {
@@ -323,14 +347,11 @@ input {
         height: 40px;
       }
     }
-
-    .row {
-      margin-bottom: 25px;
-    }
   }
 
   .form-group {
     position: relative;
+    margin-bottom: 40px;
 
 
 

@@ -15,6 +15,12 @@ class How extends Page {
         'metaTitle' => 'Text',
         'metaDescription' => 'TextArea',
 
+        'bannerTitle' => 'Text',
+        'bannerSubtitle' => 'Text',
+        'bannerImage' => 'Image_1',
+        'bannerButtonText' => 'Text',
+        'bannerButtonLink' => 'Text',
+
         'stepList' => 'ListSortable',
     ];
 

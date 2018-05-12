@@ -7,29 +7,29 @@
 
             <div class="item">
                 <p>Contact Us</p>
-                <p>Address : <span class="font-bold">Parramatta, New South Wales 2150</span></p>
-                <p class="mb-15">Email : <span class="font-bold">vacay.guide@gmail.com</span></p>
+                <p>Address : <span class="font-bold">{!! getAboutAttribute('address') !!}</span></p>
+                <p class="mb-15">Email : <span class="font-bold">{!! getAboutAttribute('email') !!}</span></p>
 
                 <p>Social Media</p>
 
                 <ul class="socmed-wrapper list-unstyled">
                     <li class="item">
-                        <a class="link" href="#">
+                        <a class="link" href="{!! getAboutAttribute('facebookLink') !!}">
                             <i class="fa fa-facebook"></i>
                         </a>
                     </li>
                     <li class="item">
-                        <a class="link" href="#">
+                        <a class="link" href="{!! getAboutAttribute('instagramLink') !!}">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
                     <li class="item">
-                        <a class="link" href="#">
+                        <a class="link" href="{!! getAboutAttribute('googlePlusLink') !!}">
                             <i class="fa fa-google-plus"></i>
                         </a>
                     </li>
                     <li class="item">
-                        <a class="link" href="#">
+                        <a class="link" href="{!! getAboutAttribute('youtubeLink') !!}">
                             <i class="fa fa-youtube-play"></i>
                         </a>
                     </li>
@@ -58,7 +58,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{!! route('terms') !!}">
                                 Terms and Conditions
                             </a>
                         </li>

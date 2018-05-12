@@ -61,8 +61,11 @@ Route::get('/vacay-pal/{url?}', 'Frontend\PalsController@details')->name('vacayp
 Route::get('/booking/{url?}', 'Frontend\BookingController@details')->name('booking');
 
 
-
 Route::get('/contact-us', 'Frontend\ContactController@index')->name('contact');
+
+Route::get('/join-as-vacay-pals', 'Frontend\PalsController@joinPage')->name('vacaypals-join');
+
+Route::get('/term-and-conditions', 'Frontend\HomeController@getTerms')->name('terms');
 
 
 

@@ -8,24 +8,8 @@
 
     <section id="how">
 
-        <div class="default-banner" style="background: url({!! url('/') !!}/assets/frontend/images/default-banner.jpg)">
-            <div class="container">
 
-                <div class="inline-wrapper">
-
-                    <h1 class="title">HOW IT WORKS</h1>
-
-
-                    <h2 class="subtitle">Treat yourself a stroll into the native and enjoy how the locals live!</h2>
-
-
-                    <a href="#" class="btn main-btn">BOOK NOW! <i class="fa fa-angle-right"></i></a>
-                </div>
-
-
-            </div>
-        </div>
-
+        @include('frontend.section.default-banner')
 
 
         <div class="default-section">

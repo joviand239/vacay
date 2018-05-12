@@ -4,6 +4,7 @@ use App\Entity\Chef;
 use App\Entity\CoursePlace;
 use App\Entity\ProductCategory;
 use App\Entity\Continent;
+use App\Util\Constant;
 
 
 function GetChefList() {
@@ -14,11 +15,12 @@ function GetChefList() {
     return $map;
 }
 
-function GetCoursePlaceList() {
-    $map = [];
-    foreach(CoursePlace::all() as $item){
-        $map[$item->id] = $item->name;
-    }
+function GetYesOrNoSelect() {
+    $map = [
+        Constant::YES => 'Yes',
+        Constant::NO => 'No'
+    ];
+
     return $map;
 }
 

@@ -30,7 +30,7 @@
             </ul>
 
             <form class="form-inline my-2 my-md-0">
-                <a href="#" class="btn main-btn white">JOIN AS VACAY PALS <i class="fa fa-angle-right"></i></a>
+                <a href="{!! route('vacaypals-join') !!}" class="btn main-btn white">JOIN AS VACAY PALS <i class="fa fa-angle-right"></i></a>
             </form>
         </div>
     </div>

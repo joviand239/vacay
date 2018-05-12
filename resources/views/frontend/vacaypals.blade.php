@@ -8,18 +8,7 @@
 
     <section id="vacaypals">
 
-        <div class="default-banner" style="background: url({!! url('/') !!}/assets/frontend/images/default-banner.jpg)">
-            <div class="container">
-
-                <div class="inline-wrapper">
-
-                    <h1 class="title">{!! @$page->bannerTitle !!}</h1>
-
-                </div>
-
-
-            </div>
-        </div>
+        @include('frontend.section.default-banner')
 
 
         <div class="default-section">
