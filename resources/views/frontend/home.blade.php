@@ -145,7 +145,7 @@
                     <div class="inline-button-wrapper">
                         <h1 class="default-title">{!! @$page->destinationSectionTitle !!}</h1>
 
-                        <a href="{!! route('destinations') !!}" class="btn-text">
+                        <a href="{!! route('destinations', ['type' => \App\Util\Constant::SEARCH_TYPE_ALL]) !!}" class="btn-text">
                             <label>Check it All</label>
                             <span class="btn simple-btn">
                             <i class="fa fa-angle-right"></i>

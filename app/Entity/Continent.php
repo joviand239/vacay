@@ -25,6 +25,9 @@ class Continent extends BaseEntity {
 
     ];
 
+    public function countries(){
+        return $this->hasMany(Country::class);
+    }
 
 
     public function getValue($key, $listItem, $language){

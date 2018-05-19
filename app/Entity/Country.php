@@ -45,6 +45,13 @@ class Country extends BaseEntity {
         'continentId' => 'GetContinentList',
     ];
 
+    public function cities(){
+        return $this->hasMany(City::class);
+    }
+
+    public function continent(){
+        return $this->belongsTo(Continent::class, 'continentId');
+    }
 
 
     public function getValue($key, $listItem, $language){

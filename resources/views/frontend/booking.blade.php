@@ -1,6 +1,6 @@
 @extends('frontend.layouts.frontend')
 
-@section('meta_title', @$page->metaTitle)
+@section('meta_title', 'Booking '.@$page->metaTitle)
 
 @section('meta_description', @$page->metaDescription)
 
@@ -13,7 +13,7 @@
 
                 <div class="inline-wrapper">
 
-                    <h1 class="title">BOOKING FORM - SYDNEY</h1>
+                    <h1 class="title">BOOKING FORM - {!! @$page->name !!}</h1>
 
                 </div>
 
@@ -68,7 +68,7 @@
                                 <div class="form-group">
                                     <label class="label-form" for="intention">PEOPLE</label>
 
-                                    <input type="number" class="form-control custom-control" id="quantity" name="quantity" placeholder="Number of people" min="1">
+                                    <input type="number" class="form-control custom-control" id="quantity" name="quantity" placeholder="Number of people" min="1" value="1">
                                 </div>
                             </div>
                         </div>
@@ -77,29 +77,9 @@
                         <div class="pick-category-wrapper">
 
                             <div class="pick-list">
-                                <div class="row pick-item" data-index="1">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <select class="form-control custom-select custom-control" name="category[]">
-                                                <option value="" disabled selected>Choose your Category</option>
-                                            </select>
-                                        </div>
-                                    </div>
 
-                                    <div class="col">
-                                        <div class="form-group">
 
-                                            <div class="input-group mb-2">
-                                                <input id="datepicker" type='text' name="date[]" class='form-control custom-control custom-datepicker' placeholder="Pick the Date"/>
 
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
 
@@ -120,7 +100,7 @@
 
                         <div class="form-group">
 
-                            <p class="mb-20">Want you bring an exxtraordinary maps to complete your travel guide, worth for $35 AUD?</p>
+                            <p class="mb-20">Want you bring an exxtraordinary maps to complete your travel guide, worth for ${!! getPriceNumber(@$page->itenenaryPrice) !!} AUD?</p>
 
 
                             <div class="custom-control custom-radio custom-control-inline">
@@ -176,55 +156,8 @@
 
 @section('jsCustom')
     <script>
-        $(document).ready(function () {
-
-            var indexCategoryPicker = 1;
-
-            var datePickerOptions = {
-                language: 'en',
-                dateFormat: 'yyyy-mm-dd',
-                minDate: new Date()
-            }
-
-            $('.custom-datepicker').datepicker(datePickerOptions);
-
-
-            $('#add-category-picker').click(function (e) {
-                e.preventDefault();
-
-                var list = $('.pick-list');
-
-                var clonedSection = $('#default-pick-category .pick-item');
-                var clone = clonedSection.clone(true);
-
-                indexCategoryPicker++;
-
-                clone.attr('data-index', indexCategoryPicker);
-
-                clone.find('[name="date[]"]').addClass('custom-datepicker');
-
-                clone.find('[name="category[]"]').addClass('custom-select');
-
-                list.append(clone);
-
-                initializeCategoryPicker(indexCategoryPicker);
-
-
-                if (indexCategoryPicker == 12){
-                    $(this).fadeOut();
-                }
-
-
-            });
-
-            function initializeCategoryPicker(index) {
-
-                $('.pick-item[data-index="'+index+'"] .custom-datepicker').datepicker(datePickerOptions);
-
-                $('.pick-item[data-index="'+index+'"] .custom-select').select2();
-
-            }
-
-        })
+        var cityCategories = {!! @$page->categories !!};
+        var selectedCityCategory = {!! json_encode(@$selectedCityCategory) !!};
     </script>
+    <script src="{{ url('/') }}/assets/frontend/js/script.booking.js"></script>
 @endsection

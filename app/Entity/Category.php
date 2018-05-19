@@ -9,8 +9,6 @@ use App\Util\Constant;
 
 
 class Category extends BaseEntity {
-    use SingleImageTrait;
-
     protected $table = 'category';
 
     const ROUTE_INDEX = 'admin.categories';
@@ -30,13 +28,11 @@ class Category extends BaseEntity {
 
     ];
 
-
     function getIconAttribute($value) {
         if (empty($value)) return [];
 
         return json_decode($value);
     }
-
 
     public function getValue($key, $listItem, $language){
 

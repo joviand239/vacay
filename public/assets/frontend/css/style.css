@@ -264,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
 .waves-effect .waves-ripple {
   z-index: -1; }
 
-.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating {
+.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #destination .category-box .hoverlay, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -739,7 +739,8 @@ input.custom-control {
   padding: 30px 0px; }
   .form-section form .select2-container {
     box-shadow: none !important;
-    outline: none !important; }
+    outline: none !important;
+    width: 100% !important; }
   .form-section form .select2-container--default .select2-selection--single {
     height: 40px;
     border-color: rgba(44, 132, 142, 0.3);
@@ -1112,7 +1113,9 @@ input.custom-control {
   padding: 30px 20px;
   border: 1px solid #d8d8d8;
   box-shadow: 0px 0px 20px 0px #d8d8d8;
-  height: 100%; }
+  height: 100%;
+  position: relative;
+  overflow: hidden; }
   #destination .category-box .icon {
     width: 50px;
     margin-bottom: 20px; }
@@ -1120,6 +1123,26 @@ input.custom-control {
     font-size: 14px;
     margin-bottom: 0px;
     line-height: 20px; }
+  #destination .category-box:hover .hoverlay {
+    top: 0px; }
+  #destination .category-box .hoverlay {
+    position: absolute;
+    top: -100%;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(9, 45, 63, 0.6);
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease; }
+    #destination .category-box .hoverlay .btn {
+      margin-bottom: 0px; }
 
 #vacaypals .review-wrapper .box {
   align-items: center;

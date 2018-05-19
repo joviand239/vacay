@@ -237,5 +237,17 @@ function getAboutAttribute($key){
     }
 }
 
+function getReadableDestination($string) {
+    $newString = str_replace(["-", "–"], ' ', $string);
+
+    return ucwords($newString);
+}
+
+function imageStringToArray($stringImage) {
+    if (empty($stringImage)) return [];
+
+    return json_decode($stringImage);
+}
+
 
 

@@ -22,7 +22,7 @@ class CityController extends Controller {
         $model = CRUDService::SaveWithData($id, City::class);
 
         if ($id == 0) {
-            $model->url = UrlService::CreatePrettyUrl(@$model->name);
+            $model->url = UrlService::CreatePrettyUrl(@$model->name, City::class);
         }
 
         $model->save();

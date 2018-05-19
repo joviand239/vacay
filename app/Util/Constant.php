@@ -22,4 +22,8 @@ class Constant {
     const ORDER_TYPE_REGULAR = 'REGULAR';
     const ORDER_TYPE_COLLECT = 'COLLECT';
     const ORDER_TYPE_CUSTOM = 'CUSTOM';
+
+    const SEARCH_TYPE_ALL = 'All';
+    const SEARCH_TYPE_CONTINENT = 'Continent';
+    const SEARCH_TYPE_COUNTRY = 'Country';
 }

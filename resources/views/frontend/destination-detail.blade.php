@@ -8,10 +8,10 @@
 
     <section id="destination">
 
-        <div class="default-banner" style="background: url({!! url('/') !!}/assets/frontend/images/default-banner.jpg)">
+        <div class="default-banner" style="background: url({!! getImageUrlSize(@$page->bannerImage[0], 'full') !!})">
             <div class="container">
                 <div class="inline-wrapper">
-                    <h1 class="title">Sydney</h1>
+                    <h1 class="title">{!! @$page->bannerTitle !!}</h1>
                 </div>
             </div>
         </div>
@@ -21,11 +21,10 @@
         <div class="default-section">
             <div class="container">
 
-                <h1 class="default-title">About Sydney</h1>
+                <h1 class="default-title">About {!! @$page->name !!}</h1>
 
                 <p class="default-summary mb-50">
-                    We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else. We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.
-                    anyone else.We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else. We connect travellers with our native guides who know their localities more than anyone else.We bestow authentic connection with stories with the locals through personalised travelling, We connect travellers with our native guides who know their localities more than anyone else.
+                    {!! @$page->description !!}
                 </p>
 
 
@@ -34,44 +33,32 @@
 
                 <div class="row mb-50">
 
-                    @for($i = 0 ; $i < 6 ; $i++)
+                    @foreach(@$page->categories as $category)
                         <div class="col-md-2 mb-30">
                             <div class="category-box">
-                                <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/natureexcapist-icon.png">
-                                <h3 class="name">NATURE EXCAPIST</h3>
-                            </div>
-                        </div>
+                                <img class="icon" src="{!! getImageUrlSize(@$category->category->icon[0], 'full') !!}" alt="{!! @$category->category->name !!}">
+                                <h3 class="name">{!! @$category->category->name !!}</h3>
 
-                        <div class="col-md-2 mb-30">
-                            <div class="category-box">
-                                <img class="icon" src="{!! url('/') !!}/assets/frontend/images/category/bushwalker-icon.png">
-                                <h3 class="name">BUSHWALKER</h3>
+
+                                <div class="hoverlay">
+                                    <a href="#" class="btn main-btn white">QUICK VIEW <i class="fa fa-angle-right"></i></a>
+
+                                    <a href="{!! route('booking', ['url' => @$page->url, 'categoryData' => @$category->id]) !!}" class="btn main-btn white">BOOK NOW <i class="fa fa-angle-right"></i></a>
+                                </div>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
 
                 </div>
 
                 <h1 class="default-title mb-30">Gallery</h1>
 
                 <ul class="photo-slider">
-                    @for($i = 0 ; $i < 4 ; $i++)
-                        <li data-thumb="{!! url('/') !!}/assets/frontend/images/gallery-image-1.jpg" data-src="{!! url('/') !!}/assets/frontend/images/gallery-image-1.jpg">
-                            <img src="{!! url('/') !!}/assets/frontend/images/gallery-image-1.jpg">
+                    @foreach(@$page->gallery as $item)
+                        <li data-thumb="{!! getImageUrlSize(@$item, 'sm') !!}" data-src="{!! getImageUrlSize(@$item, 'full') !!}">
+                            <img src="{!! getImageUrlSize(@$item, 'full') !!}">
                         </li>
-                        <li data-thumb="{!! url('/') !!}/assets/frontend/images/gallery-image-2.jpg" data-src="{!! url('/') !!}/assets/frontend/images/gallery-image-2.jpg">
-                            <img src="{!! url('/') !!}/assets/frontend/images/gallery-image-2.jpg">
-                        </li>
-                        <li data-thumb="{!! url('/') !!}/assets/frontend/images/gallery-image-3.jpg" data-src="{!! url('/') !!}/assets/frontend/images/gallery-image-3.jpg">
-                            <img src="{!! url('/') !!}/assets/frontend/images/gallery-image-3.jpg">
-                        </li>
-                        <li data-thumb="{!! url('/') !!}/assets/frontend/images/gallery-image-4.jpg" data-src="{!! url('/') !!}/assets/frontend/images/gallery-image-4.jpg">
-                            <img src="{!! url('/') !!}/assets/frontend/images/gallery-image-4.jpg">
-                        </li>
-                        <li data-thumb="{!! url('/') !!}/assets/frontend/images/gallery-image-5.jpg" data-src="{!! url('/') !!}/assets/frontend/images/gallery-image-5.jpg">
-                            <img src="{!! url('/') !!}/assets/frontend/images/gallery-image-5.jpg">
-                        </li>
-                    @endfor
+                    @endforeach
                 </ul>
 
 
@@ -87,17 +74,17 @@
 
 
                 <ul id="testimonial-slider">
-                    @for($i = 0 ; $i < 3 ; $i++)
+                    @foreach(@$page->testimonials as $item)
                         <li class="item">
                             <p class="testi">
-                                We've used your firm for several years, with tours in a number of international cities. We recently completed a trip that included 13 tours in 5 different countries. WITHOUT EXCEPTION, the tours were excellent and the guides thoroughly helpful, interesting, kind, and professional (and we tend to be picky). What a great record! Congratulations and keep up the good work
+                                {!! @$item->details !!}
                             </p>
 
                             <p class="owner">
-                                Chicco Jerikho - Solo Traveller
+                                {!! @$item->name !!} - {!! @$item->designation !!}
                             </p>
                         </li>
-                    @endfor
+                    @endforeach
                 </ul>
 
 
@@ -106,26 +93,28 @@
         </div>
 
 
-        <div class="default-section with-bg" style="background: url({!! url('/') !!}/assets/frontend/images/essentials-banner.jpg)">
-            <div class="container">
+        @if(@$page->hasItenenaryGraphics == \App\Util\Constant::YES)
+            <div class="default-section with-bg" style="background: url({!! getImageUrlSize(@$page->itenenarySectionBackground[0], 'full') !!})">
+                <div class="container">
 
-                <div class="row">
-                    <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-7">
 
-                        <h2 class="default-title white mb-30">Go on your own VACAY!</h2>
+                            <h2 class="default-title white mb-30">{!! @$page->itenenarySectionTitle !!}</h2>
 
-                        <p class="default-summary white mb-30">
-                            No need to waste your time to read and research all the travel tips out there. We make things easier for you with our VACAY ESSENTIAL, infographics and data visualizations contain interesting and useful facts, tips and bucket-list spots for your next Vacay! We bring to you light, useful information on planning your own travel.
-                        </p>
+                            <p class="default-summary white mb-30">
+                                {!! @$page->itenenarySectionDescription !!}
+                            </p>
 
-                        <a href="#" class="btn main-btn white mb-15">BOOK NOW <i class="fa fa-angle-right"></i></a>
+                            <a href="#" class="btn main-btn white mb-15">BUY NOW <i class="fa fa-angle-right"></i></a>
 
+                        </div>
                     </div>
+
+
                 </div>
-
-
             </div>
-        </div>
+        @endif
 
 
         <div class="default-section">

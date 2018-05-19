@@ -5,14 +5,18 @@ namespace App\Service;
 class UrlService {
 
 
-    public static function CreatePrettyUrl($urlFrom){
+    public static function CreatePrettyUrl($urlFrom, $class){
 
         if (!isset($urlFrom)) return '';
 
+        $prettyUrl = preg_replace(array('/\s+/', '/[-?]/'), '-', $urlFrom);
 
-        $prettyUrl = preg_replace(array('/\s+/', '/[-?]/'), '-', $urlFrom).'-'.str_random(2);
+        $model = $class::where('url', $prettyUrl)->get()->first();
 
+        if ($model){
+            $prettyUrl = $prettyUrl.'-'.str_random(2);
+        }
 
-        return $prettyUrl;
+        return strtolower($prettyUrl);
     }
 }

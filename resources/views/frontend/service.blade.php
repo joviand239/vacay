@@ -65,7 +65,7 @@
                             @foreach(@$categories as $item)
                                 <div class="col-md-6 col-12">
                                     <div class="media gift-card">
-                                        <img class="icon" src="{!! getImageUrlSize(@$item->icon, 'full') !!}" alt="{!! @$item->name !!}">
+                                        <img class="icon" src="{!! getImageUrlSize(@$item->icon[0], 'full') !!}" alt="{!! @$item->name !!}">
                                         <div class="media-body">
                                             <h5 class="mt-0">{!! @$item->name !!}</h5>
                                             <p>

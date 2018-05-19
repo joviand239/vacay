@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\CMSTrait\SingleImageTrait;
 use App\Entity\Base\BaseEntity;
 use App\Entity\User\CustomerDetails;
 use App\Util\Constant;
@@ -39,8 +40,10 @@ class City extends BaseEntity {
     ];
 
     const INDEX_FIELD = [
+        'country',
         'name',
-        'description',
+        'totalCategory',
+        'hasItenenaryGraphics',
     ];
 
     const FORM_LABEL = [
@@ -71,9 +74,42 @@ class City extends BaseEntity {
         return $this->hasMany(CityCategory::class);
     }
 
+    public function country(){
+        return $this->belongsTo(Country::class, 'countryId');
+    }
+
+    function getBannerImageAttribute($value) {
+        if (empty($value)) return [];
+
+        return json_decode($value);
+    }
+
+    function getFeaturedImageAttribute($value) {
+        if (empty($value)) return [];
+
+        return json_decode($value);
+    }
+
+    function getItenenarySectionBackgroundAttribute($value) {
+        if (empty($value)) return [];
+
+        return json_decode($value);
+    }
+
+    function getGalleryAttribute($value) {
+        if (empty($value)) return [];
+
+        return json_decode($value);
+    }
 
     public function getValue($key, $listItem, $language){
+        if ($key == 'country') {
+            return $this->country->name;
+        }
 
+        if ($key == 'totalCategory') {
+            return count($this->categories);
+        }
 
 
         return parent::getValue($key, $listItem, $language);

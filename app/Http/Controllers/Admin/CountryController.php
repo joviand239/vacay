@@ -18,7 +18,7 @@ class CountryController extends Controller {
         $model = CRUDService::SaveWithData($id, Country::class);
 
         if ($id == 0) {
-            $model->url = UrlService::CreatePrettyUrl(@$model->name);
+            $model->url = UrlService::CreatePrettyUrl(@$model->name, Country::class);
         }
 
         $model->save();

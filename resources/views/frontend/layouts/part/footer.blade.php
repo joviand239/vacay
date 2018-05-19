@@ -7,8 +7,8 @@
 
             <div class="item">
                 <p>Contact Us</p>
-                <p>Address : <span class="font-bold">{!! getAboutAttribute('address') !!}</span></p>
-                <p class="mb-15">Email : <span class="font-bold">{!! getAboutAttribute('email') !!}</span></p>
+                <p><span class="font-bold">{!! getAboutAttribute('address') !!}</span></p>
+                <p class="mb-15"><span class="font-bold">{!! getAboutAttribute('email') !!}</span></p>
 
                 <p>Social Media</p>
 

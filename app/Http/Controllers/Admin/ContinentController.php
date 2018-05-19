@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Entity\Continent;
 use App\Http\Controllers\CMSCore\Controller;
 use App\Service\CMSCore\CRUDService;
+use App\Service\UrlService;
 
 class ContinentController extends Controller {
     public function index() {
@@ -15,6 +16,10 @@ class ContinentController extends Controller {
     }
     public function save($id) {
         $model = CRUDService::SaveWithData($id, Continent::class);
+
+        if ($id == 0) {
+            $model->url = UrlService::CreatePrettyUrl(@$model->name, Continent::class);
+        }
 
         $model->save();
 
