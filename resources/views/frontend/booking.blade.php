@@ -129,7 +129,7 @@
 
 
                         <div class="text-center">
-                            <a href="#" class="btn main-btn" data-toggle="modal" data-target="#bookingResultModal" data-backdrop="static">BOOK NOW! <i class="fa fa-angle-right"></i></a>
+                            <a id="btn-book" href="#" class="btn main-btn">BOOK NOW! <i class="fa fa-angle-right"></i></a>
                         </div>
 
 

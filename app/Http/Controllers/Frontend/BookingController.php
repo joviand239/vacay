@@ -25,7 +25,7 @@ class BookingController extends FrontendController {
         $selectedCityCategory[] = 0;
 
         if (isset($data->categoryData)) {
-            $selectedCityCategory[0] = $data->categoryData;
+            $selectedCityCategory[0] = (int)$data->categoryData;
         }
 
         return view('frontend.booking', [

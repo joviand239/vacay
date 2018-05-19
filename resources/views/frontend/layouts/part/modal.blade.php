@@ -138,7 +138,7 @@
 
                             <tr>
                                 <td>Iteneraries Graphic</td>
-                                <td>YES</td>
+                                <td id="withItenenary">YES</td>
                             </tr>
 
                             <tr>
@@ -148,7 +148,7 @@
 
                             <tr>
                                 <td>Other Information</td>
-                                <td>
+                                <td id="message">
                                     I want to make this trip hilarious and adding my
                                     brave experience
                                 </td>
