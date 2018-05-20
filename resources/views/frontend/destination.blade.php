@@ -8,13 +8,13 @@
 
     <section id="destination">
 
-        <div class="default-banner" style="background: url({!! url('/') !!}/assets/frontend/images/default-banner.jpg)">
+        {{--<div class="default-banner" style="background: url({!! url('/') !!}/assets/frontend/images/default-banner.jpg)">
             <div class="container">
                 <div class="inline-wrapper">
                     <h1 class="title">DESTINATION</h1>
                 </div>
             </div>
-        </div>
+        </div>--}}
 
 
 
@@ -26,10 +26,10 @@
                     <div class="col-md-4 col-12">
                         <div class="list-wrapper">
 
-                            <div class="inline-link active">
+                            {{--<div class="inline-link active">
                                 <span>{!! getReadableDestination(@$name) !!}</span>
                                 <span>{!! count(@$list) !!}</span>
-                            </div>
+                            </div>--}}
 
                             <ul id="main-collapse" class="main-list">
 
@@ -62,7 +62,7 @@
 
                     <div class="col-md-8 col-12">
 
-                        <h1 class="default-title">Journeys</h1>
+                        <h1 class="default-title">Destinations</h1>
 
 
 

@@ -233,9 +233,9 @@
 
                 <div class="btn-wrapper">
 
-                    <a href="#" class="btn main-btn white">SEE OUR LOCALS <i class="fa fa-angle-right"></i></a>
+                    <a href="{!! route('vacaypals') !!}" class="btn main-btn white">SEE OUR LOCALS <i class="fa fa-angle-right"></i></a>
 
-                    <a href="#" class="btn main-btn">LETS TALK TO US! <i class="fa fa-angle-right"></i></a>
+                    <a href="{!! route('contact') !!}" class="btn main-btn">CONACT USS! <i class="fa fa-angle-right"></i></a>
 
                 </div>
 

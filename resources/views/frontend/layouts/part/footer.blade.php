@@ -126,7 +126,7 @@
                     <ul>
                         <li>
                             <a href="{!! route('vacaypals-join') !!}">
-                                As a local Guide
+                                As a Vacay Pals
                             </a>
                         </li>
                     </ul>

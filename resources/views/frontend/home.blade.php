@@ -78,9 +78,9 @@
 
 
                                 <div class="info-wrapper">
-                                    <h3 class="title">THEMATIC Experience</h3>
+                                    <h3 class="title">Vacay EXPERIENCE</h3>
 
-                                    <a href="#" class="btn-text">
+                                    <a href="{!! route('services') !!}" class="btn-text">
                                         <label>Explore More</label>
                                         <span class="btn simple-btn">
                                         <i class="fa fa-angle-right"></i>
@@ -107,7 +107,7 @@
                                 </div>
 
                                 <div class="info-wrapper">
-                                    <h3 class="title">Itineraries-GRAPHICS</h3>
+                                    <h3 class="title">Vacay ESSENTIALS</h3>
 
                                     <a href="#" class="btn-text">
                                         <label>Explore More</label>
@@ -161,80 +161,68 @@
                     <div class="row">
                         <div class="col-md-4 col-12">
 
-                            <div class="destination-card">
+                            <a href="#" class="destination-card">
                                 <div class="image-wrapper">
 
                                     <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
 
-                                    <div class="image-hover">
-                                        <img src="{!! url('/') !!}/assets/frontend/images/destination-hover-1.jpg" alt="Destination Hover">
-                                    </div>
-
                                 </div>
 
 
                                 <div class="text-wrapper">
 
-                                    <p class="place">Sydney</p>
+                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
 
-                                    <p class="country">AUSTRALIA</p>
+                                    <p class="name">General Tour - beautiful city in many lights</p>
 
-                                    <a href="#" class="link-caret">Explore more <i class="fa fa-angle-right"></i></a>
+                                    <p class="country">Sydney - AUSTRALIA</p>
 
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                         <div class="col-md-4 col-12">
 
-                            <div class="destination-card">
+                            <a href="#" class="destination-card">
                                 <div class="image-wrapper">
 
-                                    <img src="{!! url('/') !!}/assets/frontend/images/destination-image-2.jpg" alt="Destination Image">
-
-                                    <div class="image-hover">
-                                        <img src="{!! url('/') !!}/assets/frontend/images/destination-hover-1.jpg" alt="Destination Hover">
-                                    </div>
+                                    <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
 
                                 </div>
 
 
                                 <div class="text-wrapper">
 
-                                    <p class="place">Tokyo</p>
+                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
 
-                                    <p class="country">JAPAN</p>
+                                    <p class="name">General Tour - beautiful city in many lights</p>
 
-                                    <a href="#" class="link-caret">Explore more <i class="fa fa-angle-right"></i></a>
+                                    <p class="country">Sydney - AUSTRALIA</p>
 
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                         <div class="col-md-4 col-12">
 
-                            <div class="destination-card">
+                            <a href="#" class="destination-card">
                                 <div class="image-wrapper">
 
-                                    <img src="{!! url('/') !!}/assets/frontend/images/destination-image-3.jpg" alt="Destination Image">
-
-                                    <div class="image-hover">
-                                        <img src="{!! url('/') !!}/assets/frontend/images/destination-hover-1.jpg" alt="Destination Hover">
-                                    </div>
+                                    <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
 
                                 </div>
 
 
                                 <div class="text-wrapper">
 
-                                    <p class="place">Bali</p>
+                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
 
-                                    <p class="country">INDONESIA</p>
+                                    <p class="name">General Tour - beautiful city in many lights</p>
 
-                                    <a href="#" class="link-caret">Explore more <i class="fa fa-angle-right"></i></a>
+                                    <p class="country">Sydney - AUSTRALIA</p>
 
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

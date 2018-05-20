@@ -8,7 +8,7 @@
 
     <section id="vacaypals">
 
-        @include('frontend.section.default-banner')
+        {{--@include('frontend.section.default-banner')--}}
 
 
         <div class="default-section">

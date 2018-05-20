@@ -68,7 +68,6 @@
                                     @foreach(@$page->valueList as $item)
                                         <tr>
                                             <td class="title">{!! @$item->value !!}</td>
-                                            <td>:</td>
                                             <td>{!! @$item->description !!}</td>
                                         </tr>
                                     @endforeach
@@ -98,7 +97,6 @@
                                     @foreach(@$page->palsList as $item)
                                         <tr>
                                             <td class="title">{!! @$item->title !!}</td>
-                                            <td>:</td>
                                             <td>{!! @$item->detail !!}</td>
                                         </tr>
                                     @endforeach
@@ -142,9 +140,9 @@
 
 
                             <div class="info-wrapper">
-                                <h3 class="title">THEMATIC Experience</h3>
+                                <h3 class="title">Vacay EXPERIENCE</h3>
 
-                                <a href="#" class="btn-text">
+                                <a href="{!! route('services') !!}" class="btn-text">
                                     <label>Explore More</label>
                                     <span class="btn simple-btn">
                                         <i class="fa fa-angle-right"></i>
@@ -171,9 +169,9 @@
                             </div>
 
                             <div class="info-wrapper">
-                                <h3 class="title">Itineraries-GRAPHICS</h3>
+                                <h3 class="title">Vacay ESSENTIALS</h3>
 
-                                <a href="#" class="btn-text">
+                                <a href="{!! route('services') !!}" class="btn-text">
                                     <label>Explore More</label>
                                     <span class="btn simple-btn">
                                         <i class="fa fa-angle-right"></i>
