@@ -428,6 +428,17 @@ nav.navbar {
 // RESPONSIVE
 @media screen and (max-width: 480px) {
 
+  .pals-gallery {
+
+    .next {
+      right: 32%;
+    }
+
+    .prev {
+      left: 32%;
+    }
+
+  }
 
 }
 

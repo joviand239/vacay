@@ -145,3 +145,53 @@
   }
 
 }
+
+
+// RESPONSIVE
+@media screen and (max-width: 480px) {
+
+  #home {
+
+    .video-section {
+      .video-image {
+        width: 100%;
+      }
+    }
+
+    .blue-line {
+
+      &:before {
+        display: none;
+      }
+
+    }
+
+    .search-wrapper {
+      text-align: center;
+
+      .select-wrapper {
+        width: 100%;
+
+        .item {
+          width: 100%;
+          margin-bottom: 10px;
+
+          &:first-child {
+            border-right: none;
+          }
+        }
+      }
+
+      .text {
+        margin-bottom: 15px;
+      }
+    }
+
+
+
+
+
+
+  }
+
+}
