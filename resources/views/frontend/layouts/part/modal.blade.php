@@ -111,27 +111,8 @@
                                 <td></td>
                             </tr>
 
-                            <tr>
-                                <td>Cateogry 1</td>
-                                <td>Music Festival</td>
-                            </tr>
 
-                            <tr>
-                                <td>Date</td>
-                                <td>Sunday, 29th of July 2018</td>
-                            </tr>
-
-                            <tr>
-                                <td>Cateogry 2</td>
-                                <td>Historical Museum</td>
-                            </tr>
-
-                            <tr>
-                                <td>Date</td>
-                                <td>Tuesday, 1st of August 2018</td>
-                            </tr>
-
-                            <tr>
+                            <tr id="before-new-category">
                                 <td></td>
                                 <td></td>
                             </tr>

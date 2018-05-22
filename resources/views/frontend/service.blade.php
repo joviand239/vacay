@@ -18,16 +18,16 @@
                 <nav id="service-tab">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="nav-experience-tab" data-toggle="tab" href="#nav-experience" role="tab" aria-controls="nav-experience" aria-selected="true">
-                            <img class="icon" src="{!! getImageUrlSize(@$experience->logo[0], 'full') !!}" alt="{!! @$experience->tabTitle !!}">
-                            <img class="iconblue" src="{!! getImageUrlSize(@$experience->logoHover[0], 'full') !!}" alt="{!! @$experience->tabTitle !!}">
+                            <img class="icon" src="{!! getImageUrlSize(@$experience->logoIcon[0], 'full') !!}" alt="{!! @$experience->tabTitle !!}">
+                            <img class="iconblue" src="{!! getImageUrlSize(@$experience->logoIconHover[0], 'full') !!}" alt="{!! @$experience->tabTitle !!}">
 
 
                             <h3>{!! @$experience->tabTitle !!}</h3>
                         </a>
 
                         <a class="nav-item nav-link" id="nav-essentials-tab" data-toggle="tab" href="#nav-essentials" role="tab" aria-controls="nav-essentials" aria-selected="false">
-                            <img class="icon" src="{!! getImageUrlSize(@$essentials->logo[0], 'full') !!}" alt="{!! @$essentials->tabTitle !!}">
-                            <img class="iconblue" src="{!! getImageUrlSize(@$essentials->logoHover[0], 'full') !!}" alt="{!! @$essentials->tabTitle !!}">
+                            <img class="icon" src="{!! getImageUrlSize(@$essentials->logoIcon[0], 'full') !!}" alt="{!! @$essentials->tabTitle !!}">
+                            <img class="iconblue" src="{!! getImageUrlSize(@$essentials->logoIconHover[0], 'full') !!}" alt="{!! @$essentials->tabTitle !!}">
                             <h3>{!! @$essentials->tabTitle !!}</h3>
                         </a>
                     </div>
@@ -47,9 +47,9 @@
 
                         <h1 class="default-title">{!! @$experience->title !!}</h1>
 
-                        <p class="default-summary">
+                        <div class="details-wrapper">
                             {!! @$experience->description !!}
-                        </p>
+                        </div>
 
                     </div>
                 </div>
@@ -136,9 +136,9 @@
 
                         <h1 class="default-title">{!! @$essentials->title !!}</h1>
 
-                        <p class="default-summary">
+                        <div class="details-wrapper">
                             {!! @$essentials->description !!}
-                        </p>
+                        </div>
 
                     </div>
                 </div>

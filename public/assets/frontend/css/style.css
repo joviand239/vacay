@@ -583,9 +583,9 @@ nav.navbar {
   .default-subtitle.white {
     color: white; }
 
-.default-summary {
+.default-summary, .details-wrapper p {
   line-height: 26px; }
-  .default-summary.white {
+  .default-summary.white, .details-wrapper p.white {
     color: white; }
 
 .default-content-wrapper {
@@ -787,6 +787,9 @@ input.custom-control {
 
 .hidden {
   display: none; }
+
+.details-wrapper h3 {
+  color: #2c848e; }
 
 .modal .body-wrapper {
   text-align: center;

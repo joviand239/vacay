@@ -43,12 +43,16 @@ $(document).ready(function () {
 
     function populateDataCategoryPicker() {
 
+        var quantity = $('[name=quantity]').val();
+
         for (var i = 1; i <= indexCategoryPicker ; i++){
             var category = {
                 'id': 0,
                 'name': '',
                 'date': '',
                 'price': 0,
+                'quantity': quantity,
+                'totalPrice': 0,
             };
             var section = $('.pick-item[data-index="'+i+'"]');
 
@@ -58,8 +62,6 @@ $(document).ready(function () {
 
             categoryList[category.id] = category;
         }
-
-        console.log(categoryList);
     }
     
     function createCityCategorySection(cityCategoryId) {
@@ -117,29 +119,30 @@ $(document).ready(function () {
 
     createCityCategorySection(selectedCityCategory[0]);
 
+    var submitData = {};
 
     $('#btn-book').click(function (e) {
-
 
         populateDataCategoryPicker();
 
         var listCategory = getCategoryListData();
 
-        var data = {
+        submitData = {
             'firstName': $('[name=firstName]').val(),
             'lastName': $('[name=lastName]').val(),
             'email': $('[name=email]').val(),
             'phoneNumber': $('[name=firstName]').val(),
             'quantity': $('[name=quantity]').val(),
             'withItenerary': $('[name=withItenerary]:checked').val(),
+            'itenenaryPrice': $('[name=itenenaryPrice]').val(),
             'message': $('[name=message]').val(),
-            'listCategory': listCategory
+            'listCategory': listCategory,
+            'totalLineItem': 0,
+            'grandTotal': 0,
         };
 
 
-        console.log(data);
-
-        populateBookingModalByData(data);
+        populateBookingModalByData(submitData);
     })
 
 
@@ -151,10 +154,10 @@ $(document).ready(function () {
 
             if (categoryList[item.id]) {
                 categoryList[item.id].price = item.price;
+                categoryList[item.id].totalPrice = item.price*categoryList[item.id].quantity;
             }
 
-
-        })
+        });
 
 
         return categoryList;
@@ -171,15 +174,45 @@ $(document).ready(function () {
         wrapper.find('#phoneNumber').html(modalData.phoneNumber);
         wrapper.find('#participants').html(modalData.quantity+' people');
 
-        if (modalData.withItenerary){
+        var grandTotal = 0;
+        var totalLineItem = 0;
+        var itenenaryPrice = 0;
+
+        if (modalData.withItenerary == 1){
             wrapper.find('#withItenenary').html('YES');
+            itenenaryPrice = modalData.itenenaryPrice;
         }else {
             wrapper.find('#withItenenary').html('NO');
         }
 
         wrapper.find('#message').html(modalData.message);
-
         wrapper.find('#total-category').html(modalData.listCategory.length-1);
+
+        var idx = 1;
+
+        $.each(modalData.listCategory, function (key, val) {
+            if (val) {
+                totalLineItem += val.totalPrice;
+
+                var html = '<tr>' +
+                    '       <td>Cateogry '+idx+'</td>' +
+                    '       <td>'+val.name+'</td>' +
+                    '       </tr>' +
+                    '       <tr>' +
+                    '       <td>Date</td>' +
+                    '       <td>'+val.date+'</td>' +
+                    '       </tr>';
+
+                idx++;
+
+                wrapper.find('#before-new-category').before(html);
+            }
+        });
+
+        submitData.totalLineItem = totalLineItem;
+        submitData.grandTotal = parseInt(totalLineItem)+parseInt(itenenaryPrice);
+
+        wrapper.find('#total-price').html(submitData.grandTotal);
 
 
         $('#bookingResultModal').modal({

@@ -428,3 +428,16 @@ input {
 .hidden {
   display: none;
 }
+
+
+.details-wrapper {
+
+  h3 {
+    color: $main-color;
+  }
+
+  p {
+    @extend .default-summary;
+  }
+
+}

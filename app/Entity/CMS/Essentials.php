@@ -16,10 +16,10 @@ class Essentials extends Page {
         'metaDescription' => 'TextArea',
 
         'tabTitle' => 'Text',
-        'logo' => 'Image_1',
-        'logoHover' => 'Image_1',
+        'logoIcon' => 'Image_1',
+        'logoIconHover' => 'Image_1',
         'title' => 'Text',
-        'description' => 'TextArea',
+        'description' => 'Wysiwyg',
 
         'serviceList' => 'ListSortable'
     ];

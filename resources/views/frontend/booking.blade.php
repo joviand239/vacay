@@ -101,6 +101,7 @@
                         <div class="form-group">
 
                             <p class="mb-20">Want you bring an exxtraordinary maps to complete your travel guide, worth for ${!! getPriceNumber(@$page->itenenaryPrice) !!} AUD?</p>
+                            <input type="hidden" id="itenenaryPrice" name="itenenaryPrice" value="{!! @$page->itenenaryPrice !!}">
 
 
                             <div class="custom-control custom-radio custom-control-inline">
