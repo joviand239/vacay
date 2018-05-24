@@ -34,6 +34,9 @@
 <script src="{{ url('/') }}/assets/frontend/library/datepicker/js/datepicker.en.js"></script>
 <!-- Air DatePicker -->
 
+<!-- Form Validator -->
+<script src="{{ url('/') }}/assets/frontend/library/validator/jquery.form-validator.min.js"></script>
+<!-- Form Validator -->
 
 <script src="{{ url('/') }}/assets/frontend/js/script.js"></script>
 

@@ -28,5 +28,9 @@
 <link rel="stylesheet" href="{{ url('/') }}/assets/frontend/library/datepicker/css/datepicker.min.css">
 <!-- Air DatePicker -->
 
+<!-- Form Validator -->
+<link href="{{ url('/') }}/assets/frontend/library/validator/theme-default.min.css" rel="stylesheet">
+<!-- Form Validator -->
+
 <link rel="stylesheet" href="{{ url('/') }}/assets/frontend/css/style.css">
 

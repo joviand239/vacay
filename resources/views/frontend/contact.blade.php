@@ -20,18 +20,18 @@
                     <h2 class="header">{!! @$page->title !!}</h2>
 
 
-                    <form>
+                    <form data-validate="true">
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label class="label-form" for="firstName">FIRST NAME</label>
-                                    <input type="text" class="form-control custom-control" id="firstName" name="firstName" placeholder="First Name">
+                                    <input type="text" class="form-control custom-control" id="firstName" name="firstName" placeholder="First Name" data-validation="required">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label class="label-form" for="lastName">LAST NAME</label>
-                                    <input type="text" class="form-control custom-control" id="lastName" name="lastName" placeholder="Last Name">
+                                    <input type="text" class="form-control custom-control" id="lastName" name="lastName" placeholder="Last Name" data-validation="required">
                                 </div>
                             </div>
                         </div>
@@ -40,13 +40,13 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label class="label-form" for="email">EMAIL</label>
-                                    <input type="email" class="form-control custom-control" id="email" name="email" placeholder="Insert your email here">
+                                    <input type="text" class="form-control custom-control" id="email" name="email" placeholder="Insert your email here" data-validation="required email">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label class="label-form" for="phoneNumber">PHONE NUMBER</label>
-                                    <input type="text" class="form-control custom-control" id="phoneNumber" name="phoneNumber" placeholder="Your phone number">
+                                    <input type="text" class="form-control custom-control" id="phoneNumber" name="phoneNumber" placeholder="Your phone number" data-validation="required number">
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                                 <div class="form-group">
                                     <label class="label-form" for="intention">MY INTENTION</label>
 
-                                    <select class="form-control custom-select custom-control" id="intention" name="intention">
+                                    <select class="form-control custom-select custom-control" id="intention" name="intention" data-validation="required">
                                         <option value="" disabled selected>I would like to</option>
                                     </select>
                                 </div>

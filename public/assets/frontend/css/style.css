@@ -794,6 +794,35 @@ input.custom-control {
 .details-wrapper h3 {
   color: #2c848e; }
 
+#checkout-success {
+  min-height: 70vh;
+  opacity: 0;
+  transition: all 0.5s ease; }
+  #checkout-success.active {
+    opacity: 1; }
+  #checkout-success .default-title {
+    font-size: 26px; }
+  #checkout-success .info-content {
+    text-align: center;
+    padding: 30px 0px; }
+  #checkout-success .icon {
+    margin-bottom: 15px;
+    width: 70px; }
+  #checkout-success .highlight, #checkout-success .orderNumber {
+    font-size: 18px;
+    margin-bottom: 0px; }
+  #checkout-success p {
+    margin-bottom: 0px;
+    font-size: 16px; }
+  #checkout-success .bank-info-wrapper {
+    display: none;
+    align-items: center;
+    justify-content: center; }
+    #checkout-success .bank-info-wrapper.active {
+      display: flex; }
+    #checkout-success .bank-info-wrapper .item {
+      padding: 0px 25px; }
+
 .modal .body-wrapper {
   text-align: center;
   padding: 50px 0px 15px; }

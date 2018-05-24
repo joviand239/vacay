@@ -33,4 +33,10 @@ class HomeController extends FrontendController {
             'page' => $page->json,
         ]);
     }
+
+
+    public function test() {
+
+        return view('frontend.test');
+    }
 }

@@ -15,6 +15,7 @@ class Constant {
     const STATUS_PENDING = 'PENDING';
     const STATUS_PRINTING = 'PRINTING';
     const STATUS_PAID = 'PAID';
+    const STATUS_UNPAID = 'UNPAID';
     const STATUS_DELIVERY = 'DELIVERY';
     const STATUS_COMPLETED = 'COMPLETED';
     const STATUS_CANCELLED = 'CANCELLED';

@@ -16,11 +16,16 @@ use App\Service\CustomerService;
 use App\Service\Image\ImageService;
 
 use App\Entity\CMS\Home;
+use App\Service\Payment\VeritransService;
 use App\Util\Constant;
 use Illuminate\Support\Facades\Input;
 
 
 class BookingController extends FrontendController {
+
+    public function getPaymentNotification() {
+        VeritransService::SettlementNotification();
+    }
 
     public function details($url = '') {
         $data = (object)Input::all();
@@ -73,6 +78,7 @@ class BookingController extends FrontendController {
         $booking->message = $data->message;
         $booking->totalLineItem = $data->totalLineItem;
         $booking->grandTotal = $data->grandTotal;
+        $booking->grandTotalIdr = (int)$data->grandTotal*10707;
         $booking->status = Constant::STATUS_ACTIVE;
 
         $booking->save();
@@ -90,6 +96,15 @@ class BookingController extends FrontendController {
         }
 
 
-        return redirect()->back();
+        return $this->paymentMidtrans($booking);
+    }
+
+
+
+    private function paymentMidtrans($booking){
+        return view('frontend.booking-success', [
+            'booking' => $booking,
+            'snapToken' => VeritransService::GetSnapToken($booking)
+        ]);
     }
 }

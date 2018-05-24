@@ -133,7 +133,7 @@ $(document).ready(function () {
             'firstName': $('[name=firstName]').val(),
             'lastName': $('[name=lastName]').val(),
             'email': $('[name=email]').val(),
-            'phoneNumber': $('[name=firstName]').val(),
+            'phoneNumber': $('[name=phoneNumber]').val(),
             'cityId': cityId,
             'quantity': $('[name=quantity]').val(),
             'withItenerary': $('[name=withItenerary]:checked').val(),

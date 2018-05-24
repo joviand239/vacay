@@ -12,7 +12,8 @@ class Booking extends BaseEntity {
     protected $casts = [
         'totalLineItem' => 'integer',  
         'itenenaryPrice' => 'integer',
-        'grandTotal' => 'integer' 
+        'grandTotal' => 'integer',
+        'grandTotalIdr' => 'integer'
     ];
     protected $appends = [
         //

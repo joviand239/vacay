@@ -59,6 +59,8 @@ Route::group(['middleware' => ['authweb'], 'roles'=>['CUSTOMER', 'CUSTOMERBIZ'],
 
 Route::get('/', 'Frontend\HomeController@index')->name('home');
 
+Route::get('/test', 'Frontend\HomeController@test')->name('test');
+
 Route::get('/about-us', 'Frontend\AboutController@index')->name('about');
 
 Route::get('/our-services', 'Frontend\ServiceController@index')->name('services');
@@ -77,6 +79,8 @@ Route::get('/vacay-pal/{url?}', 'Frontend\PalsController@details')->name('vacayp
 
 Route::get('/booking/{url?}', 'Frontend\BookingController@details')->name('booking');
 Route::post('/booking/submit', 'Frontend\BookingController@save')->name('booking-submit');
+
+Route::any('/payment/notification', 'Frontend\BookingController@getPaymentNotification')->name('booking.notification');
 
 
 Route::get('/contact-us', 'Frontend\ContactController@index')->name('contact');

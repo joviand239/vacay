@@ -109,6 +109,15 @@ $(document).ready(function () {
 
 
 
+    $.validate({
+        form : '[data-validate="true"]',
+        modules: 'date, file, html5, security',
+
+
+        addValidClassOnAll: false,
+        errorElementClass: false,
+        disabledFormFilter : 'form.toggle-disabled',
+    });
 
 
     scrollNav();
