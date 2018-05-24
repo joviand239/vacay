@@ -70,3 +70,25 @@ function GetCategoryList($id) {
     }
     return $map;
 }
+
+
+function GetCityList() {
+    $map = [];
+    foreach(City::all() as $item){
+        $map[$item->id] = $item->name;
+    }
+    return $map;
+}
+
+
+function GetRatingList() {
+    $map = [
+        1 => 1,
+        2 => 2,
+        3 => 3,
+        4 => 4,
+        5 => 5,
+    ];
+
+    return $map;
+}

@@ -32,6 +32,12 @@ Route::group(['prefix'=>'admin'], function () {
         CMSCore::CRUDRoute('category', 'categories');
         CMSCore::CRUDRoute('city', 'cities');
 
+        CMSCore::CRUDRoute('vacaypal', 'vacaypals');
+
+        Route::get('/vacaypal/{parentId}/review/{id}', 'Admin\VacayPalReviewController@details')->name('vacaypal-review');
+        Route::post('/vacaypal/{parentId}/review/{id}', 'Admin\VacayPalReviewController@save')->name('vacaypal-review-save');
+        Route::get('/vacaypal-review/delete/{id}', 'Admin\VacayPalReviewController@delete')->name('vacaypal-review-delete');
+
         CMSCore::CRUDRoute('booking', 'bookings');
 
         Route::get('/city/{parentId}/testimonial/{id}', 'Admin\CityTestimonialController@details')->name('city-testimonial');

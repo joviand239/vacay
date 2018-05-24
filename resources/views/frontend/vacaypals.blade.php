@@ -24,19 +24,19 @@
 
                 <div class="row">
 
-                    @for($i = 1 ; $i < 10 ; $i++)
+                    @foreach(@$list as $item)
                         <div class="col-md-4 col-12 mb-30">
                             <div class="default-card pals-card">
                                 <div class="image-wrapper">
-                                    <img class="image" src="{!! url('/') !!}/assets/frontend/images/personal-character-preferences-image.png" alt="Featured Product Image">
+                                    <img class="image" src="{!! getImageUrlSize(@$item->featuredImage[0], 'full') !!}" alt="{!! @$item->name !!}">
 
                                 </div>
 
                                 <div class="info-wrapper">
-                                    <h3 class="title">Gisela Angelica</h3>
-                                    <p class="subtitle">Sydney - Australia</p>
+                                    <h3 class="title">{!! @$item->name !!}</h3>
+                                    <p class="subtitle">{!! @$item->city->name !!} - {!! @$item->city->country->name !!}</p>
 
-                                    <a href="{!! route('vacaypals-detail') !!}" class="btn-text">
+                                    <a href="{!! route('vacaypals-detail', ['url' => @$item->url]) !!}" class="btn-text">
                                         <label>Explore More</label>
                                         <span class="btn simple-btn">
                                             <i class="fa fa-angle-right"></i>
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
 
 
                 </div>

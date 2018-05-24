@@ -26,6 +26,15 @@
                 </a>
             </li>
 
+            <li class="dropdown {!! isActiveRoute(['admin.vacaypals']) !!}">
+                <a href="{!! route('admin.vacaypals') !!}">
+                    <div class="icon">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">Vacay Pals</div>
+                </a>
+            </li>
+
             <li class="dropdown {!! isActiveRoute(['admin.continents', 'admin.countries', 'admin.cities']) !!}">
                 <a href="#">
                     <div class="icon">

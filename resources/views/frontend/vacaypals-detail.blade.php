@@ -22,15 +22,13 @@
                     <div class="col-md-8 col-12">
                         <div class="info-guide-section">
 
-                            <h3 class="name">Jennifer Lawrence</h3>
-                            <h5 class="location mb-20">Sydney - Australia</h5>
+                            <h3 class="name">{!! @$page->name !!}</h3>
+                            <h5 class="location mb-20">{!! @$page->city->name !!} - {!! @$page->city->country->name !!}</h5>
 
-                            <h1 class="default-title">Lovable . Energetic . Love to Explore </h1>
+                            <h1 class="default-title">{!! @$page->tagline !!} </h1>
 
                             <p class="summary mb-30">
-                                We bestow authentic connection with stories with the locals through personalised travelling. We connect travellers with our native guides who know their localities more than anyone else.
-                                We bestow authentic connection with stories with the locals through personalised travelling. We connect travellers with our native guides who know their localities more than anyone else.
-                                We bestow authentic connection with stories with the locals through personalised travelling. We connect travellers with our native guides who know their localities more than anyone else.
+                                {!! @$page->description !!}
                             </p>
 
 
@@ -74,38 +72,28 @@
 
                 <div class="review-wrapper">
 
-                    @for($i = 1 ; $i < 6 ; $i++)
+                    @foreach(@$page->reviews as $review)
                         <div class="box">
                             <div class="reviewer">
-                                <img class="pic" src="{!! url('/') !!}/assets/frontend/images/review-image.jpg" alt="Reviewer Picture">
+                                <img class="pic" src="{!! getImageUrlSize(@$review->profilePic[0], 'full') !!}" alt="{!! @$review->name !!}">
                                 <div class="info">
                                     <ul class="rating">
-                                        <li>
-                                            <i class="fa fa-heart"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-heart"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-heart"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-heart"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-heart"></i>
-                                        </li>
+                                        @for($i = 1 ; $i <= @$review->rating ; $i++)
+                                            <li>
+                                                <i class="fa fa-heart"></i>
+                                            </li>
+                                        @endfor
                                     </ul>
-                                    <p class="name">Karla</p>
-                                    <p class="date">August 2018</p>
+                                    <p class="name">{!! @$review->name !!}</p>
+                                    <p class="date">{!! getDateOnly(@$review->reviewDate) !!}</p>
 
                                 </div>
                             </div>
                             <div class="review-content">
-                                Gisel is the best! we had such a great experience and could not have asked for better service in such a beautiful place. A wonderful place to explore and guide by the expert, a very well spent holiday i ever had! thankyou VACAY for give us this different experience and a very nice friends for life, see you in the next holiday! XOXO ;*
+                                {!! @$review->review !!}
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
 
 
                 </div>

@@ -471,9 +471,12 @@ nav.navbar {
     margin-bottom: 20px; }
   .default-card .image-wrapper {
     width: 220px;
+    height: 220px;
+    border-radius: 50%;
     margin: auto;
     margin-bottom: 15px;
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
     .default-card .image-wrapper:hover .hoverlay {
       opacity: 1; }
     .default-card .image-wrapper .hoverlay {

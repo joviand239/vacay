@@ -22,6 +22,9 @@ class Booking extends BaseEntity {
 
     ];
 
+    const ROUTE_INDEX = 'admin.bookings';
+    const ROUTE_DETAILS = 'admin.booking';
+
     const FORM_TYPE = [
         //
     ]; 
