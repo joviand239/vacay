@@ -6,7 +6,7 @@ use App\Entity\Base\Role;
 use App\Entity\Base\User;
 use App\Entity\Promo;
 use App\Entity\User\Customer;
-use App\Entity\User\CustomerDetails;
+use App\Entity\User\CustomerDetail;
 use App\Entity\User\CustomerPromo;
 use App\Http\Controllers\CMSCore\Controller;
 use App\Service\MailerService;
@@ -105,7 +105,7 @@ class AuthController extends Controller {
         }
 
         if ($referral_code != ''){
-            $customer_referral = CustomerDetails::where('promo_code', $data['referral_code'])->get()->first();
+            $customer_referral = CustomerDetail::where('promo_code', $data['referral_code'])->get()->first();
 
             if ($customer_referral == null){
                 $referError = 'Maaf kode referral tidak sesuai dengan data kami!';
@@ -135,7 +135,7 @@ class AuthController extends Controller {
         $name = explode(' ',$data['name'],2);
         $promo_code = str_random(8);
 
-        $customer_details = new CustomerDetails();
+        $customer_details = new CustomerDetail();
         $customer_details->first_name = $name[0];
         $customer_details->last_name = @$name[1];
         $customer_details->email = $data['email'];

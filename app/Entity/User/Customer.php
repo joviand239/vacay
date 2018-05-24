@@ -32,7 +32,7 @@ class Customer extends User {
 
 
     public function customer_details(){
-        return $this->hasOne(CustomerDetails::class, 'user_id');
+        return $this->hasOne(CustomerDetail::class, 'user_id');
     }
     public function getValue($key, $listItem, $language){
         if ($key == 'first_name') return $this->customer_details->first_name;

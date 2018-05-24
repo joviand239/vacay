@@ -4,7 +4,7 @@ namespace App\Service;
 
 
 use Illuminate\Support\Facades\Mail;
-use App\Entity\User\CustomerDetails;
+use App\Entity\User\CustomerDetail;
 use App\Entity\User\CustomerPromo;
 
 class MailerService {

@@ -49,6 +49,15 @@
                 </div>
             </li>
 
+            <li class="dropdown {!! isActiveRoute(['admin.bookings']) !!}">
+                <a href="{!! route('admin.bookings') !!}">
+                    <div class="icon">
+                        <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">Booking</div>
+                </a>
+            </li>
+
         </ul>
     </div>
 </aside>

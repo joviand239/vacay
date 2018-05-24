@@ -32,6 +32,7 @@ Route::group(['prefix'=>'admin'], function () {
         CMSCore::CRUDRoute('category', 'categories');
         CMSCore::CRUDRoute('city', 'cities');
 
+        CMSCore::CRUDRoute('booking', 'bookings');
 
         Route::get('/city/{parentId}/testimonial/{id}', 'Admin\CityTestimonialController@details')->name('city-testimonial');
         Route::post('/city/{parentId}/testimonial/{id}', 'Admin\CityTestimonialController@save')->name('city-testimonial-save');
@@ -69,6 +70,7 @@ Route::get('/vacay-pal/{url?}', 'Frontend\PalsController@details')->name('vacayp
 
 
 Route::get('/booking/{url?}', 'Frontend\BookingController@details')->name('booking');
+Route::post('/booking/submit', 'Frontend\BookingController@save')->name('booking-submit');
 
 
 Route::get('/contact-us', 'Frontend\ContactController@index')->name('contact');

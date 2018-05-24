@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\CMSTrait\SingleImageTrait;
 use App\Entity\Base\BaseEntity;
-use App\Entity\User\CustomerDetails;
+use App\Entity\User\CustomerDetail;
 use App\Util\Constant;
 
 
@@ -32,18 +32,18 @@ class City extends BaseEntity {
         'description' => 'TextArea',
         'featuredImage' => 'Image_1',
         'gallery' => 'Image_0',
-        'hasItenenaryGraphics' => 'Select',
-        'itenenarySectionTitle' => 'Text',
-        'itenenarySectionDescription' => 'TextArea',
-        'itenenarySectionBackground' => 'Image_1',
-        'itenenaryPrice' => 'Amount'
+        'hasIteneraryGraphics' => 'Select',
+        'itenerarySectionTitle' => 'Text',
+        'itenerarySectionDescription' => 'TextArea',
+        'itenerarySectionBackground' => 'Image_1',
+        'iteneraryPrice' => 'Amount'
     ];
 
     const INDEX_FIELD = [
         'country',
         'name',
         'totalCategory',
-        'hasItenenaryGraphics',
+        'hasIteneraryGraphics',
     ];
 
     const FORM_LABEL = [

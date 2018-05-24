@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use App\Entity\Base\BaseEntity;
-use App\Entity\User\CustomerDetails;
+use App\Entity\User\CustomerDetail;
 use App\Util\Constant;
 
 

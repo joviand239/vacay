@@ -156,10 +156,16 @@
                         </tfoot>
                     </table>
 
+                    <form METHOD="POST" action="{!! route('booking-submit') !!}">
 
-                    <div class="text-center">
-                        <a href="#" class="btn main-btn">CONTINUE PAYMENT <i class="fa fa-angle-right"></i></a>
-                    </div>
+                        <input type="hidden" name="formData" value="">
+
+                        <div class="text-center">
+                            <button type="submit" class="btn main-btn">CONTINUE PAYMENT <i class="fa fa-angle-right"></i></button>
+                        </div>
+                    </form>
+
+
 
 
                 </div>

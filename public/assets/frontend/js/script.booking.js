@@ -45,6 +45,8 @@ $(document).ready(function () {
 
         var quantity = $('[name=quantity]').val();
 
+        categoryList = [];
+
         for (var i = 1; i <= indexCategoryPicker ; i++){
             var category = {
                 'id': 0,
@@ -60,7 +62,7 @@ $(document).ready(function () {
             category.name = section.find('[name="category"] option:selected').html();
             category.date = section.find('[name="date"]').val();
 
-            categoryList[category.id] = category;
+            categoryList.push(category);
         }
     }
     
@@ -132,9 +134,10 @@ $(document).ready(function () {
             'lastName': $('[name=lastName]').val(),
             'email': $('[name=email]').val(),
             'phoneNumber': $('[name=firstName]').val(),
+            'cityId': cityId,
             'quantity': $('[name=quantity]').val(),
             'withItenerary': $('[name=withItenerary]:checked').val(),
-            'itenenaryPrice': $('[name=itenenaryPrice]').val(),
+            'iteneraryPrice': $('[name=iteneraryPrice]').val(),
             'message': $('[name=message]').val(),
             'listCategory': listCategory,
             'totalLineItem': 0,
@@ -152,13 +155,16 @@ $(document).ready(function () {
 
             console.log(item);
 
-            if (categoryList[item.id]) {
-                categoryList[item.id].price = item.price;
-                categoryList[item.id].totalPrice = item.price*categoryList[item.id].quantity;
-            }
+            $.each(categoryList, function (key, value) {
+
+                if (value.id == item.id) {
+                    categoryList[key].price = item.price;
+                    categoryList[key].totalPrice = item.price*categoryList[key].quantity;
+                }
+
+            })
 
         });
-
 
         return categoryList;
     }
@@ -179,26 +185,27 @@ $(document).ready(function () {
         var itenenaryPrice = 0;
 
         if (modalData.withItenerary == 1){
-            wrapper.find('#withItenenary').html('YES');
-            itenenaryPrice = modalData.itenenaryPrice;
+            wrapper.find('#withItenerary').html('YES');
+            itenenaryPrice = modalData.iteneraryPrice;
         }else {
-            wrapper.find('#withItenenary').html('NO');
+            wrapper.find('#withItenerary').html('NO');
         }
 
         wrapper.find('#message').html(modalData.message);
-        wrapper.find('#total-category').html(modalData.listCategory.length-1);
+        wrapper.find('#total-category').html(modalData.listCategory.length);
+
+        wrapper.find('.category-item').remove();
 
         var idx = 1;
-
         $.each(modalData.listCategory, function (key, val) {
             if (val) {
                 totalLineItem += val.totalPrice;
 
-                var html = '<tr>' +
+                var html = '<tr class="category-item">' +
                     '       <td>Cateogry '+idx+'</td>' +
                     '       <td>'+val.name+'</td>' +
                     '       </tr>' +
-                    '       <tr>' +
+                    '       <tr class="category-item">' +
                     '       <td>Date</td>' +
                     '       <td>'+val.date+'</td>' +
                     '       </tr>';
@@ -214,6 +221,9 @@ $(document).ready(function () {
 
         wrapper.find('#total-price').html(submitData.grandTotal);
 
+        wrapper.find('[name=formData]').val(JSON.stringify(submitData));
+
+        console.log(submitData);
 
         $('#bookingResultModal').modal({
             show: true,

@@ -100,8 +100,8 @@
 
                         <div class="form-group">
 
-                            <p class="mb-20">Want you bring an exxtraordinary maps to complete your travel guide, worth for ${!! getPriceNumber(@$page->itenenaryPrice) !!} AUD?</p>
-                            <input type="hidden" id="itenenaryPrice" name="itenenaryPrice" value="{!! @$page->itenenaryPrice !!}">
+                            <p class="mb-20">Want you bring an exxtraordinary maps to complete your travel guide, worth for ${!! getPriceNumber(@$page->iteneraryPrice) !!} AUD?</p>
+                            <input type="hidden" id="iteneraryPrice" name="iteneraryPrice" value="{!! @$page->iteneraryPrice !!}">
 
 
                             <div class="custom-control custom-radio custom-control-inline">
@@ -157,6 +157,7 @@
 
 @section('jsCustom')
     <script>
+        var cityId = {!! @$page->id !!};
         var cityCategories = {!! @$page->categories !!};
         var selectedCityCategory = {!! json_encode(@$selectedCityCategory) !!};
     </script>
