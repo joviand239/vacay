@@ -36,6 +36,26 @@
 
                             @include('cms.form.section')
 
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <label class="control-label">Itenerary File</label>
+                                </div>
+                                <div class="col-md-4">
+                                    @if(@$model->iteneraryFile)
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" disabled value="{!! @$model->iteneraryFile !!}">
+                                            <input type="hidden" class="form-control" name="iteneraryFile" value="{!! @$model->iteneraryFile !!}">
+                                            <span class="input-group-addon change">Delete</span>
+                                        </div>
+                                        <div class="input-group hide">
+                                            <input type="file" class="form-control" accept="application/pdf" name="iteneraryFile">
+                                        </div>
+                                    @else
+                                        <input type="file" class="form-control" accept="application/pdf" name="iteneraryFile">
+                                    @endif
+                                </div>
+                            </div>
+
                             @yield('button')
                         </div>
                     </div>
@@ -171,6 +191,15 @@
                 "scrollX": true
             }).columns.adjust();
 
+
+            $('.change').click(function (e) {
+                e.preventDefault();
+
+                $(this).parent().find('[type=hidden]').val('DELETE_FILE');
+
+                $(this).parent().toggleClass('hide');
+                $(this).parent().next().toggleClass('hide');
+            })
 
         })
 

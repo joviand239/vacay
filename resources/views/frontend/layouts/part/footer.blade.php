@@ -7,29 +7,29 @@
 
             <div class="item">
                 <p>Contact Us</p>
-                <p><span class="font-bold">{!! getAboutAttribute('address') !!}</span></p>
-                <p class="mb-15"><span class="font-bold">{!! getAboutAttribute('email') !!}</span></p>
+                <p><span class="font-bold">{!! getSettingAttribute('companyAddress') !!}</span></p>
+                <p class="mb-15"><span class="font-bold">{!! getSettingAttribute('companyEmail') !!}</span></p>
 
                 <p>Social Media</p>
 
                 <ul class="socmed-wrapper list-unstyled">
                     <li class="item">
-                        <a class="link" href="{!! getAboutAttribute('facebookLink') !!}">
+                        <a class="link" href="{!! getSettingAttribute('facebookLink') !!}">
                             <i class="fa fa-facebook"></i>
                         </a>
                     </li>
                     <li class="item">
-                        <a class="link" href="{!! getAboutAttribute('instagramLink') !!}">
+                        <a class="link" href="{!! getSettingAttribute('instagramLink') !!}">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
                     <li class="item">
-                        <a class="link" href="{!! getAboutAttribute('googlePlusLink') !!}">
+                        <a class="link" href="{!! getSettingAttribute('googlePlusLink') !!}">
                             <i class="fa fa-google-plus"></i>
                         </a>
                     </li>
                     <li class="item">
-                        <a class="link" href="{!! getAboutAttribute('youtubeLink') !!}">
+                        <a class="link" href="{!! getSettingAttribute('youtubeLink') !!}">
                             <i class="fa fa-youtube-play"></i>
                         </a>
                     </li>
@@ -90,31 +90,13 @@
                     <p>Destination</p>
 
                     <ul>
+                        @foreach(getAllContinent() as $continent)
                         <li>
-                            <a href="#">
-                                Asia
+                            <a href="{!! route('destinations', ['type' => \App\Util\Constant::SEARCH_TYPE_CONTINENT, 'url' => @$continent->url]) !!}">
+                                {!! @$continent->name !!}
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                Australia
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Europe
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Africa
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                America
-                            </a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

@@ -67,6 +67,27 @@
                 </a>
             </li>
 
+
+            <li class="dropdown">
+                <a href="{{ url('/admin/cms/details/Page/FeaturedTestimonial') }}">
+                    <div class="icon">
+                        <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="title"> Featured Testimonial</div>
+                </a>
+            </li>
+
+
+
+            <li class="dropdown">
+                <a href="{{ URL::route('admin.settings') }}">
+                <span class="icon">
+                    <i class="fa fa-wrench" aria-hidden="true"></i>
+                </span>
+                    <span class="title"> Setting</span>
+                </a>
+            </li>
+
         </ul>
     </div>
 </aside>

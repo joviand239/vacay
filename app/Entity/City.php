@@ -62,7 +62,7 @@ class City extends BaseEntity {
 
     const FORM_SELECT_LIST = [
         'countryId' => 'GetCountryList',
-        'hasItenenaryGraphics' => 'GetYesOrNoSelect',
+        'hasIteneraryGraphics' => 'GetYesOrNoSelect',
     ];
 
 
@@ -90,7 +90,7 @@ class City extends BaseEntity {
         return json_decode($value);
     }
 
-    function getItenenarySectionBackgroundAttribute($value) {
+    function getItenerarySectionBackgroundAttribute($value) {
         if (empty($value)) return [];
 
         return json_decode($value);

@@ -21,6 +21,10 @@ class Essentials extends Page {
         'title' => 'Text',
         'description' => 'Wysiwyg',
 
+        'itenerarySectionTitle' => 'Text',
+        'itenerarySectionDescription' => 'TextArea',
+        'itenerarySectionBackground' => 'Image_1',
+
         'serviceList' => 'ListSortable'
     ];
 

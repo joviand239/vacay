@@ -5,6 +5,8 @@ use \App\Entity\Order;
 use \App\Entity\User\Customer;
 use \App\Util\Constant;
 use \App\Entity\CMS\About;
+use App\Entity\Setting;
+use App\Entity\CMS\FeaturedTestimonial;
 
 function getPriceNumberWithComa($value) {
     if (empty($value)) {
@@ -226,12 +228,12 @@ function getOrderStatusName($name) {
     return $map[$name];
 }
 
-function getAboutAttribute($key){
-    $page = About::getPage();
+function getSettingAttribute($key){
+    $page = Setting::with(['vacayPals', 'cities'])->first();
 
 
-    if (isset($page->json->$key)){
-        return $page->json->$key;
+    if (isset($page->$key)){
+        return $page->$key;
     }else {
         return '';
     }
@@ -255,6 +257,19 @@ function getEnquiryOption() {
 
 
     return $map;
+}
+
+function getAllContinent() {
+    $continents = \App\Entity\Continent::all();
+
+    return $continents;
+}
+
+function getFeaturedTestimonials() {
+    $list = FeaturedTestimonial::getPage();
+
+
+    return @$list->json->listing;
 }
 
 

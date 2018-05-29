@@ -145,71 +145,29 @@
 
 
                 <div class="row">
-                    <div class="col-md-4 col-12">
+                    @foreach(getSettingAttribute('cities') as $item)
+                        <div class="col-md-4 col-12">
 
-                        <a href="#" class="destination-card">
-                            <div class="image-wrapper">
+                            <a href="{!! route('destination-detail', ['url' => @$item->url]) !!}" class="destination-card">
+                                <div class="image-wrapper">
 
-                                <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
+                                    <img src="{!! getImageUrlSize(@$item->featuredImage[0], 'full') !!}" alt="{!! @$item->name !!}">
 
-                            </div>
-
-
-                            <div class="text-wrapper">
-
-                                <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
-
-                                <p class="name">General Tour - beautiful city in many lights</p>
-
-                                <p class="country">Sydney - AUSTRALIA</p>
-
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-4 col-12">
-
-                        <a href="#" class="destination-card">
-                            <div class="image-wrapper">
-
-                                <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
-
-                            </div>
+                                </div>
 
 
-                            <div class="text-wrapper">
+                                <div class="text-wrapper">
 
-                                <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
+                                    <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
 
-                                <p class="name">General Tour - beautiful city in many lights</p>
+                                    <p class="name">General Tour - {!! @$item->tagline !!}</p>
 
-                                <p class="country">Sydney - AUSTRALIA</p>
+                                    <p class="country">{!! @$item->name !!} - {!! @$item->country->name !!}</p>
 
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-4 col-12">
-
-                        <a href="#" class="destination-card">
-                            <div class="image-wrapper">
-
-                                <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
-
-                            </div>
-
-
-                            <div class="text-wrapper">
-
-                                <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
-
-                                <p class="name">General Tour - beautiful city in many lights</p>
-
-                                <p class="country">Sydney - AUSTRALIA</p>
-
-                            </div>
-                        </a>
-                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -264,17 +222,17 @@
                         <h1 class="default-title mb-30">{!! @$page->vacayPalsSectionTitle !!}</h1>
 
                         <div class="info-guide-slider">
-                            @for($i = 1 ; $i <= 5 ; $i++)
+                            @foreach(getSettingAttribute('vacayPals') as $key => $item)
                                 <div class="info-guide-section">
 
-                                    <h3 class="name">Jennifer Lawrence {!! @$i !!}</h3>
-                                    <h5 class="location mb-20">Sydney - Australia</h5>
+                                    <h3 class="name">{!! @$item->name !!}</h3>
+                                    <h5 class="location mb-20">{!! @$item->city->name !!} - {!! @$item->city->country->name !!}</h5>
 
                                     <p class="summary mb-30">
-                                        Driven by a passion for the outdoors, 'Active Adventurers' want to push themselves physically and mentally while exploring the natural world with a well-rounded multi-sport experience. Open-minded, eager, and personable, 'Cultural Travellers' are fueled by their passion for discovery of people and places.
+                                        {!! @$item->description !!}
                                     </p>
                                 </div>
-                            @endfor
+                            @endforeach
                         </div>
 
                         <h6>Social Media</h6>
@@ -302,7 +260,7 @@
                             </li>
                         </ul>
 
-                        <a href="#" class="btn main-btn">SEE ALL LOCALS <i class="fa fa-angle-right"></i></a>
+                        <a href="{!! route('vacaypals') !!}" class="btn main-btn">SEE ALL LOCALS <i class="fa fa-angle-right"></i></a>
 
 
 
@@ -315,18 +273,18 @@
 
                         <div id="gallery-wrapper" class="pals-gallery">
                             <div class="gallery">
-                                @for($i = 0 ; $i < 5 ; $i++)
+                                @foreach(getSettingAttribute('vacayPals') as $key => $item)
                                     <div>
                                         <div class="img-wrapper">
-                                            <img src="{!! url('/') !!}/assets/frontend/images/local-guide-image.jpg">
+                                            <img src="{!! getImageUrlSize(@$item->featuredImage[0], 'full') !!}" alt="{!! @$item->name !!}">
                                         </div>
                                     </div>
-                                @endfor
+                                @endforeach
                             </div>
 
                             <div class="total-slider">
 
-                                <p><span class="index">1</span> / <span class="total">5</span></p>
+                                <p><span class="index">1</span> / <span class="total">{!! count(getSettingAttribute('vacayPals')) !!}</span></p>
 
                             </div>
                         </div>
@@ -352,17 +310,17 @@
 
 
                 <ul id="testimonial-slider">
-                    @for($i = 0 ; $i < 3 ; $i++)
+                    @foreach(getFeaturedTestimonials() as $item)
                         <li class="item">
                             <p class="testi">
-                                We've used your firm for several years, with tours in a number of international cities. We recently completed a trip that included 13 tours in 5 different countries. WITHOUT EXCEPTION, the tours were excellent and the guides thoroughly helpful, interesting, kind, and professional (and we tend to be picky). What a great record! Congratulations and keep up the good work
+                                {!! @$item->details !!}
                             </p>
 
                             <p class="owner">
-                                Chicco Jerikho - Solo Traveller
+                                {!! @$item->sourceName !!} - {!! @$item->designation !!}
                             </p>
                         </li>
-                    @endfor
+                    @endforeach
                 </ul>
 
 

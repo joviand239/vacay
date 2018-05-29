@@ -7,7 +7,9 @@ use App\Entity\CityCategory;
 use App\Entity\CityTestimonial;
 use App\Http\Controllers\CMSCore\Controller;
 use App\Service\CMSCore\CRUDService;
+use App\Service\CMSCore\FileService;
 use App\Service\UrlService;
+use Illuminate\Support\Facades\Input;
 
 class CityController extends Controller {
     public function index() {
@@ -23,6 +25,16 @@ class CityController extends Controller {
 
         if ($id == 0) {
             $model->url = UrlService::CreatePrettyUrl(@$model->name, City::class);
+        }
+
+        $data = Input::all();
+
+        if (isset($data['iteneraryFile']) && !is_string($data['iteneraryFile'])) {
+            FileService::delete( $model->iteneraryFile);
+            $model->iteneraryFile = FileService::UploadFile($data['iteneraryFile']);
+        }elseif (isset($data['iteneraryFile']) && $data['iteneraryFile'] == 'DELETE_FILE'){
+            FileService::delete( $model->iteneraryFile);
+            $model->iteneraryFile = null;
         }
 
         $model->save();

@@ -12,9 +12,9 @@ Route::group(['prefix'=>'admin'], function () {
 		Route::get('/', 'Admin\DashboardController@index')->name('admin.home');
 		Route::get('/backtoprevious', 'CMSCore\Admin\BackController@back' )->name('admin.back');
 
-		Route::get('/users/', function () {return redirect('admin/');} );
-		Route::get('/user/{id?}', 'Admin\AdminController@details')->name('user');
-		Route::post('/user/{id?}', 'Admin\AdminController@save' );
+        Route::get('/users/', function () {return redirect('admin/');} );
+        Route::get('/user/{id?}', 'Admin\AdminController@details')->name('admin.user');
+        Route::post('/user/{id?}', 'Admin\AdminController@save')->name('admin.user-save');
 
 		Route::get('/cms/{type}/{subtype?}', 'CMSCore\Admin\CMSController@index')->name('admin.page');
 		Route::get('/cms/details/{type}/{subtype}/{id?}', 'CMSCore\Admin\CMSController@details');
@@ -26,8 +26,9 @@ Route::group(['prefix'=>'admin'], function () {
 		Route::post('/order/{id?}', 'Admin\OrderController@save');
 		Route::get('/order/delete/{id?}', 'Admin\OrderController@delete');
 
+        CMSCore::CRUDRoute('setting');
 
-		CMSCore::CRUDRoute('continent', 'continents');
+        CMSCore::CRUDRoute('continent', 'continents');
         CMSCore::CRUDRoute('country', 'countries');
         CMSCore::CRUDRoute('category', 'categories');
         CMSCore::CRUDRoute('city', 'cities');

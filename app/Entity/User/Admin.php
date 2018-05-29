@@ -12,7 +12,7 @@ class Admin extends User {
     }
     const FORM_REQUIRED = ['name', 'email'];
     const INDEX_FIELD = [
-        'name','email', 'phone'
+        'name','email'
     ];
     const FORM_TYPE = [
         'name' => 'Text',

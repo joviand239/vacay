@@ -8,6 +8,7 @@ use App\Util\Constant;
 use App\Entity\Country;
 use App\Entity\Category;
 use App\Entity\City;
+use App\Entity\VacayPal;
 
 
 function GetChefList() {
@@ -99,5 +100,13 @@ function GetRatingList() {
         5 => 5,
     ];
 
+    return $map;
+}
+
+function GetVacayPalList() {
+    $map = [];
+    foreach (VacayPal::all() as $item) {
+        $map[$item->id] = $item->name;
+    }
     return $map;
 }

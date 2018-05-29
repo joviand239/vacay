@@ -93,17 +93,17 @@
         </div>
 
 
-        @if(@$page->hasItenenaryGraphics == \App\Util\Constant::YES)
-            <div class="default-section with-bg" style="background: url({!! getImageUrlSize(@$page->itenenarySectionBackground[0], 'full') !!})">
+        @if(@$page->hasIteneraryGraphics == \App\Util\Constant::YES)
+            <div class="default-section with-bg" style="background: url({!! getImageUrlSize(@$page->itenerarySectionBackground[0], 'full') !!})">
                 <div class="container">
 
                     <div class="row">
                         <div class="col-md-7">
 
-                            <h2 class="default-title white mb-30">{!! @$page->itenenarySectionTitle !!}</h2>
+                            <h2 class="default-title white mb-30">{!! @$page->itenerarySectionTitle !!}</h2>
 
                             <p class="default-summary white mb-30">
-                                {!! @$page->itenenarySectionDescription !!}
+                                {!! @$page->itenerarySectionDescription !!}
                             </p>
 
                             <a href="#" class="btn main-btn white mb-15">BUY NOW <i class="fa fa-angle-right"></i></a>

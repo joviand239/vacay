@@ -11,7 +11,7 @@
 
         <div class="container">
 
-            <h1 class="default-title">Terima kasih telah booking di Vacay Pals</h1>
+            <h1 class="default-title">Thank you for booking at Vacay Pals</h1>
 
             <hr>
 
@@ -20,13 +20,13 @@
                 <img class="icon" src="{!! url('/') !!}/assets/frontend/images/icon-plane.png" alt="Icon Thank You">
 
                 <div class="mb-30">
-                    <h2 class="highlight">BOOKINGAN ANDA TELAH KAMI TERIMA</h2>
+                    <h2 class="highlight">YOUR BOOKS HAVE WE ACCEPTED</h2>
                     <h2 class="orderNumber">#{!! @$booking->bookingNumber !!}</h2>
-                    <h2 class="highlight">TOTAL AUD {!! getPriceNumber(@$booking->grandTotal) !!}</h2>
+                    <h2 class="highlight">TOTAL USD {!! getPriceNumber(@$booking->grandTotal) !!}</h2>
                 </div>
 
 
-                <p>Jika ada pertanyaan mengenai bookingan Anda, hubungi customer service kami.</p>
+                <p>If you have any questions about your bookings, contact our customer service.</p>
 
             </div>
 

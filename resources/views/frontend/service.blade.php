@@ -174,17 +174,17 @@
 
 
                         <ul class="testimonial-slider">
-                            @for($i = 0 ; $i < 3 ; $i++)
+                            @foreach(getFeaturedTestimonials() as $item)
                                 <li class="item">
                                     <p class="testi">
-                                        We've used your firm for several years, with tours in a number of international cities. We recently completed a trip that included 13 tours in 5 different countries. WITHOUT EXCEPTION, the tours were excellent and the guides thoroughly helpful, interesting, kind, and professional (and we tend to be picky). What a great record! Congratulations and keep up the good work
+                                        {!! @$item->details !!}
                                     </p>
 
                                     <p class="owner">
-                                        Chicco Jerikho - Solo Traveller
+                                        {!! @$item->sourceName !!} - {!! @$item->designation !!}
                                     </p>
                                 </li>
-                            @endfor
+                            @endforeach
                         </ul>
 
 
@@ -193,19 +193,19 @@
                 </div>
 
 
-                <div class="default-section with-bg" style="background: url({!! url('/') !!}/assets/frontend/images/essentials-banner.jpg)">
+                <div class="default-section with-bg" style="background: url({!! getImageUrlSize(@$essentials->itenerarySectionBackground[0], 'full') !!})">
                     <div class="container">
 
                         <div class="row">
                             <div class="col-md-7">
 
-                                <h2 class="default-title white mb-30">Go on your own VACAY!</h2>
+                                <h2 class="default-title white mb-30">{!! @$essentials->itenerarySectionTitle !!}</h2>
 
                                 <p class="default-summary white mb-30">
-                                    No need to waste your time to read and research all the travel tips out there. We make things easier for you with our VACAY ESSENTIAL, infographics and data visualizations contain interesting and useful facts, tips and bucket-list spots for your next Vacay! We bring to you light, useful information on planning your own travel.
+                                    {!! @$essentials->itenerarySectionDescription !!}
                                 </p>
 
-                                <a href="#" class="btn main-btn white mb-15">BOOK NOW <i class="fa fa-angle-right"></i></a>
+                                <a href="{!! route('destinations', ['type' => \App\Util\Constant::SEARCH_TYPE_ALL]) !!}" class="btn main-btn white mb-15">BOOK NOW <i class="fa fa-angle-right"></i></a>
 
                             </div>
                         </div>
@@ -235,7 +235,7 @@
 
                     <a href="{!! route('vacaypals') !!}" class="btn main-btn white">SEE OUR LOCALS <i class="fa fa-angle-right"></i></a>
 
-                    <a href="{!! route('contact') !!}" class="btn main-btn">CONACT USS! <i class="fa fa-angle-right"></i></a>
+                    <a href="{!! route('contact') !!}" class="btn main-btn">CONTACT US! <i class="fa fa-angle-right"></i></a>
 
                 </div>
 
