@@ -250,4 +250,12 @@ function imageStringToArray($stringImage) {
 }
 
 
+function getEnquiryOption() {
+    $map = Constant::OPTION_LABEL_ENQUIRY;
+
+
+    return $map;
+}
+
+
 

@@ -32,39 +32,39 @@
                         <h1 class="default-title small">{!! @$page->title !!}</h1>
 
                         <div class="form-section">
-                            <form>
+                            <form action="" method="post" data-validate="true">
                                 <div class="form-group">
                                     <label class="label-form" for="firstName">FIRST NAME</label>
-                                    <input type="text" class="form-control custom-control" id="firstName" name="firstName" placeholder="First Name">
+                                    <input type="text" class="form-control custom-control" id="firstName" name="firstName" placeholder="First Name" data-validation="required">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label class="label-form" for="lastName">LAST NAME</label>
-                                    <input type="text" class="form-control custom-control" id="lastName" name="lastName" placeholder="Last Name">
+                                    <input type="text" class="form-control custom-control" id="lastName" name="lastName" placeholder="Last Name" data-validation="required">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="label-form" for="phoneNumber">PHONE NUMBER</label>
-                                    <input type="text" class="form-control custom-control" id="phoneNumber" name="phoneNumber" placeholder="Your phone number">
+                                    <input type="text" class="form-control custom-control" id="phoneNumber" name="phoneNumber" placeholder="Your phone number" data-validation="required number">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="label-form" for="email">EMAIL</label>
-                                    <input type="email" class="form-control custom-control" id="email" name="email" placeholder="Insert your email here">
+                                    <input type="text" class="form-control custom-control" id="email" name="email" placeholder="Insert your email here" data-validation="required email">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label class="label-form" for="email">CITY</label>
-                                    <input type="text" class="form-control custom-control" id="city" name="city" placeholder="Your City ex. Sydney, Kyoto, Bali">
+                                    <input type="text" class="form-control custom-control" id="city" name="city" placeholder="Your City ex. Sydney, Kyoto, Bali" data-validation="required">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label class="label-form" for="message">ABOUT ME</label>
 
-                                    <textarea class="form-control custom-control" rows="5" placeholder="Tell us a bit about you..." id="aboutDescription" name="aboutDescription"></textarea>
+                                    <textarea class="form-control custom-control" rows="5" placeholder="Tell us a bit about you..." id="aboutDescription" name="aboutDescription" data-validation="required"></textarea>
                                 </div>
 
 

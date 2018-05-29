@@ -59,6 +59,9 @@
 
                                     <select class="form-control custom-select custom-control" id="intention" name="intention" data-validation="required">
                                         <option value="" disabled selected>I would like to</option>
+                                        @foreach(getEnquiryOption() as $key => $value)
+                                            <option value="{!! @$key !!}">{!! @$value !!}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -68,6 +71,9 @@
 
                                     <select class="form-control custom-select custom-control" id="destination" name="destination">
                                         <option value="" disabled selected>Your chosen local destination</option>
+                                        @foreach(GetCityList() as $key => $value)
+                                            <option value="{!! @$key !!}">{!! @$value !!}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

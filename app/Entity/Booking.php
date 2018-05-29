@@ -27,7 +27,16 @@ class Booking extends BaseEntity {
     const ROUTE_DETAILS = 'admin.booking';
 
     const FORM_TYPE = [
-        //
+        'bookingNumber' => 'Text',
+        'cityId' => 'Select',
+        'customerName' => 'Text',
+        'bookingDate' => 'Date',
+        'message' => 'TextArea',
+        'withItenerary' => 'Select',
+        'iteneraryPrice' => 'Amount',
+        'totalLineItem' => 'Amount',
+        'grandTotal' => 'Amount',
+        'grandTotalIdr' => 'Amount'
     ]; 
 
     const FORM_REQUIRED = [
@@ -35,7 +44,16 @@ class Booking extends BaseEntity {
     ];
 
     const FORM_DISABLED = [
-        // 
+        'bookingNumber',
+        'cityId',
+        'customerName',
+        'bookingDate',
+        'message',
+        'withItenerary',
+        'iteneraryPrice',
+        'totalLineItem',
+        'grandTotal',
+        'grandTotalIdr',
     ]; 
 
     const INDEX_FIELD = [
@@ -47,7 +65,8 @@ class Booking extends BaseEntity {
     ]; 
 
     const FORM_SELECT_LIST = [
-        //
+        'cityId' => 'GetCityList',
+        'withItenerary' => 'GetYesOrNo'
     ];
 
 

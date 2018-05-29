@@ -67,6 +67,8 @@ Route::get('/our-services', 'Frontend\ServiceController@index')->name('services'
 
 Route::get('/how-it-works', 'Frontend\HowController@index')->name('how-it-works');
 
+Route::post('/select-destination/submit', 'Frontend\DestinationController@submitSearch')->name('select-destination');
+
 Route::get('/destinations/{type}/{url?}', 'Frontend\DestinationController@search')->name('destinations');
 
 Route::get('/destination/{url?}', 'Frontend\DestinationController@details')->name('destination-detail');

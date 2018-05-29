@@ -14,6 +14,7 @@ use App\Service\Image\ImageService;
 
 use App\Entity\CMS\Home;
 use App\Util\Constant;
+use Illuminate\Support\Facades\Input;
 
 
 class DestinationController extends FrontendController {
@@ -21,6 +22,20 @@ class DestinationController extends FrontendController {
     public function index() {
 
         return view('frontend.destination');
+    }
+
+
+    public function submitSearch(){
+        $data = (object)Input::all();
+
+        $country = Country::find($data->countryId);
+
+        if (!$country){
+            return redirect()->back();
+        }
+
+
+        return redirect()->route('destinations', ['type' => Constant::SEARCH_TYPE_COUNTRY, 'url' => @$country->url]);
     }
 
 

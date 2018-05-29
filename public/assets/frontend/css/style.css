@@ -915,7 +915,7 @@ input.custom-control {
 #home .search-wrapper {
   padding: 30px;
   box-shadow: 0px 0px 20px 0px;
-  width: 90%;
+  width: 100%;
   margin: auto;
   margin-top: -60px;
   position: relative;
@@ -932,12 +932,10 @@ input.custom-control {
     #home .search-wrapper .select2-container--default .select2-selection--single .select2-selection__rendered {
       line-height: 36px; }
   #home .search-wrapper .select-wrapper {
-    width: 60%; }
+    width: 50%; }
     #home .search-wrapper .select-wrapper .item {
       padding: 0px 15px;
-      width: 50%; }
-      #home .search-wrapper .select-wrapper .item:first-child {
-        border-right: 1px solid #a9a9a9; }
+      width: 100%; }
   #home .search-wrapper .text {
     font-size: 20px;
     color: #092d3f; }

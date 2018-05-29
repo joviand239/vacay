@@ -27,6 +27,15 @@ function GetYesOrNoSelect() {
     return $map;
 }
 
+function GetYesOrNo() {
+    $map = [
+        1 => 'Yes',
+        0 => 'No'
+    ];
+
+    return $map;
+}
+
 function GetProductCategoryList() {
     $map = [];
     foreach(ProductCategory::all() as $item){
