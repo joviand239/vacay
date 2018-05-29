@@ -16,7 +16,7 @@ class Essentials extends Page {
         'metaDescription' => 'TextArea',
 
         'tabTitle' => 'Text',
-        'logoIcon' => 'Image_1',
+        'iconImage' => 'Image_1',
         'logoIconHover' => 'Image_1',
         'title' => 'Text',
         'description' => 'Wysiwyg',
@@ -42,7 +42,7 @@ class Essentials extends Page {
         'serviceList' => [
             'icon' => 'Image_1',
             'title' => 'Text',
-            'description' => 'TextArea'
+            'details' => 'TextArea'
         ],
     ];
 

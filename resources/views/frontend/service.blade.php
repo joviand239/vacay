@@ -18,7 +18,7 @@
                 <nav id="service-tab">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="nav-experience-tab" data-toggle="tab" href="#nav-experience" role="tab" aria-controls="nav-experience" aria-selected="true">
-                            <img class="icon" src="{!! getImageUrlSize(@$experience->logoIcon[0], 'full') !!}" alt="{!! @$experience->tabTitle !!}">
+                            <img class="icon" src="{!! getImageUrlSize(@$experience->iconImage[0], 'full') !!}" alt="{!! @$experience->tabTitle !!}">
                             <img class="iconblue" src="{!! getImageUrlSize(@$experience->logoIconHover[0], 'full') !!}" alt="{!! @$experience->tabTitle !!}">
 
 
@@ -26,7 +26,7 @@
                         </a>
 
                         <a class="nav-item nav-link" id="nav-essentials-tab" data-toggle="tab" href="#nav-essentials" role="tab" aria-controls="nav-essentials" aria-selected="false">
-                            <img class="icon" src="{!! getImageUrlSize(@$essentials->logoIcon[0], 'full') !!}" alt="{!! @$essentials->tabTitle !!}">
+                            <img class="icon" src="{!! getImageUrlSize(@$essentials->iconImage[0], 'full') !!}" alt="{!! @$essentials->tabTitle !!}">
                             <img class="iconblue" src="{!! getImageUrlSize(@$essentials->logoIconHover[0], 'full') !!}" alt="{!! @$essentials->tabTitle !!}">
                             <h3>{!! @$essentials->tabTitle !!}</h3>
                         </a>
@@ -156,7 +156,7 @@
                                 <div class="media-body">
                                     <h5 class="mt-0">{!! @$item->title !!}</h5>
                                     <p>
-                                        {!! @$item->description !!}
+                                        {!! @$item->details !!}
                                     </p>
                                 </div>
                             </div>

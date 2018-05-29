@@ -15,7 +15,7 @@ class Experience extends Page {
         'metaTitle' => 'Text',
         'metaDescription' => 'TextArea',
         'tabTitle' => 'Text',
-        'logoIcon' => 'Image_1',
+        'iconImage' => 'Image_1',
         'logoIconHover' => 'Image_1',
         'title' => 'Text',
         'description' => 'Wysiwyg',
