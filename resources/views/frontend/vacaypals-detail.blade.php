@@ -16,7 +16,7 @@
                 <div class="row mb-50">
 
                     <div class="col-md-4 col-12">
-                        <img src="{!! url('/') !!}/assets/frontend/images/pals-image.jpg" alt="Pals Featured Image">
+                        <img src="{!! getImageUrlSize(@$page->featuredImage[0], 'full') !!}" alt="{!! @$page->name !!}">
                     </div>
 
                     <div class="col-md-8 col-12">

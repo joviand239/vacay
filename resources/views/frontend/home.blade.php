@@ -231,39 +231,11 @@
                                     <p class="summary mb-30">
                                         {!! @$item->description !!}
                                     </p>
+
+                                    <a href="{!! route('vacaypals-detail', ['url' => @$item->url]) !!}" class="btn main-btn">EXPLORE MORE <i class="fa fa-angle-right"></i></a>
                                 </div>
                             @endforeach
                         </div>
-
-                        <h6>Social Media</h6>
-
-                        <ul class="socmed-wrapper list-unstyled mb-20">
-                            <li class="item">
-                                <a class="link light" href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a class="link light" href="#">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a class="link light" href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a class="link light" href="#">
-                                    <i class="fa fa-youtube-play"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <a href="{!! route('vacaypals') !!}" class="btn main-btn">SEE ALL LOCALS <i class="fa fa-angle-right"></i></a>
-
-
-
                     </div>
 
 
