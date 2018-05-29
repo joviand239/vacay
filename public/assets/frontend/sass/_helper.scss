@@ -325,7 +325,7 @@ input {
 
   }
 
-  form {
+  .form, form {
     padding: 30px 0px;
 
     .select2-container {
@@ -491,4 +491,9 @@ input {
     }
   }
 
+}
+
+
+input.valid, select.valid {
+  background: none;
 }

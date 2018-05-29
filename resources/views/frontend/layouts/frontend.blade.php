@@ -27,6 +27,10 @@
 
     @include('frontend.layouts.part.modal')
 
+    <script>
+        var mainUrl = '{{ url('/') }}';
+    </script>
+
     @include('frontend.layouts.part.js')
 
     @yield('jsCustom')

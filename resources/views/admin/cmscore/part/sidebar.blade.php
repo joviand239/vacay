@@ -58,6 +58,26 @@
                 </div>
             </li>
 
+            <li class="dropdown {!! isActiveRoute(['admin.contactforms']) !!}">
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-file-text" aria-hidden="true"></i>
+                    </div>
+                    <div class="title"> Form</div>
+                </a>
+
+                <div class="dropdown-menu">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="{{ route('admin.contactforms') }}">Contact</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Join as Vacay Pals</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
             <li class="dropdown {!! isActiveRoute(['admin.bookings']) !!}">
                 <a href="{!! route('admin.bookings') !!}">
                     <div class="icon">
@@ -76,7 +96,6 @@
                     <div class="title"> Featured Testimonial</div>
                 </a>
             </li>
-
 
 
             <li class="dropdown">

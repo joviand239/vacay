@@ -153,8 +153,6 @@ $(document).ready(function () {
 
         $.each(cityCategories, function (idx, item) {
 
-            console.log(item);
-
             $.each(categoryList, function (key, value) {
 
                 if (value.id == item.id) {

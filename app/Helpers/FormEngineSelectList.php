@@ -91,6 +91,14 @@ function GetCityList() {
 }
 
 
+function GetEnquiryList() {
+    $map = Constant::OPTION_LABEL_ENQUIRY;
+
+
+    return $map;
+}
+
+
 function GetRatingList() {
     $map = [
         1 => 1,

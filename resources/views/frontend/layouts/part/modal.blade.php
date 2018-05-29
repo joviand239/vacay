@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModal" aria-hidden="true">
+<div class="modal fade" id="successFormModal" tabindex="-1" role="dialog" aria-labelledby="successFormModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
