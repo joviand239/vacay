@@ -166,6 +166,7 @@ nav.navbar {
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
+  max-height: 200px;
 
   &:hover {
 
@@ -181,6 +182,10 @@ nav.navbar {
 
   .image-wrapper {
     @include transition(all, 0.5s, ease);
+
+    img {
+      min-height: 200px;
+    }
   }
 
   .place {
@@ -194,6 +199,7 @@ nav.navbar {
     position: absolute;
     width: 100%;
     color: white;
+    background: #5757575c;
     bottom: 0px;
     height: 100%;
     @extend .display-flex;

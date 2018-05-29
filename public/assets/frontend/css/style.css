@@ -358,7 +358,8 @@ nav.navbar {
   display: block;
   position: relative;
   overflow: hidden;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  max-height: 200px; }
   .destination-card:hover .image-wrapper {
     transform: scale(1.2); }
   .destination-card .icon {
@@ -369,6 +370,8 @@ nav.navbar {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease; }
+    .destination-card .image-wrapper img {
+      min-height: 200px; }
   .destination-card .place {
     font-family: 'TimmanaRegular';
     font-size: 28px;
@@ -378,6 +381,7 @@ nav.navbar {
     position: absolute;
     width: 100%;
     color: white;
+    background: #5757575c;
     bottom: 0px;
     height: 100%;
     flex-direction: column;
