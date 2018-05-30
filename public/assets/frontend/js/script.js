@@ -179,3 +179,25 @@ function getReadableMonth(key) {
 
     return  m_names[key-1];
 }
+
+
+function initSuccessFormModal(message) {
+
+    var wrapper = $('#successFormModal');
+
+    wrapper.find('.title').html(message.title);
+    wrapper.find('.summary').html(message.summary);
+
+    wrapper.modal({
+        show: true,
+        backdrop: 'static'
+    });
+}
+
+function resetForm(wrapperId) {
+    var form = $(wrapperId);
+
+    form.find('input').val('');
+    form.find('textarea').val('');
+    form.find('select').val('');
+}

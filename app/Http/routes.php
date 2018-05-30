@@ -36,6 +36,7 @@ Route::group(['prefix'=>'admin'], function () {
         CMSCore::CRUDRoute('vacaypal', 'vacaypals');
 
         CMSCore::CRUDRoute('contactform', 'contactforms');
+        CMSCore::CRUDRoute('palform', 'palforms');
 
         Route::get('/vacaypal/{parentId}/review/{id}', 'Admin\VacayPalReviewController@details')->name('vacaypal-review');
         Route::post('/vacaypal/{parentId}/review/{id}', 'Admin\VacayPalReviewController@save')->name('vacaypal-review-save');
@@ -92,6 +93,7 @@ Route::get('/contact-us', 'Frontend\ContactController@index')->name('contact');
 Route::post('/contact-us/submit', 'Frontend\ContactController@submitForm')->name('contact.submit');
 
 Route::get('/join-as-vacay-pals', 'Frontend\PalsController@joinPage')->name('vacaypals-join');
+Route::post('/vacay-pals/submit', 'Frontend\PalsController@submitForm')->name('vacaypals.submit');
 
 Route::get('/term-and-conditions', 'Frontend\HomeController@getTerms')->name('terms');
 

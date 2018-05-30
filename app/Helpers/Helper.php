@@ -179,13 +179,10 @@ function getCustomerStatusAttribute($value) {
     }
 }
 
-function GetFileURL($listFile){
-	$filename = GetFileName($listFile);
-	if(empty($filename)) return '';
+function GetFileURL($fileName){
+	if ( !File::exists( public_path(env('UPLOAD_FILE')) . $fileName ) ) return '';
 
-	if ( !File::exists( public_path(env('UPLOAD_FILE')) . $filename ) ) return '';
-
-	return url(env('UPLOAD_FILE')).'/'.$filename;
+	return url(env('UPLOAD_FILE')).'/'.$fileName;
 }
 
 function GetFileName($listFile){

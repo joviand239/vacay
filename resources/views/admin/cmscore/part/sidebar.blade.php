@@ -72,7 +72,7 @@
                             <a href="{{ route('admin.contactforms') }}">Contact</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#">Join as Vacay Pals</a>
+                            <a href="{{ route('admin.palforms') }}">Join as Vacay Pals</a>
                         </li>
                     </ul>
                 </div>
