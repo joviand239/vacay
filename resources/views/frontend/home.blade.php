@@ -121,7 +121,13 @@
                     {!! @$page->differentSectionDescription !!}
                 </p>
 
-                <img class="video-image" src="{!! url('/') !!}/assets/frontend/images/video-image.jpg">
+                <div id="video-gallery">
+                    <a href="{!! @$page->differentSectionVideoLink !!}" data-poster="{!! getImageUrlSize(@$page->differentSectionThumbImage[0], 'sm') !!}" >
+                        <img class="video-image" src="{!! getImageUrlSize(@$page->differentSectionThumbImage[0], 'full') !!}">
+                    </a>
+                </div>
+
+
             </div>
         </div>
 

@@ -27,6 +27,7 @@ class Home extends Page {
         'differentSectionTitle' => 'Text',
         'differentSectionSubtitle' => 'Text',
         'differentSectionDescription' => 'TextArea',
+        'differentSectionThumbImage' => 'Image_1',
         'differentSectionVideoLink' => 'Text',
 
         'destinationSectionTitle' => 'Text',

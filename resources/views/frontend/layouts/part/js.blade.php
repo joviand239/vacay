@@ -16,7 +16,9 @@
 <!-- Light Slider -->
 
 <!-- Light Gallery -->
-<script src="{{ url('/') }}/assets/frontend/library/lightgallery/js/lightgallery.js"></script>
+<script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script src="http://vjs.zencdn.net/4.12/video.js"></script>
+<script src="{{ url('/') }}/assets/frontend/library/lightgallery/js/lightgallery-all.js"></script>
 <!-- Light Gallery -->
 
 <!-- Slick Slider -->

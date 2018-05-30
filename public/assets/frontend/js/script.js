@@ -63,6 +63,10 @@ $(document).ready(function () {
          $('#gallery-wrapper .total-slider .index').html(nextSlide+1);
     });
 
+    $('#video-gallery').lightGallery({
+        loadYoutubeThumbnail: true,
+        youtubeThumbSize: 'default',
+    });
 
 
     $("#testimonial-slider").lightSlider({
