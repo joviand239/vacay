@@ -71,10 +71,12 @@
                 <div class="card">
                     <div class="card-header card-header-add">
                         <span>Category List</span>
-                        <a type="button" class="btn btn-success btn-xs pull-right" href="{{ route('city-category', ['parentId' => $id, 'id' => 0]) }}">
-                            <i class="icon fa fa-plus"></i>
-                            <span class="help-text">Create new Category</span>
-                        </a>
+                        @if(count(@$model->categories) < 12)
+                            <a type="button" class="btn btn-success btn-xs pull-right" href="{{ route('city-category', ['parentId' => $id, 'id' => 0]) }}">
+                                <i class="icon fa fa-plus"></i>
+                                <span class="help-text">Create new Category</span>
+                            </a>
+                        @endif
                     </div>
                     <div class="card-body">
                         <table class="datatable table table-striped primary">

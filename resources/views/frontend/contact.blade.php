@@ -147,8 +147,6 @@
                     message: form.find('[name=message]').val(),
                 };
 
-                console.log(data);
-
                 if (countError == 0) {
                     $.ajax({
                         url: mainUrl+'/contact-us/submit',

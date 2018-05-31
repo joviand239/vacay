@@ -79,7 +79,7 @@
                                         <div class="text-wrapper">
 
                                             <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
-                                            <p class="name">General Tour - {!! @$item->tagline !!}</p>
+                                            <p class="name">{!! @$item->type !!} - {!! @$item->tagline !!}</p>
 
                                             <p class="country">{!! @$item->cityName !!} - {!! @$item->countryName !!}</p>
                                         </div>

@@ -41,7 +41,7 @@
 
 
                                 <div class="hoverlay">
-                                    <a href="#" class="btn main-btn white">QUICK VIEW <i class="fa fa-angle-right"></i></a>
+                                    {{--<a href="#" class="btn main-btn white">QUICK VIEW <i class="fa fa-angle-right"></i></a>--}}
 
                                     <a href="{!! route('booking', ['url' => @$page->url, 'categoryData' => @$category->id]) !!}" class="btn main-btn white">BOOK NOW <i class="fa fa-angle-right"></i></a>
                                 </div>
@@ -117,7 +117,7 @@
         @endif
 
 
-        <div class="default-section">
+        {{--<div class="default-section">
 
             <div class="container">
 
@@ -182,7 +182,7 @@
 
             </div>
 
-        </div>
+        </div>--}}
 
 
 

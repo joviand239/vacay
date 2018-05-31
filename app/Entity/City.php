@@ -28,6 +28,7 @@ class City extends BaseEntity {
         'bannerImage' => 'Image_1',
 
         'name' => 'Text',
+        'type' => 'Text',
         'tagline' => 'Text',
         'description' => 'TextArea',
         'featuredImage' => 'Image_1',
