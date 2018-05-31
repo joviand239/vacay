@@ -10,6 +10,7 @@ use App\Entity\City;
 use App\Entity\CMS\WhyGerayPrint;
 use App\Entity\Product;
 
+use App\Entity\Setting;
 use App\Entity\User\CustomerDetail;
 use App\Service\BookingService;
 use App\Service\CustomerService;
@@ -63,6 +64,8 @@ class BookingController extends FrontendController {
             $customer = CustomerService::CreateNewCustomer($customerData);
         }
 
+        $setting = Setting::first();
+
         $booking = new Booking();
 
         $formatDate = \Carbon::now();
@@ -78,7 +81,7 @@ class BookingController extends FrontendController {
         $booking->message = $data->message;
         $booking->totalLineItem = $data->totalLineItem;
         $booking->grandTotal = $data->grandTotal;
-        $booking->grandTotalIdr = (int)$data->grandTotal*10707;
+        $booking->grandTotalIdr = (int)$data->grandTotal*(int)@$setting->currencyRate;
         $booking->status = Constant::STATUS_ACTIVE;
 
         $booking->save();

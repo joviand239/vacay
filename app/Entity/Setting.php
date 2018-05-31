@@ -20,6 +20,7 @@ class Setting extends BaseEntity {
         'companyPhone',
         'companyEmail',
         'companyAddress',
+        'currencyRate',
         'facebookLink',
         'instagramLink',
         'googlePlusLink',
@@ -34,6 +35,8 @@ class Setting extends BaseEntity {
         return $this->belongsToMany(City::class, 'settingCities');
     }
 
+    const AMOUNT_CURRENCY = 'IDR';
+
     const FORM_LABEL = [
         'companyName' => 'Nama Perusahaan', 
         'companyPhone' => 'No. Telp', 
@@ -45,13 +48,18 @@ class Setting extends BaseEntity {
         'youtubeLink' => 'Page Youtube',
         'vacayPals' => 'Featured Pals',
         'cities' => 'Featured Cities',
-    ]; 
+    ];
+
+    const FORM_LABEL_HELP = [
+        'currencyRate' => 'isi dengan indonesia rupiah',
+    ];
 
     const FORM_TYPE = [
         'companyName' => 'Text', 
         'companyPhone' => 'Text', 
         'companyEmail' => 'Text', 
         'companyAddress' => 'TextArea',
+        'currencyRate' => 'Amount',
         'facebookLink' => 'Text',
         'instagramLink' => 'Text',
         'googlePlusLink' => 'Text',
@@ -69,7 +77,7 @@ class Setting extends BaseEntity {
     ]; 
 
     const INDEX_FIELD = [
-        //  
+
     ]; 
 
     const FORM_SELECT_LIST = [

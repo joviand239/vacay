@@ -95,11 +95,7 @@ class DestinationController extends FrontendController {
 
 
     public function details($url = '') {
-
-
         $city = City::where('url', $url)->get()->first();
-
-
 
         return view('frontend.destination-detail', [
             'page' => $city
