@@ -26,7 +26,7 @@
 
 
                 <div class="form-section">
-                    <form data-validate="true">
+                    <div id="booking-form" role="form" data-validate="true">
 
                         <h1 class="form-title">1. Personal Details</h1>
 
@@ -105,7 +105,7 @@
 
 
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="withItenerary1" name="withItenerary" class="custom-control-input" value="1">
+                                <input type="radio" id="withItenerary1" name="withItenerary" class="custom-control-input" value="1" checked>
                                 <label class="custom-control-label" for="withItenerary1">Absolutely, YES</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
@@ -129,13 +129,27 @@
                         </div>
 
 
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="agreed" name="agreed" data-validation="required">
+                                        <label class="custom-control-label" for="agreed">I agree with <a href="{!! route('terms') !!}">Terms & Conditions</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                         <div class="text-center">
                             <a id="btn-book" href="#" class="btn main-btn">BOOK NOW! <i class="fa fa-angle-right"></i></a>
                         </div>
 
 
 
-                    </form>
+                    </div>
                 </div>
 
 

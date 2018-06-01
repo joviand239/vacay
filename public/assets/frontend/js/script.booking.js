@@ -125,27 +125,39 @@ $(document).ready(function () {
 
     $('#btn-book').click(function (e) {
 
-        populateDataCategoryPicker();
-
-        var listCategory = getCategoryListData();
-
-        submitData = {
-            'firstName': $('[name=firstName]').val(),
-            'lastName': $('[name=lastName]').val(),
-            'email': $('[name=email]').val(),
-            'phoneNumber': $('[name=phoneNumber]').val(),
-            'cityId': cityId,
-            'quantity': $('[name=quantity]').val(),
-            'withItenerary': $('[name=withItenerary]:checked').val(),
-            'iteneraryPrice': $('[name=iteneraryPrice]').val(),
-            'message': $('[name=message]').val(),
-            'listCategory': listCategory,
-            'totalLineItem': 0,
-            'grandTotal': 0,
-        };
 
 
-        populateBookingModalByData(submitData);
+        var form = $('#booking-form');
+
+        form.trigger('submit');
+
+        var countError = form.find('.has-error').length;
+
+
+        if (countError == 0) {
+            populateDataCategoryPicker();
+
+            var listCategory = getCategoryListData();
+
+            submitData = {
+                'firstName': $('[name=firstName]').val(),
+                'lastName': $('[name=lastName]').val(),
+                'email': $('[name=email]').val(),
+                'phoneNumber': $('[name=phoneNumber]').val(),
+                'cityId': cityId,
+                'quantity': $('[name=quantity]').val(),
+                'withItenerary': $('[name=withItenerary]:checked').val(),
+                'iteneraryPrice': $('[name=iteneraryPrice]').val(),
+                'message': $('[name=message]').val(),
+                'listCategory': listCategory,
+                'totalLineItem': 0,
+                'grandTotal': 0,
+            };
+
+
+            populateBookingModalByData(submitData);
+        }
+
     })
 
 
