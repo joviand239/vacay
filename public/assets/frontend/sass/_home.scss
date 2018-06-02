@@ -71,10 +71,16 @@
 
     }
 
+    .adjust-wrapper {
+      width: 60%;
+      position: relative;
+      @extend .display-flex;
+    }
+
 
     .select-wrapper {
       @extend .display-flex;
-      width: 50%;
+      width: 90%;
 
       .item {
         padding: 0px 15px;
@@ -164,9 +170,15 @@
 
     .search-wrapper {
       text-align: center;
+      justify-content: center;
+
+      .adjust-wrapper {
+        width: 100%;
+        justify-content: space-between;
+      }
 
       .select-wrapper {
-        width: 100%;
+        width: 80%;
 
         .item {
           width: 100%;

@@ -21,18 +21,21 @@
                     <span class="text">{!! @$page->searchText !!}</span>
 
 
-                    <div class="select-wrapper">
-                        <div class="item">
-                            <select class="custom-select" name="countryId">
-                                <option value="" disabled selected>Where do you want to go?</option>
-                                @foreach(GetCountryList() as $key => $value)
-                                    <option value="{!! @$key !!}">{!! @$value !!}</option>
-                                @endforeach
-                            </select>
+                    <div class="adjust-wrapper">
+                        <div class="select-wrapper">
+                            <div class="item">
+                                <select class="custom-select" name="countryId">
+                                    <option value="" disabled selected>Where do you want to go?</option>
+                                    @foreach(GetCountryList() as $key => $value)
+                                        <option value="{!! @$key !!}">{!! @$value !!}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
+
+                        <button type="submit" class="btn simple-btn"><i class="fa fa-angle-right"></i></button>
                     </div>
 
-                    <button type="submit" class="btn simple-btn"><i class="fa fa-angle-right"></i></button>
 
                 </div>
             </form>
@@ -66,7 +69,7 @@
                             <div class="info-wrapper">
                                 <h3 class="title">Vacay EXPERIENCE</h3>
 
-                                <a href="{!! route('services') !!}" class="btn-text">
+                                <a href="{!! route('services') !!}#nav-experience" class="btn-text">
                                     <label>Explore More</label>
                                     <span class="btn simple-btn">
                                         <i class="fa fa-angle-right"></i>
@@ -95,7 +98,7 @@
                             <div class="info-wrapper">
                                 <h3 class="title">Vacay ESSENTIALS</h3>
 
-                                <a href="#" class="btn-text">
+                                <a href="{!! route('services') !!}#nav-essentials" class="btn-text">
                                     <label>Explore More</label>
                                     <span class="btn simple-btn">
                                         <i class="fa fa-angle-right"></i>

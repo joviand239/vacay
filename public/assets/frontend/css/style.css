@@ -264,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
 .waves-effect .waves-ripple {
   z-index: -1; }
 
-.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .destination-card .text-wrapper, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #destination .category-box .hoverlay, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating {
+.display-flex, .text-btn, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .destination-card .text-wrapper, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .adjust-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #destination .category-box .hoverlay, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -524,7 +524,14 @@ nav.navbar {
   .pals-gallery .next {
     right: 32%; }
   .pals-gallery .prev {
-    left: 32%; } }
+    left: 32%; }
+
+  #footer .col-wrapper {
+    flex-direction: column; }
+    #footer .col-wrapper .item {
+      margin-bottom: 15px; }
+      #footer .col-wrapper .item .info-wrapper {
+        flex-direction: column; } }
 .slick-slide:focus {
   outline: none; }
 
@@ -938,8 +945,11 @@ input.valid, select.valid {
     outline: none !important; }
     #home .search-wrapper .select2-container--default .select2-selection--single .select2-selection__rendered {
       line-height: 36px; }
+  #home .search-wrapper .adjust-wrapper {
+    width: 60%;
+    position: relative; }
   #home .search-wrapper .select-wrapper {
-    width: 50%; }
+    width: 90%; }
     #home .search-wrapper .select-wrapper .item {
       padding: 0px 15px;
       width: 100%; }
@@ -980,9 +990,13 @@ input.valid, select.valid {
   #home .blue-line:before {
     display: none; }
   #home .search-wrapper {
-    text-align: center; }
+    text-align: center;
+    justify-content: center; }
+    #home .search-wrapper .adjust-wrapper {
+      width: 100%;
+      justify-content: space-between; }
     #home .search-wrapper .select-wrapper {
-      width: 100%; }
+      width: 80%; }
       #home .search-wrapper .select-wrapper .item {
         width: 100%;
         margin-bottom: 10px; }

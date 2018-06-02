@@ -446,7 +446,22 @@ nav.navbar {
     .prev {
       left: 32%;
     }
+  }
 
+
+
+  #footer {
+    .col-wrapper {
+      flex-direction: column;
+
+      .item {
+        margin-bottom: 15px;
+
+        .info-wrapper {
+          flex-direction: column;
+        }
+      }
+    }
   }
 
 }

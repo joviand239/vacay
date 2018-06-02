@@ -72,12 +72,12 @@
 
                     <ul>
                         <li>
-                            <a href="{!! route('services') !!}">
+                            <a href="{!! route('services') !!}#nav-experience">
                                 Vacay Experience
                             </a>
                         </li>
                         <li>
-                            <a href="{!! route('services') !!}">
+                            <a href="{!! route('services') !!}#nav-essentials">
                                 Vacay Essentials
                             </a>
                         </li>
