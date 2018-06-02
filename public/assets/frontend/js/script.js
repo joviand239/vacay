@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
 
+    $('#menu-icon').click(function(){
+        $(this).toggleClass('open');
+    });
+
+
     /*$("#home-slider").lightSlider({
         item: 1,
         loop: true,
