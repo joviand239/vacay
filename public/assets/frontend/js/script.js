@@ -90,6 +90,20 @@ $(document).ready(function () {
         slideMove: 5,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
         speed: 600,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    item: 3,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    item: 2,
+                }
+            }
+        ],
         onSliderLoad: function(el) {
             el.lightGallery({
                 selector: '.photo-slider .lslide'

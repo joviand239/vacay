@@ -31,13 +31,13 @@
                         <h1 class="form-title">1. Personal Details</h1>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label class="label-form" for="firstName">FIRST NAME</label>
                                     <input type="text" class="form-control custom-control" id="firstName" name="firstName" placeholder="First Name" data-validation="required">
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label class="label-form" for="lastName">LAST NAME</label>
                                     <input type="text" class="form-control custom-control" id="lastName" name="lastName" placeholder="Last Name" data-validation="required">
@@ -46,13 +46,13 @@
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label class="label-form" for="email">EMAIL</label>
                                     <input type="text" class="form-control custom-control" id="email" name="email" placeholder="Insert your email here" data-validation="required email">
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label class="label-form" for="phoneNumber">PHONE NUMBER</label>
                                     <input type="text" class="form-control custom-control" id="phoneNumber" name="phoneNumber" placeholder="Your phone number" data-validation="required number">
@@ -64,7 +64,7 @@
 
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label class="label-form" for="intention">PEOPLE</label>
 

@@ -34,7 +34,7 @@
                 <div class="row mb-50">
 
                     @foreach(@$page->categories as $category)
-                        <div class="col-md-2 mb-30">
+                        <div class="col-md-2 col-6 mb-30">
                             <div class="category-box">
                                 <img class="icon" src="{!! getImageUrlSize(@$category->category->icon[0], 'full') !!}" alt="{!! @$category->category->name !!}">
                                 <h3 class="name">{!! @$category->category->name !!}</h3>

@@ -112,6 +112,9 @@ h1, h2, h3, h4, h5, h6 {
   .simple-btn:hover {
     background: #092d3f;
     color: white; }
+  .simple-btn:focus {
+    background: white;
+    color: #092d3f; }
 
 .main-btn {
   background: #2c848e;
@@ -448,6 +451,9 @@ nav.navbar {
       font-size: 56px;
       margin-bottom: 15px;
       margin-top: 30px; }
+      @media (max-width: 480px) {
+        .default-banner .inline-wrapper .title {
+          font-size: 36px; } }
     .default-banner .inline-wrapper .subtitle {
       font-size: 18px;
       width: 50%;
@@ -998,6 +1004,10 @@ input.valid, select.valid {
   padding: 325px 0px 150px;
   position: relative;
   z-index: 100; }
+  @media (max-width: 480px) {
+    #home .banner {
+      padding: 125px 0px;
+      text-align: center; } }
   #home .banner .title, #home .banner .subtitle {
     font-family: 'TimmanaRegular';
     color: white;
@@ -1006,8 +1016,14 @@ input.valid, select.valid {
     width: 100%;
     font-size: 42px;
     line-height: 30px; }
+    @media (max-width: 480px) {
+      #home .banner .title {
+        font-size: 30px; } }
   #home .banner .subtitle {
     font-size: 27px; }
+    @media (max-width: 480px) {
+      #home .banner .subtitle {
+        font-size: 18px; } }
 #home .blue-line {
   position: relative; }
   #home .blue-line:before {

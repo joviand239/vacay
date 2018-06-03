@@ -85,6 +85,11 @@
     background: $main-color-dark;
     color: white;
   }
+
+  &:focus {
+    background: white;
+    color: $main-color-dark;
+  }
 }
 
 .main-btn {

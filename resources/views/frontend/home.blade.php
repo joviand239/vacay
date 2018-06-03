@@ -226,7 +226,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-6 col-12 mb-xs-30">
+                    <div class="col-md-6 col-12 order-md-1 order-6 mb-xs-30">
 
                         <h1 class="default-title mb-30">{!! @$page->vacayPalsSectionTitle !!}</h1>
 
@@ -249,7 +249,7 @@
 
 
 
-                    <div class="col-md-6 col-12">
+                    <div class="col-md-6 col-12 order-md-6 order-1 mb-xs-50">
 
 
                         <div id="gallery-wrapper" class="pals-gallery">
