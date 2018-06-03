@@ -884,6 +884,10 @@ input.custom-control {
   .icon-list li {
     align-items: center;
     line-height: 32px; }
+    @media (max-width: 480px) {
+      .icon-list li {
+        align-items: flex-start;
+        flex-wrap: nowrap; } }
 
 .hidden {
   display: none; }

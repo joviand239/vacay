@@ -420,6 +420,11 @@ input {
     @extend .display-flex;
     align-items: center;
     line-height: 32px;
+    
+    @include breakpoint('breakpoint-sm', 'max-width'){
+      align-items: flex-start;
+      flex-wrap: nowrap;
+    }
   }
 
 }
