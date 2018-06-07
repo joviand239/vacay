@@ -33,10 +33,6 @@ class Booking extends BaseEntity {
         'bookingDate' => 'Date',
         'message' => 'TextArea',
         'withItenerary' => 'Select',
-        'iteneraryPrice' => 'Amount',
-        'totalLineItem' => 'Amount',
-        'grandTotal' => 'Amount',
-        'grandTotalIdr' => 'Amount'
     ]; 
 
     const FORM_REQUIRED = [
@@ -60,7 +56,7 @@ class Booking extends BaseEntity {
         'bookingNumber',
         'customerName', 
         'bookingDate',
-        'grandTotal', 
+        'total',
         'status',
     ]; 
 
@@ -86,8 +82,8 @@ class Booking extends BaseEntity {
         if($key == 'customerName') {
             if($this->customerDetail) return $this->customerDetail->firstName.' '.$this->customerDetail->lastName; 
             return 'N/A';
-        } elseif($key == 'grandTotal') {
-            return getPriceNumber($this->grandTotal); 
+        } elseif($key == 'total') {
+            return '$'.getPriceNumber($this->grandTotal);
         }
         return parent::getValue($key, $listItem, $language);
     }

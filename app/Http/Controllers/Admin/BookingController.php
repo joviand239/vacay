@@ -12,7 +12,9 @@ class BookingController extends Controller {
         return view('admin.booking.index', ['list'=>Booking::all(), 'model'=>Booking::class]);
     }
     public function details($id) {
-        return view('admin.booking.details', ['model'=>Booking::get($id), 'id' => $id]);
+        $model = Booking::get($id);
+
+        return view('admin.booking.details', ['model'=>@$model, 'id' => $id]);
     }
     public function save($id) {
         $model = CRUDService::SaveWithData($id, Booking::class);
