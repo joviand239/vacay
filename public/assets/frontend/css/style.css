@@ -267,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
 .waves-effect .waves-ripple {
   z-index: -1; }
 
-.display-flex, .text-btn, nav.navbar .brand-wrapper, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .destination-card .text-wrapper, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .adjust-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #destination .category-box .hoverlay, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating {
+.display-flex, .text-btn, nav.navbar .brand-wrapper, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .destination-card .text-wrapper, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .adjust-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #destination .category-box .hoverlay, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating, #booking .pick-category-wrapper .pick-item .remove-category-item {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -836,26 +836,27 @@ input.custom-control {
   .inline-button-wrapper .default-title {
     margin-bottom: 0px; }
 
+.select2-container {
+  box-shadow: none !important;
+  outline: none !important;
+  width: 100% !important; }
+
 .form-section .header {
   font-size: 16px;
   color: #2c848e;
   font-weight: 700; }
 .form-section .form-title:first-of-type {
   margin-top: 0px; }
-.form-section .form, .form-section form {
+.form-section .form, .form-section form, .form-section [role='form'] {
   padding: 30px 0px; }
-  .form-section .form .select2-container, .form-section form .select2-container {
-    box-shadow: none !important;
-    outline: none !important;
-    width: 100% !important; }
-  .form-section .form .select2-container--default .select2-selection--single, .form-section form .select2-container--default .select2-selection--single {
+  .form-section .form .select2-container--default .select2-selection--single, .form-section form .select2-container--default .select2-selection--single, .form-section [role='form'] .select2-container--default .select2-selection--single {
     height: 40px;
     border-color: rgba(44, 132, 142, 0.3);
     box-shadow: none !important;
     outline: none !important; }
-    .form-section .form .select2-container--default .select2-selection--single .select2-selection__rendered, .form-section form .select2-container--default .select2-selection--single .select2-selection__rendered {
+    .form-section .form .select2-container--default .select2-selection--single .select2-selection__rendered, .form-section form .select2-container--default .select2-selection--single .select2-selection__rendered, .form-section [role='form'] .select2-container--default .select2-selection--single .select2-selection__rendered {
       line-height: 40px; }
-    .form-section .form .select2-container--default .select2-selection--single .select2-selection__arrow, .form-section form .select2-container--default .select2-selection--single .select2-selection__arrow {
+    .form-section .form .select2-container--default .select2-selection--single .select2-selection__arrow, .form-section form .select2-container--default .select2-selection--single .select2-selection__arrow, .form-section [role='form'] .select2-container--default .select2-selection--single .select2-selection__arrow {
       height: 40px; }
 .form-section .form-group {
   position: relative;
@@ -1373,6 +1374,27 @@ input.valid, select.valid {
       border-radius: 50%;
       margin-left: 10px; }
   #booking .pick-category-wrapper .pick-item {
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    position: relative; }
+    #booking .pick-category-wrapper .pick-item:last-of-type:hover .remove-category-item {
+      opacity: 1; }
+    #booking .pick-category-wrapper .pick-item .remove-category-item {
+      width: 35px;
+      height: 35px;
+      align-items: center;
+      justify-content: center;
+      background: #d7c1c0;
+      border-radius: 50%;
+      cursor: pointer;
+      position: absolute;
+      right: -50px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      -webkit-transition: opacity 0.5s ease;
+      -moz-transition: opacity 0.5s ease;
+      -o-transition: opacity 0.5s ease; }
+      #booking .pick-category-wrapper .pick-item .remove-category-item .fa {
+        font-size: 20px;
+        color: white; }
 
 /*# sourceMappingURL=style.css.map */

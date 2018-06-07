@@ -19,6 +19,15 @@ class Constant {
     const STATUS_DELIVERY = 'DELIVERY';
     const STATUS_COMPLETED = 'COMPLETED';
     const STATUS_CANCELLED = 'CANCELLED';
+    const STATUS_REFUNDED = 'REFUNDED';
+
+    const PAYMENT_STATUS_LABEL = [
+        self::STATUS_ACTIVE => 'Menunggu Verifikasi',
+        self::STATUS_PAID => 'Pembayaran Terverifikasi',
+        self::STATUS_COMPLETED => 'Booking Selesai',
+        self::STATUS_REFUNDED => 'Refund Pembayaran',
+        self::STATUS_CANCELLED => 'Booking Dibatalkan',
+    ];
 
     const ORDER_TYPE_REGULAR = 'REGULAR';
     const ORDER_TYPE_COLLECT = 'COLLECT';

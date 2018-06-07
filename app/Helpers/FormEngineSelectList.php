@@ -98,6 +98,13 @@ function GetEnquiryList() {
     return $map;
 }
 
+function GetStatusPaymentlList() {
+    $map = Constant::PAYMENT_STATUS_LABEL;
+
+
+    return $map;
+}
+
 
 function GetRatingList() {
     $map = [

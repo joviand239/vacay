@@ -20,7 +20,11 @@ class Booking extends BaseEntity {
     ]; 
     protected $table = 'booking';
     protected $fillable = [
+        'status'
+    ];
 
+    const MANUAL_SAVE_FIELD = [
+        'customerName'
     ];
 
     const ROUTE_INDEX = 'admin.bookings';
@@ -33,6 +37,7 @@ class Booking extends BaseEntity {
         'bookingDate' => 'Date',
         'message' => 'TextArea',
         'withItenerary' => 'Select',
+        'status' => 'Select',
     ]; 
 
     const FORM_REQUIRED = [
@@ -62,7 +67,8 @@ class Booking extends BaseEntity {
 
     const FORM_SELECT_LIST = [
         'cityId' => 'GetCityList',
-        'withItenerary' => 'GetYesOrNo'
+        'withItenerary' => 'GetYesOrNo',
+        'status' => 'GetStatusPaymentlList'
     ];
 
 
@@ -83,7 +89,9 @@ class Booking extends BaseEntity {
             if($this->customerDetail) return $this->customerDetail->firstName.' '.$this->customerDetail->lastName; 
             return 'N/A';
         } elseif($key == 'total') {
-            return '$'.getPriceNumber($this->grandTotal);
+            return '$' . getPriceNumber($this->grandTotal);
+        } elseif($key == 'status') {
+            return @getOrderStatusName($this->status);
         }
         return parent::getValue($key, $listItem, $language);
     }

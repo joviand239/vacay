@@ -20,6 +20,20 @@ $(document).ready(function () {
         createCityCategorySection(0);
     });
 
+    $('.remove-category-item').click(function (e) {
+        e.preventDefault();
+
+        $('.pick-item[data-index="'+indexCategoryPicker+'"]').remove();
+
+        indexCategoryPicker--;
+
+        $('.pick-item[data-index="'+indexCategoryPicker+'"] .custom-select').prop("disabled", false);
+
+        if (indexCategoryPicker < maxCategoryPicker){
+            $('#add-category-picker').fadeIn();
+        }
+    });
+
     function initializeCategoryPicker(index) {
         $('.pick-item[data-index="'+index+'"] .custom-datepicker').datepicker(datePickerOptions);
         $('.pick-item[data-index="'+index+'"] .custom-select').select2();
@@ -233,8 +247,6 @@ $(document).ready(function () {
 
         wrapper.find('[name=formData]').val(JSON.stringify(submitData));
 
-        console.log(submitData);
-
         $('#bookingResultModal').modal({
             show: true,
             backdrop: 'static'
@@ -244,4 +256,4 @@ $(document).ready(function () {
     }
 
 
-})
+});

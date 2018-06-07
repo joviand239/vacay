@@ -22,6 +22,11 @@
 
             </div>
         </div>
+
+        <label class="remove-category-item">
+            <i class="fa fa-trash"></i>
+        </label>
+
     </div>
 
 </div>

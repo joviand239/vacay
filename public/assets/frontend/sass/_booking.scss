@@ -25,6 +25,35 @@
 
     .pick-item {
       margin-bottom: 5px;
+      position: relative;
+
+      &:last-of-type {
+        &:hover {
+          .remove-category-item {
+            opacity: 1;
+          }
+        }
+      }
+
+      .remove-category-item {
+        width: 35px;
+        height: 35px;
+        @extend .display-flex;
+        align-items: center;
+        justify-content: center;
+        background: #d7c1c0;
+        border-radius: 50%;
+        cursor: pointer;
+        position: absolute;
+        right: -50px;
+        opacity: 0;
+        @include transition(opacity, 0.5s, ease);
+
+        .fa {
+          font-size: 20px;
+          color: white;
+        }
+      }
     }
   }
 

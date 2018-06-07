@@ -214,13 +214,7 @@ function getPromoFormatName($name) {
 }
 
 function getOrderStatusName($name) {
-    $map = [
-        'PENDING' => 'Pending',
-        'PAID' => 'Printing',
-        'DELIVERY' => 'Delivery',
-        'COMPLETED' => 'Completed',
-        'CANCELLED' => 'Cancelled'
-    ];
+    $map = Constant::PAYMENT_STATUS_LABEL;
 
     return $map[$name];
 }

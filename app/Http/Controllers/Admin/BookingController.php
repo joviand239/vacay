@@ -9,7 +9,9 @@ use App\Service\UrlService;
 
 class BookingController extends Controller {
     public function index() {
-        return view('admin.booking.index', ['list'=>Booking::all(), 'model'=>Booking::class]);
+        $list = Booking::orderBy('createdAt', 'DESC')->get();
+
+        return view('admin.booking.index', ['list'=>@$list, 'model'=>Booking::class]);
     }
     public function details($id) {
         $model = Booking::get($id);
