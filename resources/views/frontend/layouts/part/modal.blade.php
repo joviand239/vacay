@@ -177,3 +177,35 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="quickViewModal" tabindex="-1" role="dialog" aria-labelledby="quickViewModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times"></i>
+                </button>
+
+
+                <div class="body-wrapper">
+                    <p class="title">Category Name :</p>
+                    <p id="categoryName" class="subtitle"></p>
+
+                    <p class="title">Short Description :</p>
+                    <p id="categoryDescription" class="subtitle"></p>
+
+                    <p class="title">Price :</p>
+                    <p id="categoryPrice" class="subtitle"></p>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

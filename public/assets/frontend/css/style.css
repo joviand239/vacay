@@ -1003,6 +1003,7 @@ input.valid, select.valid {
 #quickViewModal .title {
   margin-bottom: 0px;
   font-size: 18px;
+  font-weight: 500;
   color: #2c848e; }
 #quickViewModal .subtitle {
   margin-bottom: 10px; }

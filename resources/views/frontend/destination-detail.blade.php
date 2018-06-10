@@ -184,39 +184,6 @@
 
         </div>--}}
 
-
-        <div class="modal fade" id="quickViewModal" tabindex="-1" role="dialog" aria-labelledby="quickViewModal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-body">
-
-                        <button class="close" data-dismiss="modal" aria-label="Close">
-                            <i class="fa fa-times"></i>
-                        </button>
-
-
-                        <div class="body-wrapper">
-                            <p class="title">Category Name :</p>
-                            <p id="categoryName" class="subtitle">Nature Escapist</p>
-
-                            <p class="title">Short Description :</p>
-                            <p id="categoryDescription" class="subtitle">Bali is a holiday paradise. Its rich and diverse culture, countless alluring sights, local food markets, and the hospitality of local people takes Bali experience to another level. Explore the beaches and temples, go surfing or indulge your appetite with the delicious local foods. This Land of Gods is simply picturesque and soul soothing destination to stroll into!</p>
-
-                            <p class="title">Price :</p>
-                            <p id="categoryPrice" class="subtitle">USD 500</p>
-
-                        </div>
-
-
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
     </section>
 @endsection
 
@@ -233,10 +200,7 @@
                 e.preventDefault();
 
                 var cityCategoryId = $(this).attr('data-id');
-
-
-
-
+                
                 var data = {
                     cityCategoryId: cityCategoryId,
                 };
