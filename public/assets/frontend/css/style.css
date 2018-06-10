@@ -911,6 +911,10 @@ input.custom-control {
   transition: all 0.5s ease; }
   #checkout-success.active {
     opacity: 1; }
+  #checkout-success .section {
+    display: none; }
+    #checkout-success .section.active {
+      display: block; }
   #checkout-success .default-title {
     font-size: 26px; }
   #checkout-success .info-content {

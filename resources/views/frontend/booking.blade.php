@@ -134,7 +134,7 @@
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="agreed" name="agreed" data-validation="required">
-                                        <label class="custom-control-label" for="agreed">I agree with <a href="{!! route('terms') !!}">Terms & Conditions</a></label>
+                                        <label class="custom-control-label" for="agreed">I agree with <a href="{!! route('terms') !!}" target="_blank">Terms & Conditions</a></label>
                                     </div>
                                 </div>
                             </div>

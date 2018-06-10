@@ -20,6 +20,7 @@ use App\Entity\CMS\Home;
 use App\Service\Payment\VeritransService;
 use App\Util\Constant;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
 
 
 class BookingController extends FrontendController {
@@ -50,6 +51,12 @@ class BookingController extends FrontendController {
         $data = (object)Input::all();
 
         $data = json_decode($data->formData);
+
+        $oldOrder = Session::get('oldOrder');
+
+        if ($oldOrder){
+            return redirect()->route('home');
+        }
 
         $customer = CustomerDetail::where('email', $data->email)->get()->first();
 
@@ -105,6 +112,9 @@ class BookingController extends FrontendController {
 
 
     private function paymentMidtrans($booking){
+
+        Session::put('oldOrder', true);
+
         return view('frontend.booking-success', [
             'booking' => $booking,
             'snapToken' => VeritransService::GetSnapToken($booking)

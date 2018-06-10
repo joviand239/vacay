@@ -200,7 +200,7 @@
                 e.preventDefault();
 
                 var cityCategoryId = $(this).attr('data-id');
-                
+
                 var data = {
                     cityCategoryId: cityCategoryId,
                 };

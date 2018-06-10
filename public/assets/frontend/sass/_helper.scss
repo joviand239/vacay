@@ -457,6 +457,14 @@ input {
     opacity: 1;
   }
 
+  .section {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
   .default-title {
     font-size: 26px;
   }
