@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Entity\Category;
 
 use App\Entity\City;
+use App\Entity\CityCategory;
 use App\Entity\CMS\WhyGerayPrint;
 use App\Entity\Continent;
 use App\Entity\Country;
@@ -13,6 +14,7 @@ use App\Entity\Product;
 use App\Service\Image\ImageService;
 
 use App\Entity\CMS\Home;
+use App\Util\CMSCore\ResponseUtil;
 use App\Util\Constant;
 use Illuminate\Support\Facades\Input;
 
@@ -100,5 +102,14 @@ class DestinationController extends FrontendController {
         return view('frontend.destination-detail', [
             'page' => $city
         ]);
+    }
+
+
+    public function ajaxDetailCityCategory() {
+        $data = Input::all();
+
+        $cityCategory = CityCategory::with(['category'])->find($data['cityCategoryId']);
+
+        return ResponseUtil::Success(['data' => $cityCategory]);
     }
 }

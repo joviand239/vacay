@@ -77,6 +77,8 @@ Route::get('/destinations/{type}/{url?}', 'Frontend\DestinationController@search
 
 Route::get('/destination/{url?}', 'Frontend\DestinationController@details')->name('destination-detail');
 
+Route::post('/city-category/detail/ajax', 'Frontend\DestinationController@ajaxDetailCityCategory')->name('ajax.detailCityCategory');
+
 
 Route::get('/vacay-pals', 'Frontend\PalsController@index')->name('vacaypals');
 

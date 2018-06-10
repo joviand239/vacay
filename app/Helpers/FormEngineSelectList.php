@@ -62,17 +62,17 @@ function GetCountryList() {
     return $map;
 }
 
-function GetCategoryList($id) {
+function GetCategoryList($categoryId, $id) {
     $map = [];
 
-    $city = City::get($id);
+    $city = City::get($categoryId);
     $cityCategory = $city->categories->pluck('categoryId');
 
     $cityCategory = $cityCategory->toArray();
 
     foreach(Category::all() as $item){
 
-        if(!in_array($item->id, $cityCategory)) {
+        if(!in_array($item->id, $cityCategory ) || $id != 0) {
             $map[$item->id] = $item->name;
         }
 

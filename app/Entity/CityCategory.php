@@ -16,6 +16,7 @@ class CityCategory extends BaseEntity {
 
     const FORM_TYPE = [
         'price' => 'Amount',
+        'description' => 'TextArea',
     ];
 
     const INDEX_FIELD = [

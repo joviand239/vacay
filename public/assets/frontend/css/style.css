@@ -277,6 +277,9 @@ h1, h2, h3, h4, h5, h6 {
 .font-bold {
   font-weight: 700; }
 
+body.modal-open {
+  overflow: visible; }
+
 nav.navbar {
   z-index: 1000;
   width: 100%;
@@ -994,6 +997,15 @@ input.valid, select.valid {
       font-size: 18px; }
       .modal .booking-result .table tfoot .col-footer .col-half {
         width: 50%; }
+
+#quickViewModal .body-wrapper {
+  text-align: left; }
+#quickViewModal .title {
+  margin-bottom: 0px;
+  font-size: 18px;
+  color: #2c848e; }
+#quickViewModal .subtitle {
+  margin-bottom: 10px; }
 
 @media (min-width: 992px) {
   .modal-lg {

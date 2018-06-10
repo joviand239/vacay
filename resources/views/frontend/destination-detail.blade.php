@@ -41,7 +41,7 @@
 
 
                                 <div class="hoverlay">
-                                    {{--<a href="#" class="btn main-btn white">QUICK VIEW <i class="fa fa-angle-right"></i></a>--}}
+                                    <a class="btn main-btn white btn-quick-view" data-id="{!! @$category->id !!}">QUICK VIEW <i class="fa fa-angle-right"></i></a>
 
                                     <a href="{!! route('booking', ['url' => @$page->url, 'categoryData' => @$category->id]) !!}" class="btn main-btn white">BOOK NOW <i class="fa fa-angle-right"></i></a>
                                 </div>
@@ -185,9 +185,98 @@
         </div>--}}
 
 
+        <div class="modal fade" id="quickViewModal" tabindex="-1" role="dialog" aria-labelledby="quickViewModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        <button class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+
+
+                        <div class="body-wrapper">
+                            <p class="title">Category Name :</p>
+                            <p id="categoryName" class="subtitle">Nature Escapist</p>
+
+                            <p class="title">Short Description :</p>
+                            <p id="categoryDescription" class="subtitle">Bali is a holiday paradise. Its rich and diverse culture, countless alluring sights, local food markets, and the hospitality of local people takes Bali experience to another level. Explore the beaches and temples, go surfing or indulge your appetite with the delicious local foods. This Land of Gods is simply picturesque and soul soothing destination to stroll into!</p>
+
+                            <p class="title">Price :</p>
+                            <p id="categoryPrice" class="subtitle">USD 500</p>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
 
     </section>
+@endsection
 
 
+@section('jsCustom')
+    <script>
+        var getCityCategoryDetailUrl = '{!! route('ajax.detailCityCategory') !!}'
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.btn-quick-view').click(function (e) {
+                e.preventDefault();
+
+                var cityCategoryId = $(this).attr('data-id');
+
+
+
+
+                var data = {
+                    cityCategoryId: cityCategoryId,
+                };
+
+                $.ajax({
+                    url: getCityCategoryDetailUrl,
+                    type: 'POST',
+                    data: data,
+                    dataType: 'JSON',
+                    beforeSend: function() {
+
+                    },
+                    success: function(response){
+                        populateQuickViewModal(response.data.data);
+                    },
+                    error: function(error){
+
+                    }
+                });
+            })
+
+            function populateQuickViewModal(data) {
+                var wrapper = $('#quickViewModal');
+
+                wrapper.find('#categoryName').html(data.category.name);
+                if (data.description){
+                    wrapper.find('#categoryDescription').html(data.description);
+                }else {
+                    wrapper.find('#categoryDescription').html(data.category.summary);
+                }
+
+                wrapper.find('#categoryPrice').html('USD '+parseInt(data.price));
+
+                $('#quickViewModal').modal({
+                    show: true,
+                    backdrop: 'static'
+                });
+            }
+
+        });
+    </script>
 @endsection
 

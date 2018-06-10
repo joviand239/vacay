@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="col-md-9">
                                     <select  class="form-control" name="categoryId" value="{!! @$model->categoryId !!}" {{ $model->isRequired('categoryId') }} {{ $model->isDisabled('categoryId') }} label="{{ $model->label('categoryId') }}">
-                                        @foreach(GetCategoryList($parentId) as $selectKey=>$selectLabel)
+                                        @foreach(GetCategoryList($parentId, @$id) as $selectKey=>$selectLabel)
                                             <option value="{{ $selectKey }}"
                                                     @if($selectKey == @$model->categoryId) selected @endif>{{ $selectLabel }}</option>
                                         @endforeach

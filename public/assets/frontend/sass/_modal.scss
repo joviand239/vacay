@@ -123,6 +123,23 @@
 
 }
 
+#quickViewModal {
+
+  .body-wrapper {
+    text-align: left;
+  }
+
+  .title {
+    margin-bottom: 0px;
+    font-size: 18px;
+    color: $main-color;
+  }
+
+  .subtitle {
+    margin-bottom: 10px;
+  }
+}
+
 
 @media (min-width: 992px) {
   .modal-lg {
