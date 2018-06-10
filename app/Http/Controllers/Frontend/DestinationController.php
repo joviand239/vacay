@@ -30,6 +30,10 @@ class DestinationController extends FrontendController {
     public function submitSearch(){
         $data = (object)Input::all();
 
+        if (!isset($data->countryId)){
+            return redirect()->route('destinations', ['type' => Constant::SEARCH_TYPE_ALL]);
+        }
+
         $country = Country::find($data->countryId);
 
         if (!$country){
