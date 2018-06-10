@@ -125,7 +125,7 @@
                 </p>
 
                 <div id="video-gallery">
-                    <a href="{!! @$page->differentSectionVideoLink !!}" data-poster="{!! getImageUrlSize(@$page->differentSectionThumbImage[0], 'sm') !!}" >
+                    <a href="{!! @$page->differentSectionVideoLink !!}">
                         <img class="video-image" src="{!! getImageUrlSize(@$page->differentSectionThumbImage[0], 'full') !!}">
                     </a>
                 </div>

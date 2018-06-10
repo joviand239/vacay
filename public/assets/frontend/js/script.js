@@ -71,6 +71,7 @@ $(document).ready(function () {
     $('#video-gallery').lightGallery({
         loadYoutubeThumbnail: true,
         youtubeThumbSize: 'default',
+        autoplayFirstVideo: true,
     });
 
 

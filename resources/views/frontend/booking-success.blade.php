@@ -49,15 +49,19 @@
                 snap.pay('{{ @$snapToken }}',{
                     onSuccess: function(result){
                         populateInfoPage();
+                        console.log('success');console.log(result);
                     },
                     onPending: function(result){
                         populateInfoPage();
+                        console.log('pending');console.log(result);
                     },
                     onError: function(result){
                         populateInfoPage();
+                        console.log('error');console.log(result);
                     },
                     onClose: function(){
                         populateInfoPage();
+                        console.log('customer closed the popup without finishing the payment');
                     }
                 });
 
