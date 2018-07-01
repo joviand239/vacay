@@ -1252,7 +1252,7 @@ input.valid, select.valid {
   min-height: 70vh; }
   #destination .list-wrapper {
     padding: 20px;
-    background: #fef7e4; }
+    background: white; }
     #destination .list-wrapper .main-list {
       list-style: none;
       padding: 0px;

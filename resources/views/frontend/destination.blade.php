@@ -23,7 +23,7 @@
 
                 <div class="row">
 
-                    <div class="col-md-4 col-12">
+                    <div class="col-lg-4 col-12 mb-30">
                         <div class="list-wrapper">
 
                             {{--<div class="inline-link active">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-8 col-12">
+                    <div class="col-lg-8 col-12">
 
                         <h1 class="default-title">Destinations</h1>
 
