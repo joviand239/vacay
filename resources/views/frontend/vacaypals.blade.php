@@ -28,7 +28,7 @@
                         <div class="col-md-4 col-12 mb-30">
                             <div class="default-card pals-card">
                                 <div class="image-wrapper">
-                                    <img class="image" src="{!! getImageUrlSize(@$item->featuredImage[0], 'full') !!}" alt="{!! @$item->name !!}">
+                                    <img class="image" src="{!! getImageUrlSizeForPicture(@$item->featuredImage[0], 'full') !!}" alt="{!! @$item->name !!}">
 
                                 </div>
 

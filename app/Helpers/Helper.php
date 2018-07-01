@@ -263,5 +263,12 @@ function getFeaturedTestimonials() {
     return @$list->json->listing;
 }
 
+function getImageUrlSizeForPicture($filename, $size){
+    if (empty($filename)) return getNoPhotoProfile();
+    return url('/') . '/assets/upload/' . $size .'/'. $filename;
+}
+function getNoPhotoProfile(){
+    return url('/') . '/assets/admin/image/default-no-photo-profile.jpeg';
+}
 
 
