@@ -35,6 +35,15 @@
                 </a>
             </li>
 
+            <li class="dropdown {!! isActiveRoute(['admin.vouchers']) !!}">
+                <a href="{!! route('admin.vouchers') !!}">
+                    <div class="icon">
+                        <i class="fa fa-percent" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">Voucher</div>
+                </a>
+            </li>
+
             <li class="dropdown {!! isActiveRoute(['admin.continents', 'admin.countries', 'admin.cities']) !!}">
                 <a href="#">
                     <div class="icon">

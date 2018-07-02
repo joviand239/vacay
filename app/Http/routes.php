@@ -52,6 +52,9 @@ Route::group(['prefix'=>'admin'], function () {
         Route::post('/city/{parentId}/category/{id}', 'Admin\CityCategoryController@save')->name('city-category-save');
         Route::get('/city-category/delete/{id}', 'Admin\CityCategoryController@delete')->name('city-category-delete');
 
+
+        CMSCore::CRUDRoute('voucher', 'vouchers');
+
 	});
 });
 

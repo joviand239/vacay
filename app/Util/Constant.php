@@ -62,4 +62,14 @@ class Constant {
         self::ENQUIRY_MARKETING_AND_MEDIA => 'Marketing & Media Enquiry',
         self::ENQUIRY_COMMUNITY_AND_SPONSORSHIP => 'Community & Sponsorship Enquiry',
     ];
+
+
+
+    const VOUCHER_TYPE_DISCOUNT_PERCENTAGE = 'VOUCHER_DISCOUNT_PERCENTAGE';
+    const VOUCHER_TYPE_DISCOUNT_PRICE = 'VOUCHER_DISCOUNT_PRICE';
+
+    const OPTION_LABEL_VOUCHER = [
+        self::VOUCHER_TYPE_DISCOUNT_PERCENTAGE => 'Voucher Discount (%)',
+        self::VOUCHER_TYPE_DISCOUNT_PRICE => 'Voucher Potongan Harga (USD)',
+    ];
 }

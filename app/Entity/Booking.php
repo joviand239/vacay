@@ -34,6 +34,8 @@ class Booking extends BaseEntity {
         'bookingNumber' => 'Text',
         'cityId' => 'Select',
         'customerName' => 'Text',
+        'email' => 'Text',
+        'phoneNumber' => 'Text',
         'bookingDate' => 'Date',
         'message' => 'TextArea',
         'withItenerary' => 'Select',
@@ -48,6 +50,8 @@ class Booking extends BaseEntity {
         'bookingNumber',
         'cityId',
         'customerName',
+        'email',
+        'phoneNumber',
         'bookingDate',
         'message',
         'withItenerary',
@@ -62,8 +66,8 @@ class Booking extends BaseEntity {
         'customerName', 
         'bookingDate',
         'total',
-        'status',
-    ]; 
+        'statusPayment',
+    ];
 
     const FORM_SELECT_LIST = [
         'cityId' => 'GetCityList',
@@ -88,10 +92,14 @@ class Booking extends BaseEntity {
         if($key == 'customerName') {
             if($this->customerDetail) return $this->customerDetail->firstName.' '.$this->customerDetail->lastName; 
             return 'N/A';
-        } elseif($key == 'total') {
+        }elseif($key == 'total') {
             return '$' . getPriceNumber($this->grandTotal);
-        } elseif($key == 'status') {
+        }elseif($key == 'statusPayment') {
             return @getOrderStatusName($this->status);
+        }elseif($key == 'email') {
+            return @$this->customerDetail->email;
+        }elseif($key == 'phoneNumber') {
+            return $this->customerDetail->phoneNumber;
         }
         return parent::getValue($key, $listItem, $language);
     }

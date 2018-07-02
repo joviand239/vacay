@@ -98,6 +98,13 @@ function GetEnquiryList() {
     return $map;
 }
 
+function GetVoucherType() {
+    $map = Constant::OPTION_LABEL_VOUCHER;
+
+
+    return $map;
+}
+
 function GetStatusPaymentlList() {
     $map = Constant::PAYMENT_STATUS_LABEL;
 
