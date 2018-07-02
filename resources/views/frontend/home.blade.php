@@ -128,6 +128,11 @@
                     <a href="{!! @$page->differentSectionVideoLink !!}">
                         <img class="video-image" src="{!! getImageUrlSize(@$page->differentSectionThumbImage[0], 'full') !!}">
                     </a>
+
+                    <div class="icon-wrapper">
+                        <img class="icon" src="{!! url('/') !!}/assets/frontend/images/video-play.png" alt="Icon Play">
+                    </div>
+
                 </div>
 
 

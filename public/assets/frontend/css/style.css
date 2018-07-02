@@ -96,9 +96,13 @@ h1, h2, h3, h4, h5, h6 {
     outline: none;
     box-shadow: none; }
 
+.btn-text:hover .simple-btn {
+  background: #092d3f;
+  color: white; }
 .btn-text label {
   margin-right: 7.5px;
-  font-weight: 700; }
+  font-weight: 700;
+  cursor: pointer; }
 
 .simple-btn {
   background: transparent;
@@ -267,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 .waves-effect .waves-ripple {
   z-index: -1; }
 
-.display-flex, .text-btn, nav.navbar .brand-wrapper, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .destination-card .text-wrapper, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .adjust-wrapper, #home .search-wrapper .select-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #destination .category-box .hoverlay, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating, #booking .pick-category-wrapper .pick-item .remove-category-item {
+.display-flex, .text-btn, nav.navbar .brand-wrapper, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .destination-card .text-wrapper, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .adjust-wrapper, #home .search-wrapper .select-wrapper, #home .video-section .icon-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #destination .category-box .hoverlay, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating, #booking .pick-category-wrapper .pick-item .remove-category-item {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -387,7 +391,7 @@ nav.navbar {
     position: absolute;
     width: 100%;
     color: white;
-    background: #5757575c;
+    background: #575757b5;
     bottom: 0px;
     height: 100%;
     flex-direction: column;
@@ -500,7 +504,7 @@ nav.navbar {
       border-radius: 50%;
       align-items: center;
       justify-content: center;
-      opacity: 0;
+      opacity: 1;
       transition: all 0.5s ease;
       -webkit-transition: all 0.5s ease;
       -moz-transition: all 0.5s ease;
@@ -1087,9 +1091,21 @@ input.valid, select.valid {
   text-align: center; }
   #home .video-section .default-title {
     font-weight: 500; }
-  #home .video-section .video-image {
-    width: 550px;
+  #home .video-section #video-gallery {
+    position: relative;
     margin-bottom: -100px; }
+  #home .video-section .video-image {
+    width: 550px; }
+  #home .video-section .icon-wrapper {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center; }
+    #home .video-section .icon-wrapper .icon {
+      width: 75px;
+      height: 75px; }
 #home .gallery .slick-list {
   padding: 30px;
   margin-bottom: 25px; }

@@ -207,7 +207,7 @@ nav.navbar {
     position: absolute;
     width: 100%;
     color: white;
-    background: #5757575c;
+    background: #575757b5;
     bottom: 0px;
     height: 100%;
     @extend .display-flex;
@@ -402,7 +402,7 @@ nav.navbar {
       @extend .display-flex;
       align-items: center;
       justify-content: center;
-      opacity: 0;
+      opacity: 1;
       @include transition(all, 0.5s, ease);
 
       .icon {

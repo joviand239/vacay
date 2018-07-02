@@ -65,9 +65,17 @@
 
 .btn-text {
 
+  &:hover {
+    .simple-btn {
+      background: $main-color-dark;
+      color: white;
+    }
+  }
+
   label {
     margin-right: 7.5px;
     font-weight: 700;
+    cursor: pointer;
   }
 }
 
