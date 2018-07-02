@@ -1016,6 +1016,17 @@ input.valid, select.valid {
 #quickViewModal .subtitle {
   margin-bottom: 10px; }
 
+#buyEssentialModal .body-wrapper {
+  padding-top: 25px;
+  text-align: left; }
+  #buyEssentialModal .body-wrapper .default-title {
+    font-size: 18px;
+    font-weight: 500; }
+  #buyEssentialModal .body-wrapper .form-section .form-group {
+    margin-bottom: 25px; }
+  #buyEssentialModal .body-wrapper .form-section .form {
+    padding-top: 15px; }
+
 @media (min-width: 992px) {
   .modal-lg {
     max-width: 700px; } }

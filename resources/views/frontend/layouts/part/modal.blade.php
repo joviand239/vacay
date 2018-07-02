@@ -209,3 +209,64 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="buyEssentialModal" tabindex="-1" role="dialog" aria-labelledby="buyEssentialModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times"></i>
+                </button>
+
+
+                <div class="body-wrapper">
+
+                    <div class="form-section">
+                        <h1 class="default-title">Fill your personal data here:</h1>
+
+                        <div id="esssential-form" class="form" role="form" data-validate="true">
+                            <div class="form-group">
+                                <label class="label-form" for="firstName">FIRST NAME</label>
+                                <input type="text" class="form-control custom-control" id="firstName" name="firstName" placeholder="First Name" data-validation="required">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-form" for="lastName">LAST NAME</label>
+                                <input type="text" class="form-control custom-control" id="lastName" name="lastName" placeholder="Last Name" data-validation="required">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-form" for="phoneNumber">PHONE NUMBER</label>
+                                <input type="text" class="form-control custom-control" id="phoneNumber" name="phoneNumber" placeholder="Your phone number" data-validation="required number">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-form" for="email">EMAIL</label>
+                                <input type="text" class="form-control custom-control" id="email" name="email" placeholder="Insert your email here" data-validation="required email">
+                            </div>
+
+
+                            <div class="text-center">
+                                <button type="button" id="btn-submit-contact" class="btn main-btn">CONTINUE PAYMENT <i class="fa fa-angle-right"></i></button>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

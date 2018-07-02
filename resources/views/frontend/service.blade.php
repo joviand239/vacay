@@ -205,7 +205,7 @@
                                     {!! @$essentials->itenerarySectionDescription !!}
                                 </p>
 
-                                <a href="{!! route('destinations', ['type' => \App\Util\Constant::SEARCH_TYPE_ALL]) !!}" class="btn main-btn white mb-15">BUY NOW <i class="fa fa-angle-right"></i></a>
+                                <button type="button" data-toggle="modal" data-target="#buyEssentialModal" data-backdrop="static" class="btn main-btn white mb-15">BUY NOW <i class="fa fa-angle-right"></i></button>
 
                             </div>
                         </div>
