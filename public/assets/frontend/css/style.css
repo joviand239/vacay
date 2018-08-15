@@ -271,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 .waves-effect .waves-ripple {
   z-index: -1; }
 
-.display-flex, .text-btn, nav.navbar .brand-wrapper, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .destination-card .text-wrapper, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #home .search-wrapper, #home .search-wrapper .adjust-wrapper, #home .search-wrapper .select-wrapper, #home .video-section .icon-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #destination .category-box .hoverlay, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating, #booking .pick-category-wrapper .pick-item .remove-category-item {
+.display-flex, .text-btn, nav.navbar .brand-wrapper, #footer .col-wrapper, #footer .info-wrapper, .socmed-wrapper, .socmed-wrapper .link, .destination-card .text-wrapper, .default-banner .inline-wrapper, .default-banner .inline-wrapper .anchor-list, .default-card.service-card, .default-card .image-wrapper .hoverlay, .share-wrapper, .nav-custom-tabs, .inline-button-wrapper, .form-section .form-group .input-group .input-group-prepend .input-group-text, .icon-list li, .modal .booking-result .table tfoot .col-footer, #paymentModal .method-box, #paymentModal .method-box .left, #home .search-wrapper, #home .search-wrapper .adjust-wrapper, #home .search-wrapper .select-wrapper, #home .video-section .icon-wrapper, #about .full-section .center-wrapper, #service #service-tab .nav-tabs .nav-link, #destination .list-wrapper .inline-link, #destination .destination-card .text-wrapper, #destination .category-box .hoverlay, #vacaypals .review-wrapper .box, #vacaypals .review-wrapper .box .reviewer, #vacaypals .review-wrapper .box .reviewer .rating, #booking .pick-category-wrapper .pick-item .remove-category-item {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -945,6 +945,9 @@ input.custom-control {
 input.valid, select.valid {
   background: none; }
 
+.datepickers-container {
+  z-index: 1200; }
+
 .modal .body-wrapper {
   text-align: center;
   padding: 50px 0px 15px; }
@@ -1016,16 +1019,47 @@ input.valid, select.valid {
 #quickViewModal .subtitle {
   margin-bottom: 10px; }
 
-#buyEssentialModal .body-wrapper {
+#buyEssentialModal .modal-body, #paymentModal .modal-body {
+  padding: 15px 10%; }
+#buyEssentialModal .body-wrapper, #paymentModal .body-wrapper {
   padding-top: 25px;
   text-align: left; }
-  #buyEssentialModal .body-wrapper .default-title {
+  #buyEssentialModal .body-wrapper .default-title, #paymentModal .body-wrapper .default-title {
     font-size: 18px;
     font-weight: 500; }
-  #buyEssentialModal .body-wrapper .form-section .form-group {
+  #buyEssentialModal .body-wrapper .form-section .form-group, #paymentModal .body-wrapper .form-section .form-group {
     margin-bottom: 25px; }
-  #buyEssentialModal .body-wrapper .form-section .form {
+  #buyEssentialModal .body-wrapper .form-section .form, #paymentModal .body-wrapper .form-section .form {
     padding-top: 15px; }
+
+#paymentModal .method-box {
+  align-items: center;
+  justify-content: space-between;
+  padding: 7.5px 20px;
+  border: 1px solid;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease; }
+  #paymentModal .method-box:hover {
+    background: #2c848e;
+    color: white; }
+  #paymentModal .method-box .icon {
+    width: auto;
+    font-size: 32px;
+    margin-bottom: 0px; }
+  #paymentModal .method-box .left {
+    align-items: center; }
+    #paymentModal .method-box .left .icon {
+      margin-right: 10px; }
+    #paymentModal .method-box .left .name {
+      font-weight: 700; }
+#paymentModal .method-section {
+  display: none; }
+  #paymentModal .method-section.active {
+    display: block; }
 
 @media (min-width: 992px) {
   .modal-lg {

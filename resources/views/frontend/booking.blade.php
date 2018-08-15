@@ -95,27 +95,26 @@
                         </div>
 
 
-                        <h1 class="form-title">3. Iteneraries Graphic</h1>
+                        @if(@$page->hasIteneraryPrice == \App\Util\Constant::YES)
+                            <h1 class="form-title">3. Iteneraries Graphic</h1>
+                            <div class="form-group">
+
+                                <p class="mb-20">Want you bring an exxtraordinary maps to complete your travel guide, worth for ${!! getPriceNumber(@$page->iteneraryPrice) !!} AUD?</p>
+                                <input type="hidden" id="iteneraryPrice" name="iteneraryPrice" value="{!! @$page->iteneraryPrice !!}">
 
 
-                        <div class="form-group">
-
-                            <p class="mb-20">Want you bring an exxtraordinary maps to complete your travel guide, worth for ${!! getPriceNumber(@$page->iteneraryPrice) !!} AUD?</p>
-                            <input type="hidden" id="iteneraryPrice" name="iteneraryPrice" value="{!! @$page->iteneraryPrice !!}">
-
-
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="withItenerary1" name="withItenerary" class="custom-control-input" value="1" checked>
-                                <label class="custom-control-label" for="withItenerary1">Absolutely, YES</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="withItenerary1" name="withItenerary" class="custom-control-input" value="1" checked>
+                                    <label class="custom-control-label" for="withItenerary1">Absolutely, YES</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="withItenerary2" name="withItenerary" class="custom-control-input" value="0">
+                                    <label class="custom-control-label" for="withItenerary2">Hmm. I don't think I need it</label>
+                                </div>
                             </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="withItenerary2" name="withItenerary" class="custom-control-input" value="0">
-                                <label class="custom-control-label" for="withItenerary2">Hmm. I don't think I need it</label>
-                            </div>
+                        @endif
 
-                        </div>
-
-                        <h1 class="form-title">4. Additional Info</h1>
+                        <h1 class="form-title">{!! (@$page->hasIteneraryPrice == \App\Util\Constant::YES) ? '4' : '3' !!}. Additional Info</h1>
 
 
                         <div class="row">

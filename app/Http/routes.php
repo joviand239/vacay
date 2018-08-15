@@ -90,6 +90,11 @@ Route::get('/vacay-pal/{url?}', 'Frontend\PalsController@details')->name('vacayp
 
 Route::get('/booking/{url?}', 'Frontend\BookingController@details')->name('booking');
 Route::post('/booking/submit', 'Frontend\BookingController@save')->name('booking-submit');
+Route::get('/booking/checkout/payment/{bookingNumber}', 'Frontend\BookingController@paypalGateway')->name('booking-payment');
+Route::post('/booking/checkout/payment/{bookingNumber}', 'Frontend\BookingController@submitPaypal')->name('submit.booking-payment');
+
+Route::get('/booking/checkout/success/{bookingNumber}', 'Frontend\BookingController@getSuccessPage')->name('booking-success');
+Route::get('/booking/checkout/error', 'Frontend\BookingController@getErrorPage')->name('booking-error');
 
 Route::any('/payment/notification', 'Frontend\BookingController@getPaymentNotification')->name('booking.notification');
 
@@ -104,4 +109,5 @@ Route::get('/term-and-conditions', 'Frontend\HomeController@getTerms')->name('te
 
 
 
+Route::get('/payment/with-credit-card', 'Frontend\PaypalPaymentController@paywithCreditCard')->name('testPayment');
 

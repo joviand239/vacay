@@ -163,7 +163,8 @@ return [
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
         WVI\CMSCore\CMSCoreProvider::class,
-        Laravel\Socialite\SocialiteServiceProvider::class
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
     ],
 
     /*
@@ -218,7 +219,8 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
 	    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'CMSCore' => WVI\CMSCore\Facades\CMSCore::class
+        'CMSCore' => WVI\CMSCore\Facades\CMSCore::class,
+        'Paypalpayment'   => Anouar\Paypalpayment\Facades\PaypalPayment::class,
     ],
 
 

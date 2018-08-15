@@ -1,8 +1,8 @@
 @extends('frontend.layouts.frontend')
 
-@section('meta_title', 'Checkout Success')
+@section('meta_title', 'Booking Error')
 
-@section('meta_description', 'Success Page')
+@section('meta_description', 'Booking Error Page')
 
 @section('content')
 
@@ -11,8 +11,8 @@
 
         <div class="container">
 
-            <div class="success">
-                <h1 class="default-title">Thank you for booking at Vacay Pals</h1>
+            <div class="error">
+                <h1 class="default-title">There was an error during the booking process</h1>
 
                 <hr>
 
@@ -21,20 +21,13 @@
                     <img class="icon" src="{!! url('/') !!}/assets/frontend/images/icon-plane.png" alt="Icon Thank You">
 
                     <div class="mb-30">
-                        <h2 class="highlight">YOUR BOOKS HAVE WE ACCEPTED</h2>
-                        <h2 class="orderNumber">#{!! @$booking->bookingNumber !!}</h2>
-                        <h2 class="highlight">TOTAL USD {!! getPriceNumber(@$booking->grandTotal) !!}</h2>
+                        <h2 class="highlight">please repeat the ordering and payment process correctly</h2>
                     </div>
-
-
-                    <p class="mb-30">If you have any questions about your bookings, contact our customer service.</p>
 
                     <a href="{!! route('home') !!}" class="btn main-btn" tabindex="0">CLICK HERE <i class="fa fa-angle-right"></i></a>
 
                 </div>
             </div>
-
-
 
         </div>
 

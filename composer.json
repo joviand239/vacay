@@ -25,7 +25,8 @@
         "wvi/cmscore": "0.2.*",
         "fzaninotto/faker": "^1.7@dev",
         "laravel/socialite": "~2.0",
-        "veritrans/veritrans-php": "dev-snap"
+        "veritrans/veritrans-php": "dev-snap",
+        "anouar/paypalpayment": ">=3.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

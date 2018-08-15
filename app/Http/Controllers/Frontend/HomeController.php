@@ -12,12 +12,12 @@ use App\Entity\Product;
 use App\Service\Image\ImageService;
 
 use App\Entity\CMS\Home;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 
 class HomeController extends FrontendController {
 
     public function index() {
-
         $page = Home::getPage();
 
         return view('frontend.home', [

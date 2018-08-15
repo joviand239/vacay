@@ -132,3 +132,11 @@ function GetVacayPalList() {
     }
     return $map;
 }
+
+
+function GetEssentialList() {
+    $list = City::where('hasIteneraryGraphics', Constant::YES)->get();
+
+
+    return @$list;
+}

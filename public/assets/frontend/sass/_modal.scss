@@ -142,7 +142,11 @@
 }
 
 
-#buyEssentialModal {
+#buyEssentialModal, #paymentModal {
+
+  .modal-body {
+    padding: 15px 10%;
+  }
 
   .body-wrapper {
     padding-top: 25px;
@@ -165,6 +169,53 @@
     }
   }
 
+}
+
+
+#paymentModal {
+
+  .method-box {
+    @extend .display-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7.5px 20px;
+    border: 1px solid;
+    cursor: pointer;
+    margin-bottom: 15px;
+    @include transition(all, 0.5s, ease);
+
+    &:hover {
+      background: $main-color;
+      color: white;
+    }
+
+    .icon {
+      width: auto;
+      font-size: 32px;
+      margin-bottom: 0px;
+    }
+
+    .left {
+      @extend .display-flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 10px;
+      }
+
+      .name {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .method-section {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
 }
 
 

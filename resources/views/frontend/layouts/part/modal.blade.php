@@ -119,7 +119,7 @@
 
                             <tr>
                                 <td>Iteneraries Graphic</td>
-                                <td id="withItenenary">YES</td>
+                                <td id="withItenerary">YES</td>
                             </tr>
 
                             <tr>
@@ -228,6 +228,17 @@
                         <h1 class="default-title">Fill your personal data here:</h1>
 
                         <div id="esssential-form" class="form" role="form" data-validate="true">
+
+                            <div class="form-group">
+                                <label class="label-form active" for="cityId">VACAY ESSENTIAL</label>
+
+                                <select class="form-control custom-select custom-control" id="cityId" name="cityId" data-validation="required">
+                                    <option value="" disabled selected>Choose your City Essential</option>
+                                    @foreach(GetEssentialList() as $key => $item)
+                                        <option value="{!! @$item->id !!}">{!! @$item->name !!}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label class="label-form" for="firstName">FIRST NAME</label>
                                 <input type="text" class="form-control custom-control" id="firstName" name="firstName" placeholder="First Name" data-validation="required">

@@ -17,7 +17,9 @@ use App\Service\CustomerService;
 use App\Service\Image\ImageService;
 
 use App\Entity\CMS\Home;
+use App\Service\Payment\PaypalService;
 use App\Service\Payment\VeritransService;
+use App\Util\CMSCore\ResponseUtil;
 use App\Util\Constant;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -55,6 +57,7 @@ class BookingController extends FrontendController {
         $oldOrder = Session::get('oldOrder');
 
         if ($oldOrder){
+            Session::put('oldOrder', false);
             return redirect()->route('home');
         }
 
@@ -88,7 +91,7 @@ class BookingController extends FrontendController {
         $booking->message = $data->message;
         $booking->totalLineItem = $data->totalLineItem;
         $booking->grandTotal = $data->grandTotal;
-        $booking->grandTotalIdr = (int)$data->grandTotal*(int)@$setting->currencyRate;
+        $booking->grandTotalIdr = (int)$data->grandTotal;
         $booking->status = Constant::STATUS_ACTIVE;
 
         $booking->save();
@@ -106,7 +109,53 @@ class BookingController extends FrontendController {
         }
 
 
-        return $this->paymentMidtrans($booking);
+
+
+        return redirect()->route('booking-payment', ['bookingNumber' => @$booking->bookingNumber]);
+
+        // return $this->paymentMidtrans($booking);
+    }
+
+
+    public function paypalGateway($bookingNumber){
+        if (!$bookingNumber) return redirect()->route('booking-error');
+
+        $booking = Booking::where('bookingNumber', @$bookingNumber)->get()->first();
+
+        if (!$booking) return redirect()->route('booking-error');
+
+        return view('frontend.booking-payment', [
+            'bookingNumber' => @$bookingNumber
+        ]);
+    }
+
+
+    public function submitPaypal($bookingNumber){
+        if (!$bookingNumber) return redirect()->route('booking-error');
+
+        $booking = Booking::where('bookingNumber', @$bookingNumber)->get()->first();
+
+        if (!$booking) return redirect()->route('booking-error');
+
+        $input = (object)Input::all();
+
+        $expriedDate = explode('/', @$input->expiredDate);
+
+        $input->month = $expriedDate[0];
+        $input->year = $expriedDate[1];
+
+        $response = PaypalService::paywithCreditCard($booking, $input);
+
+        $responeData = $response->getData()[0];
+
+        if (@$responeData->state == 'approved' && @$responeData->transactions[0]->related_resources[0]->sale->state == 'completed') {
+            $booking->status = Constant::STATUS_PAID;
+            $booking->paypalTransactionId = @$responeData->transactions[0]->related_resources[0]->sale->id;
+            $booking->paypalInvoiceId = @$responeData->transactions[0]->invoice_number;
+            $booking->save();
+        }
+
+        return redirect()->route('booking-success', ['bookingNumber' => @$booking->bookingNumber]);
     }
 
 
@@ -119,5 +168,23 @@ class BookingController extends FrontendController {
             'booking' => $booking,
             'snapToken' => VeritransService::GetSnapToken($booking)
         ]);
+    }
+
+    public function getSuccessPage($bookingNumber) {
+        if (!$bookingNumber) return redirect()->route('booking-error');
+
+        $booking = Booking::where('bookingNumber', @$bookingNumber)->get()->first();
+
+        if (!$booking) return redirect()->route('booking-error');
+
+
+        return view('frontend.booking-success', [
+            'booking' => $booking
+        ]);
+    }
+
+    public function getErrorPage() {
+
+        return view('frontend.booking-error');
     }
 }
