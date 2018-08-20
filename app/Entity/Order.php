@@ -26,8 +26,8 @@ class Order extends BaseEntity {
         'customerName'
     ];
 
-    const ROUTE_INDEX = 'admin.bookings';
-    const ROUTE_DETAILS = 'admin.booking';
+    const ROUTE_INDEX = 'admin.orders';
+    const ROUTE_DETAILS = 'admin.order';
 
     const FORM_TYPE = [
         'cityId' => 'Text',
