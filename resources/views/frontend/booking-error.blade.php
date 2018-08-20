@@ -12,7 +12,7 @@
         <div class="container">
 
             <div class="error">
-                <h1 class="default-title">There was an error during the booking process</h1>
+                <h1 class="default-title">There was an error during the {!! ($type == 'BOOKING') ? 'booking' : 'order' !!} process</h1>
 
                 <hr>
 

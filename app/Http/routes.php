@@ -21,10 +21,7 @@ Route::group(['prefix'=>'admin'], function () {
 		Route::post('/cms/details/{type}/{subtype}/{id?}', 'CMSCore\Admin\CMSController@save');
 		Route::get('/cms/delete/{type}/{subtype}/{id?}', 'CMSCore\Admin\CMSController@delete');
 
-		Route::get('/orders/{status}/{customer}', 'Admin\OrderController@index')->name('orders');
-		Route::get('/order/{id?}', 'Admin\OrderController@details')->name('order');
-		Route::post('/order/{id?}', 'Admin\OrderController@save');
-		Route::get('/order/delete/{id?}', 'Admin\OrderController@delete');
+
 
         CMSCore::CRUDRoute('setting');
 
@@ -43,6 +40,8 @@ Route::group(['prefix'=>'admin'], function () {
         Route::get('/vacaypal-review/delete/{id}', 'Admin\VacayPalReviewController@delete')->name('vacaypal-review-delete');
 
         CMSCore::CRUDRoute('booking', 'bookings');
+
+        CMSCore::CRUDRoute('order', 'orders');
 
         Route::get('/city/{parentId}/testimonial/{id}', 'Admin\CityTestimonialController@details')->name('city-testimonial');
         Route::post('/city/{parentId}/testimonial/{id}', 'Admin\CityTestimonialController@save')->name('city-testimonial-save');
@@ -90,11 +89,14 @@ Route::get('/vacay-pal/{url?}', 'Frontend\PalsController@details')->name('vacayp
 
 Route::get('/booking/{url?}', 'Frontend\BookingController@details')->name('booking');
 Route::post('/booking/submit', 'Frontend\BookingController@save')->name('booking-submit');
-Route::get('/booking/checkout/payment/{bookingNumber}', 'Frontend\BookingController@paypalGateway')->name('booking-payment');
-Route::post('/booking/checkout/payment/{bookingNumber}', 'Frontend\BookingController@submitPaypal')->name('submit.booking-payment');
+Route::post('/order/essential', 'Frontend\BookingController@orderEssential')->name('order-essential');
 
-Route::get('/booking/checkout/success/{bookingNumber}', 'Frontend\BookingController@getSuccessPage')->name('booking-success');
-Route::get('/booking/checkout/error', 'Frontend\BookingController@getErrorPage')->name('booking-error');
+
+Route::get('/checkout/payment/{number}/{type?}', 'Frontend\BookingController@paypalGateway')->name('payment');
+Route::post('/checkout/payment/{number}/{type?}', 'Frontend\BookingController@submitPaypal')->name('submit.payment');
+
+Route::get('/checkout/success/{number}/{type?}', 'Frontend\BookingController@getSuccessPage')->name('success');
+Route::get('/checkout/error/{type}', 'Frontend\BookingController@getErrorPage')->name('error');
 
 Route::any('/payment/notification', 'Frontend\BookingController@getPaymentNotification')->name('booking.notification');
 

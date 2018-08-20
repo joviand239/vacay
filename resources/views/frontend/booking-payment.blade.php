@@ -81,22 +81,14 @@
                                 </div>
                             </div>
 
-                            <div class="method-box">
-                                <div class="left">
-                                    <i class="fa fa-cc-paypal icon"></i>
-                                    <span class="name">PayPal</span>
-                                </div>
-                                <div class="right">
-                                    <i class="fa fa-angle-right icon"></i>
-                                </div>
-                            </div>
+
                         </div>
 
 
                         <div class="cc-method-section method-section form-section">
                             <h1 class="default-title mb-30">Enter your card details</h1>
 
-                            <form id="creditCardForm" method="POST" action="{!! route('submit.booking-payment', ['bookingNumber' => $bookingNumber]) !!}" class="form" role="form" data-validate="true">
+                            <form id="creditCardForm" method="POST" action="{!! route('submit.payment', ['number' => $number, 'type' => @$type]) !!}" class="form" role="form" data-validate="true">
 
                                 <div class="form-group">
                                     <label class="label-form active" for="firstName">CARD HOLDER FIRST NAME</label>
@@ -169,7 +161,7 @@
 @section('jsCustom')
 
     <script>
-        var submitPaymentURL = '{!! route('submit.booking-payment', ['bookingNumber' => $bookingNumber]) !!}';
+        var submitPaymentURL = '{!! route('submit.payment', ['number' => @$number, 'type' => @$type]) !!}';
     </script>
 
     <script src="{{ url('/') }}/assets/frontend/js/script.booking-success.js"></script>

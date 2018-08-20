@@ -8,6 +8,7 @@ use App\Entity\Category;
 
 use App\Entity\City;
 use App\Entity\CMS\WhyGerayPrint;
+use App\Entity\Order;
 use App\Entity\Product;
 
 use App\Entity\Setting;
@@ -111,51 +112,95 @@ class BookingController extends FrontendController {
 
 
 
-        return redirect()->route('booking-payment', ['bookingNumber' => @$booking->bookingNumber]);
+        return redirect()->route('payment', ['number' => @$booking->bookingNumber, 'type' => 'BOOKING']);
 
         // return $this->paymentMidtrans($booking);
     }
 
+    public function orderEssential(){
+        $input = (object)Input::all();
 
-    public function paypalGateway($bookingNumber){
-        if (!$bookingNumber) return redirect()->route('booking-error');
+        $customer = CustomerDetail::where('email', $input->email)->get()->first();
 
-        $booking = Booking::where('bookingNumber', @$bookingNumber)->get()->first();
+        if (!$customer) {
+            $customerData = [
+                'firstName' => $input->firstName,
+                'lastName' => $input->lastName,
+                'email' => $input->email,
+                'phoneNumber' => $input->phoneNumber,
+            ];
 
-        if (!$booking) return redirect()->route('booking-error');
+            $customer = CustomerService::CreateNewCustomer($customerData);
+        }
+
+        $order = new Order();
+
+        $city = City::get(@$input->cityId);
+
+        $order->customerDetailId = $customer->id;
+        $order->cityId = $input->cityId;
+        $order->firstName = $input->firstName;
+        $order->lastName = $input->lastName;
+        $order->orderNumber = BookingService::GenerateOrderNumber();
+        $order->grandTotal = $city->iteneraryPrice;
+        $order->status = Constant::STATUS_ACTIVE;
+
+        $order->save();
+
+        return redirect()->route('payment', ['number' => @$order->orderNumber, 'type' => 'ORDER']);
+    }
+
+
+    public function paypalGateway($number, $type){
+        if (!$number) return redirect()->route('error', ['type' => @$type]);
+
+        if ($type == 'BOOKING') {
+            $model = Booking::where('bookingNumber', @$number)->get()->first();
+        }elseif ($type == 'ORDER'){
+            $model = Order::where('orderNumber', @$number)->get()->first();
+        }
+
+        if (!$model) return redirect()->route('error', ['type' => @$type]);
 
         return view('frontend.booking-payment', [
-            'bookingNumber' => @$bookingNumber
+            'number' => @$number,
+            'type' => $type
         ]);
     }
 
 
-    public function submitPaypal($bookingNumber){
-        if (!$bookingNumber) return redirect()->route('booking-error');
+    public function submitPaypal($number,  $type){
+        if (!$number) return redirect()->route('error', ['type' => @$type]);
 
-        $booking = Booking::where('bookingNumber', @$bookingNumber)->get()->first();
+        if ($type == 'BOOKING') {
+            $model = Booking::where('bookingNumber', @$number)->get()->first();
+        }elseif ($type == 'ORDER'){
+            $model = Order::where('orderNumber', @$number)->get()->first();
+        }
 
-        if (!$booking) return redirect()->route('booking-error');
+        if (!$model) return redirect()->route('error');
 
         $input = (object)Input::all();
 
         $expriedDate = explode('/', @$input->expiredDate);
-
         $input->month = $expriedDate[0];
         $input->year = $expriedDate[1];
 
-        $response = PaypalService::paywithCreditCard($booking, $input);
+        $response = PaypalService::paywithCreditCard($model, $input, $type);
 
         $responeData = $response->getData()[0];
 
         if (@$responeData->state == 'approved' && @$responeData->transactions[0]->related_resources[0]->sale->state == 'completed') {
-            $booking->status = Constant::STATUS_PAID;
-            $booking->paypalTransactionId = @$responeData->transactions[0]->related_resources[0]->sale->id;
-            $booking->paypalInvoiceId = @$responeData->transactions[0]->invoice_number;
-            $booking->save();
+            $model->status = Constant::STATUS_PAID;
+            $model->paypalTransactionId = @$responeData->transactions[0]->related_resources[0]->sale->id;
+            $model->paypalInvoiceId = @$responeData->transactions[0]->invoice_number;
+            $model->save();
         }
 
-        return redirect()->route('booking-success', ['bookingNumber' => @$booking->bookingNumber]);
+        return redirect()->route('success', [
+            'number' => $number,
+            'type' => $type,
+        ]);
     }
 
 
@@ -170,21 +215,28 @@ class BookingController extends FrontendController {
         ]);
     }
 
-    public function getSuccessPage($bookingNumber) {
-        if (!$bookingNumber) return redirect()->route('booking-error');
+    public function getSuccessPage($number,  $type) {
+        if (!$number) return redirect()->route('error', ['type' => @$type]);
 
-        $booking = Booking::where('bookingNumber', @$bookingNumber)->get()->first();
+        if ($type == 'BOOKING') {
+            $model = Booking::where('bookingNumber', @$number)->get()->first();
+        }elseif ($type == 'ORDER'){
+            $model = Order::where('orderNumber', @$number)->get()->first();
+        }
 
-        if (!$booking) return redirect()->route('booking-error');
+        if (!$model) return redirect()->route('error', ['type' => @$type]);
 
 
         return view('frontend.booking-success', [
-            'booking' => $booking
+            'model' => $model,
+            'type' => $type
         ]);
     }
 
-    public function getErrorPage() {
+    public function getErrorPage($type) {
 
-        return view('frontend.booking-error');
+        return view('frontend.booking-error', [
+            'type' => @$type
+        ]);
     }
 }

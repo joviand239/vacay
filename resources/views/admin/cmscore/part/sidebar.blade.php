@@ -96,6 +96,15 @@
                 </a>
             </li>
 
+            <li class="dropdown {!! isActiveRoute(['admin.orders']) !!}">
+                <a href="{!! route('admin.orders') !!}">
+                    <div class="icon">
+                        <i class="fa fa-ticket" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">Order</div>
+                </a>
+            </li>
+
 
             <li class="dropdown">
                 <a href="{{ url('/admin/cms/details/Page/FeaturedTestimonial') }}">

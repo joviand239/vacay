@@ -148,7 +148,7 @@
                                         </div>
 
                                         <div class="col-half">
-                                            Total Price: <strong id="total-price">$750</strong>
+                                            Total Price: USD <strong id="total-price">750</strong>
                                         </div>
                                     </div>
                                 </td>
@@ -227,7 +227,7 @@
                     <div class="form-section">
                         <h1 class="default-title">Fill your personal data here:</h1>
 
-                        <div id="esssential-form" class="form" role="form" data-validate="true">
+                        <form id="esssential-form" class="form" role="form" data-validate="true" method="POST" action="{!! route('order-essential') !!}">
 
                             <div class="form-group">
                                 <label class="label-form active" for="cityId">VACAY ESSENTIAL</label>
@@ -261,10 +261,10 @@
 
 
                             <div class="text-center">
-                                <button type="button" id="btn-submit-contact" class="btn main-btn">CONTINUE PAYMENT <i class="fa fa-angle-right"></i></button>
+                                <button type="submit" id="btn-submit-order" class="btn main-btn">CONTINUE PAYMENT <i class="fa fa-angle-right"></i></button>
                             </div>
 
-                        </div>
+                        </form>
 
 
                     </div>

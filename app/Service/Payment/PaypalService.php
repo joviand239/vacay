@@ -8,7 +8,7 @@ class PaypalService {
     /*
     * Process payment using credit card
     */
-    public static function paywithCreditCard ($booking, $dataPayment) {
+    public static function paywithCreditCard ($model, $dataPayment, $type) {
         // ### Address
         // Base Address object used as shipping or billing
         // address in a payment. [Optional]
@@ -20,7 +20,7 @@ class PaypalService {
             ->setPostalCode("14305")
             ->setCountryCode("US")
             ->setPhone("716-298-1822")
-            ->setRecipientName(@$booking->customerDetail->firstName.' '.@$booking->customerDetail->lastName);
+            ->setRecipientName(@$model->customerDetail->firstName.' '.@$model->customerDetail->lastName);
 
         // ### CreditCard
         $card = Paypalpayment::creditCard();
@@ -51,13 +51,24 @@ class PaypalService {
 
         $arrayItem = [];
 
-        foreach (@$booking->bookingItems as $data) {
+        if ($type == 'BOOKING') {
+            foreach (@$model->bookingItems as $data) {
+                $item = Paypalpayment::item();
+                $item->setName(@$data->cityCategory->city->name.' - '.@$data->cityCategory->category->name)
+                    ->setDescription(@$data->cityCategory->city->tagline)
+                    ->setCurrency('USD')
+                    ->setQuantity((int)@$data->quantity)
+                    ->setPrice((int)@$data->price);
+
+                $arrayItem[] = $item;
+            }
+        }elseif ($type == 'ORDER'){
             $item = Paypalpayment::item();
-            $item->setName(@$data->cityCategory->city->name.' - '.@$data->cityCategory->category->name)
-                ->setDescription(@$data->cityCategory->city->tagline)
+            $item->setName(@$model->city->name.' - Essential')
+                ->setDescription(@$model->city->tagline)
                 ->setCurrency('USD')
-                ->setQuantity((int)@$data->quantity)
-                ->setPrice((int)@$data->price);
+                ->setQuantity(1)
+                ->setPrice(@$model->grandTotal);
 
             $arrayItem[] = $item;
         }
@@ -69,13 +80,13 @@ class PaypalService {
 
 
         $details = Paypalpayment::details();
-        $details->setSubtotal((int)@$booking->grandTotal);
+        $details->setSubtotal((int)@$model->grandTotal);
 
         //Payment Amount
         $amount = Paypalpayment::amount();
         $amount->setCurrency("USD")
             // the total is $17.8 = (16 + 0.6) * 1 ( of quantity) + 1.2 ( of Shipping).
-            ->setTotal((int)@$booking->grandTotal)
+            ->setTotal((int)@$model->grandTotal)
             ->setDetails($details);
 
         // ### Transaction
