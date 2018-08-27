@@ -106,7 +106,7 @@
                                 {!! @$page->itenerarySectionDescription !!}
                             </p>
 
-                            <a href="#" class="btn main-btn white mb-15">BUY NOW <i class="fa fa-angle-right"></i></a>
+                            <button type="button" id="openEssentialModal" data-id="{!! @$page->id !!}" class="btn main-btn white mb-15">BUY NOW <i class="fa fa-angle-right"></i></button>
 
                         </div>
                     </div>

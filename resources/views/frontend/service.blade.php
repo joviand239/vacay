@@ -205,7 +205,7 @@
                                     {!! @$essentials->itenerarySectionDescription !!}
                                 </p>
 
-                                <button type="button" data-toggle="modal" data-target="#buyEssentialModal" data-backdrop="static" class="btn main-btn white mb-15">BUY NOW <i class="fa fa-angle-right"></i></button>
+                                <button id="openEssentialModal" data-id="0" type="button" class="btn main-btn white mb-15">BUY NOW <i class="fa fa-angle-right"></i></button>
 
                             </div>
                         </div>

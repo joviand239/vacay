@@ -5,28 +5,6 @@ $(document).ready(function () {
         $(this).toggleClass('open');
     });
 
-
-    /*$("#home-slider").lightSlider({
-        item: 1,
-        loop: true,
-        adaptiveHeight: true,
-        auto: true,
-        pause: 5000,
-        prevHtml : '<span class="custom-prev-html"><i class="fa fa-angle-left"></i></span>',
-        nextHtml : '<span class="custom-next-html"><i class="fa fa-angle-right"></i></span>',
-    });
-
-    $('.course-date-slider').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: false,
-        asNavFor: '.course-detail-slider',
-        dots: false,
-        centerMode: true,
-        focusOnSelect: true,
-        variableWidth: true
-    });*/
-
     $('.info-guide-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -34,7 +12,6 @@ $(document).ready(function () {
         fade: true,
         asNavFor: '.gallery'
     });
-
 
     $('.gallery').slick({
         centerMode: true,
@@ -145,6 +122,25 @@ $(document).ready(function () {
 
 
     scrollNav();
+
+
+    $('#openEssentialModal').click(function (e) {
+        var dataId = $(this).attr('data-id');
+
+        var modal = $('#buyEssentialModal');
+
+        if (dataId){
+            modal.find('[name=cityId]').val(dataId).trigger('change');
+        }else {
+            modal.find('[name=cityId]').val(0).trigger('change');
+        }
+
+        $('#buyEssentialModal').modal({
+            backdrop: 'static',
+            keyboard: false,
+        })
+
+    });
 
 });
 

@@ -37,7 +37,7 @@ class Order extends BaseEntity {
         'phoneNumber' => 'Text',
         'status' => 'Text',
         'grandTotal' => 'Amount',
-    ]; 
+    ];
 
     const FORM_REQUIRED = [
         // 

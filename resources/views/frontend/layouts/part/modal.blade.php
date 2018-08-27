@@ -233,7 +233,7 @@
                                 <label class="label-form active" for="cityId">VACAY ESSENTIAL</label>
 
                                 <select class="form-control custom-select custom-control" id="cityId" name="cityId" data-validation="required">
-                                    <option value="" disabled selected>Choose your City Essential</option>
+                                    <option value="0" disabled selected>Choose your City Essential</option>
                                     @foreach(GetEssentialList() as $key => $item)
                                         <option value="{!! @$item->id !!}">{!! @$item->name !!}</option>
                                     @endforeach
