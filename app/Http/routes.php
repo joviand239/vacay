@@ -96,6 +96,7 @@ Route::get('/checkout/payment/{number}/{type?}', 'Frontend\BookingController@pay
 Route::post('/checkout/payment/{number}/{type?}', 'Frontend\BookingController@submitPaypal')->name('submit.payment');
 
 Route::get('/checkout/success/{number}/{type?}', 'Frontend\BookingController@getSuccessPage')->name('success');
+Route::get('/paypal/success/{number}/{type?}', 'Frontend\BookingController@paypalSuccess')->name('paypal-success');
 Route::get('/checkout/error/{type}', 'Frontend\BookingController@getErrorPage')->name('error');
 
 Route::any('/payment/notification', 'Frontend\BookingController@getPaymentNotification')->name('booking.notification');

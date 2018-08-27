@@ -59,6 +59,10 @@
     </div>
 
 
+    <form id="paypalForm" method="POST" action="{!! route('submit.payment', ['number' => $number, 'type' => @$type]) !!}" class="form" role="form">
+        <input type="hidden" class="form-control" id="paymentMethod" name="paymentMethod">
+    </form>
+
 
 
     <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModal" aria-hidden="true">
@@ -71,7 +75,7 @@
                         <div class="choose-payment-method method-section active">
                             <h1 class="default-title mb-30">Pay With:</h1>
 
-                            <div class="method-box">
+                            <div class="method-box" data-method="{!! \App\Util\Constant::PAYMENT_METHOD_CREDITCARD !!}">
                                 <div class="left">
                                     <i class="fa fa-credit-card icon"></i>
                                     <span class="name">Credit Card</span>
@@ -81,6 +85,15 @@
                                 </div>
                             </div>
 
+                            <div class="method-box" data-method="{!! \App\Util\Constant::PAYMENT_METHOD_PAYPAL !!}">
+                                <div class="left">
+                                    <i class="fa fa-cc-paypal icon"></i>
+                                    <span class="name">PayPal</span>
+                                </div>
+                                <div class="right">
+                                    <i class="fa fa-angle-right icon"></i>
+                                </div>
+                            </div>
 
                         </div>
 
@@ -89,6 +102,8 @@
                             <h1 class="default-title mb-30">Enter your card details</h1>
 
                             <form id="creditCardForm" method="POST" action="{!! route('submit.payment', ['number' => $number, 'type' => @$type]) !!}" class="form" role="form" data-validate="true">
+
+                                <input type="hidden" class="form-control" id="paymentMethod" name="paymentMethod">
 
                                 <div class="form-group">
                                     <label class="label-form active" for="firstName">CARD HOLDER FIRST NAME</label>
@@ -165,5 +180,6 @@
     </script>
 
     <script src="{{ url('/') }}/assets/frontend/js/script.booking-success.js"></script>
+
 @endsection
 

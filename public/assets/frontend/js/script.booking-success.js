@@ -7,8 +7,19 @@ $(document).ready(function () {
 
 
     $('.method-box').click(function (e) {
-        $('.choose-payment-method').toggleClass('active');
-        $('.cc-method-section').toggleClass('active');
+        var method = $(this).attr('data-method');
+
+        $('[name=paymentMethod]').val(method);
+
+        if (method == 'CREDITCARD'){
+            $('.choose-payment-method').toggleClass('active');
+            $('.cc-method-section').toggleClass('active');
+        }else if (method == 'PAYPAL') {
+            $('#paypalForm').trigger('submit');
+        }
+
+
+
     });
 
 

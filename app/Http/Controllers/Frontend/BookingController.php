@@ -169,7 +169,7 @@ class BookingController extends FrontendController {
     }
 
 
-    public function submitPaypal($number,  $type){
+    public function submitPaypal($number, $type){
         if (!$number) return redirect()->route('error', ['type' => @$type]);
 
         if ($type == 'BOOKING') {
@@ -182,25 +182,41 @@ class BookingController extends FrontendController {
 
         $input = (object)Input::all();
 
-        $expriedDate = explode('/', @$input->expiredDate);
-        $input->month = $expriedDate[0];
-        $input->year = $expriedDate[1];
+        if ($input->paymentMethod == Constant::PAYMENT_METHOD_CREDITCARD) {
+            $expriedDate = explode('/', @$input->expiredDate);
+            $input->month = $expriedDate[0];
+            $input->year = $expriedDate[1];
 
-        $response = PaypalService::paywithCreditCard($model, $input, $type);
+            $response = PaypalService::paywithCreditCard($model, $input, $type);
 
-        $responeData = $response->getData()[0];
+            $responeData = $response->getData()[0];
 
-        if (@$responeData->state == 'approved' && @$responeData->transactions[0]->related_resources[0]->sale->state == 'completed') {
-            $model->status = Constant::STATUS_PAID;
-            $model->paypalTransactionId = @$responeData->transactions[0]->related_resources[0]->sale->id;
-            $model->paypalInvoiceId = @$responeData->transactions[0]->invoice_number;
-            $model->save();
+
+            if (@$responeData->state == 'approved' && @$responeData->transactions[0]->related_resources[0]->sale->state == 'completed') {
+                $model->status = Constant::STATUS_PAID;
+                $model->paypalTransactionId = @$responeData->transactions[0]->related_resources[0]->sale->id;
+                $model->paypalInvoiceId = @$responeData->transactions[0]->invoice_number;
+                $model->save();
+            }
+
+            return redirect()->route('success', [
+                'number' => $number,
+                'type' => $type,
+            ]);
+
+        }elseif ($input->paymentMethod == Constant::PAYMENT_METHOD_PAYPAL){
+            $response = PaypalService::paywithPaypal($model, $type);
+
+            $responeData = (array)$response->getData();
+
+            if (@$responeData[0]->state == 'created') {
+                $model->paypalTransactionId = @$responeData[0]->id;
+                $model->paypalInvoiceId = @$responeData[0]->transactions[0]->invoice_number;
+                $model->save();
+            }
+
+            return redirect($responeData['approval_url']);
         }
-
-        return redirect()->route('success', [
-            'number' => $number,
-            'type' => $type,
-        ]);
     }
 
 
@@ -213,6 +229,22 @@ class BookingController extends FrontendController {
             'booking' => $booking,
             'snapToken' => VeritransService::GetSnapToken($booking)
         ]);
+    }
+
+    public function paypalSuccess($number, $type) {
+        if (!$number) return redirect()->route('error', ['type' => @$type]);
+        if ($type == 'BOOKING') {
+            $model = Booking::where('bookingNumber', @$number)->get()->first();
+        }elseif ($type == 'ORDER'){
+            $model = Order::where('orderNumber', @$number)->get()->first();
+        }
+
+        if (!$model) return redirect()->route('error', ['type' => @$type]);
+
+        $model->status = Constant::STATUS_PAID;
+        $model->save();
+
+        return redirect(route('success', ['number' => $number, 'type' => $type]));
     }
 
     public function getSuccessPage($number,  $type) {
