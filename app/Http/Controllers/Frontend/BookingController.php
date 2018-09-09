@@ -189,7 +189,13 @@ class BookingController extends FrontendController {
 
             $response = PaypalService::paywithCreditCard($model, $input, $type);
 
-            $responeData = $response->getData()[0];
+            $responeData = $response->getData();
+
+            if (isset($responeData->error)) {
+                return redirect()->route('error', ['type' => @$type]);
+            }else {
+                $responeData = $responeData[0];
+            }
 
 
             if (@$responeData->state == 'approved' && @$responeData->transactions[0]->related_resources[0]->sale->state == 'completed') {
@@ -197,12 +203,16 @@ class BookingController extends FrontendController {
                 $model->paypalTransactionId = @$responeData->transactions[0]->related_resources[0]->sale->id;
                 $model->paypalInvoiceId = @$responeData->transactions[0]->invoice_number;
                 $model->save();
+
+                return redirect()->route('success', [
+                    'number' => $number,
+                    'type' => $type,
+                ]);
+
             }
 
-            return redirect()->route('success', [
-                'number' => $number,
-                'type' => $type,
-            ]);
+
+            return redirect()->route('error', ['type' => @$type]);
 
         }elseif ($input->paymentMethod == Constant::PAYMENT_METHOD_PAYPAL){
             $response = PaypalService::paywithPaypal($model, $type);

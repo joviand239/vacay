@@ -2,6 +2,7 @@
 namespace App\Service\Payment;
 
 use Anouar\Paypalpayment\Facades\PaypalPayment;
+use PayPal\Exception\PayPalConnectionException;
 
 class PaypalService {
 
@@ -107,8 +108,9 @@ class PaypalService {
             // using a valid ApiContext
             // The return object contains the status;
             $payment->create(Paypalpayment::apiContext());
-        } catch (\PPConnectionException $ex) {
-            return response()->json(["error" => $ex->getMessage()], 400);
+        } catch (PayPalConnectionException $ex) {
+
+            return response()->json(["error" => $ex->getCode()], 400);
         }
 
         return response()->json([$payment->toArray()], 200);
