@@ -16,35 +16,7 @@
                 </a>
             </li>
 
-
-            <li class="dropdown {!! isActiveRoute(['admin.categories']) !!}">
-                <a href="{{ route('admin.categories') }}">
-                    <div class="icon">
-                        <i class="fa fa-sitemap" aria-hidden="true"></i>
-                    </div>
-                    <div class="title">Category</div>
-                </a>
-            </li>
-
-            <li class="dropdown {!! isActiveRoute(['admin.vacaypals']) !!}">
-                <a href="{!! route('admin.vacaypals') !!}">
-                    <div class="icon">
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                    </div>
-                    <div class="title">Vacay Pals</div>
-                </a>
-            </li>
-
-            <li class="dropdown {!! isActiveRoute(['admin.vouchers']) !!}">
-                <a href="{!! route('admin.vouchers') !!}">
-                    <div class="icon">
-                        <i class="fa fa-percent" aria-hidden="true"></i>
-                    </div>
-                    <div class="title">Voucher</div>
-                </a>
-            </li>
-
-            <li class="dropdown {!! isActiveRoute(['admin.continents', 'admin.countries', 'admin.cities']) !!}">
+            <li class="dropdown {!! isActiveRoute(['admin.continents', 'admin.countries', 'admin.cities', 'admin.categories']) !!}">
                 <a href="#">
                     <div class="icon">
                         <i class="fa fa-map-o" aria-hidden="true"></i>
@@ -54,6 +26,9 @@
 
                 <div class="dropdown-menu">
                     <ul>
+                        <li class="dropdown">
+                            <a href="{{ route('admin.categories') }}">Category</a>
+                        </li>
                         <li class="dropdown">
                             <a href="{{ route('admin.continents') }}">Continent</a>
                         </li>
@@ -67,24 +42,13 @@
                 </div>
             </li>
 
-            <li class="dropdown {!! isActiveRoute(['admin.contactforms']) !!}">
-                <a href="#">
+            <li class="dropdown {!! isActiveRoute(['admin.vouchers']) !!}">
+                <a href="{!! route('admin.vouchers') !!}">
                     <div class="icon">
-                        <i class="fa fa-file-text" aria-hidden="true"></i>
+                        <i class="fa fa-percent" aria-hidden="true"></i>
                     </div>
-                    <div class="title"> Form</div>
+                    <div class="title">Voucher</div>
                 </a>
-
-                <div class="dropdown-menu">
-                    <ul>
-                        <li class="dropdown">
-                            <a href="{{ route('admin.contactforms') }}">Contact</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="{{ route('admin.palforms') }}">Join as Vacay Pals</a>
-                        </li>
-                    </ul>
-                </div>
             </li>
 
             <li class="dropdown {!! isActiveRoute(['admin.bookings']) !!}">
@@ -113,6 +77,35 @@
                     </div>
                     <div class="title"> Featured Testimonial</div>
                 </a>
+            </li>
+
+            <li class="dropdown {!! isActiveRoute(['admin.vacaypals']) !!}">
+                <a href="{!! route('admin.vacaypals') !!}">
+                    <div class="icon">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">Vacay Pals</div>
+                </a>
+            </li>
+
+            <li class="dropdown {!! isActiveRoute(['admin.contactforms']) !!}">
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-file-text" aria-hidden="true"></i>
+                    </div>
+                    <div class="title"> Form</div>
+                </a>
+
+                <div class="dropdown-menu">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="{{ route('admin.contactforms') }}">Contact</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{{ route('admin.palforms') }}">Join as Vacay Pals</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
 
 
