@@ -18,11 +18,15 @@ class City extends BaseEntity {
         'countryId'
     ];
 
+    const FORM_REQUIRED = [
+        'countryId',
+        'name'
+    ];
+
+    const USE_META_SET = true;
+
     const FORM_TYPE = [
         'countryId' => 'Select',
-
-        'metaTitle' => 'Text',
-        'metaDescription' => 'TextArea',
 
         'bannerTitle' => 'Text',
         'bannerImage' => 'Image_1',

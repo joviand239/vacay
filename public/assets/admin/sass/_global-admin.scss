@@ -196,4 +196,17 @@ aside {
     }
   }
 }
+
+
+.view-file {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: $main-color;
+  transition: all 0.5s ease;
+}
+
+
 /* End Custom */

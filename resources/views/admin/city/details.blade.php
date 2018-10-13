@@ -46,10 +46,15 @@
                                             <input type="text" class="form-control" disabled value="{!! @$model->iteneraryFile !!}">
                                             <input type="hidden" class="form-control" name="iteneraryFile" value="{!! @$model->iteneraryFile !!}">
                                             <span class="input-group-addon change">Delete</span>
+
+                                            <a target="_blank" href="{!! GetFileURL(@$model->iteneraryFile) !!}" class="view-file" title="Click to View File">
+                                                <i class="fa fa-file-text-o"></i>
+                                            </a>
                                         </div>
                                         <div class="input-group hide">
                                             <input type="file" class="form-control" accept="application/pdf" name="iteneraryFile">
                                         </div>
+
                                     @else
                                         <input type="file" class="form-control" accept="application/pdf" name="iteneraryFile">
                                     @endif

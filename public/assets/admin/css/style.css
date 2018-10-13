@@ -118,6 +118,15 @@ aside.app-sidebar {
   #app-layout .search-right .top .dataTables_filter {
     margin-right: 30px; }
 
+.view-file {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #2c848e;
+  transition: all 0.5s ease; }
+
 /* End Custom */
 
 /*# sourceMappingURL=style.css.map */

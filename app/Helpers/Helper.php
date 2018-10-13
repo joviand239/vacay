@@ -270,5 +270,3 @@ function getImageUrlSizeForPicture($filename, $size){
 function getNoPhotoProfile(){
     return url('/') . '/assets/admin/image/default-no-photo-profile.jpeg';
 }
-
-
