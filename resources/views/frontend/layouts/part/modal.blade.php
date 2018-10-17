@@ -183,12 +183,15 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
-            <div class="modal-body">
+            <div class="image-wrapper">
+                <img class="featured-image" src="{!! url('/') !!}/assets/frontend/images/test-image.jpg" alt="featured image">
 
                 <button class="close" data-dismiss="modal" aria-label="Close">
                     <i class="fa fa-times"></i>
                 </button>
+            </div>
 
+            <div class="modal-body">
 
                 <div class="body-wrapper">
                     <p class="title">Category Name :</p>

@@ -116,74 +116,6 @@
             </div>
         @endif
 
-
-        {{--<div class="default-section">
-
-            <div class="container">
-
-                <h2 class="default-title mb-30">Next Destination</h2>
-
-
-                <div class="row">
-                    <div class="col-md-4 col-12">
-                        <a href="#" class="destination-card">
-                            <div class="image-wrapper">
-
-                                <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
-                            </div>
-
-
-                            <div class="text-wrapper">
-
-                                <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
-                                <p class="name">General Tour - beautiful city in many lights</p>
-
-                                <p class="country">Kyoto - JAPAN</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-4 col-12">
-                        <a href="#" class="destination-card">
-                            <div class="image-wrapper">
-
-                                <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
-                            </div>
-
-
-                            <div class="text-wrapper">
-
-                                <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
-                                <p class="name">General Tour - beautiful city in many lights</p>
-
-                                <p class="country">Kyoto - JAPAN</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-4 col-12">
-                        <a href="#" class="destination-card">
-                            <div class="image-wrapper">
-
-                                <img src="{!! url('/') !!}/assets/frontend/images/destination-image-1.jpg" alt="Destination Image">
-                            </div>
-
-
-                            <div class="text-wrapper">
-
-                                <img class="icon" src="{!! url('/') !!}/assets/frontend/images/general-tour-icon.png" alt="Featured Product Icon">
-                                <p class="name">General Tour - beautiful city in many lights</p>
-
-                                <p class="country">Kyoto - JAPAN</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>--}}
-
     </section>
 @endsection
 
@@ -225,7 +157,22 @@
             function populateQuickViewModal(data) {
                 var wrapper = $('#quickViewModal');
 
+                var featuredImage = JSON.parse(data.featuredImage);
+
+                if (featuredImage) {
+                    if (featuredImage[0] != '') {
+                        var featuredImageLink = mainUrl+'/assets/upload/md/'+featuredImage[0];
+
+                        wrapper.find('.featured-image').attr('src', featuredImageLink);
+                    } else {
+                        wrapper.find('.featured-image').addClass('hidden');
+                    }
+                }else {
+                    wrapper.find('.featured-image').addClass('hidden');
+                }
+
                 wrapper.find('#categoryName').html(data.category.name);
+
                 if (data.description){
                     wrapper.find('#categoryDescription').html(data.description);
                 }else {

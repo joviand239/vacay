@@ -1010,7 +1010,8 @@ input.valid, select.valid {
         width: 50%; }
 
 #quickViewModal .body-wrapper {
-  text-align: left; }
+  text-align: left;
+  padding: 15px; }
 #quickViewModal .title {
   margin-bottom: 0px;
   font-size: 18px;
@@ -1018,6 +1019,11 @@ input.valid, select.valid {
   color: #2c848e; }
 #quickViewModal .subtitle {
   margin-bottom: 10px; }
+#quickViewModal .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 999; }
 
 #buyEssentialModal .modal-body, #paymentModal .modal-body {
   padding: 15px 10%; }

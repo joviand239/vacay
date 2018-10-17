@@ -17,6 +17,12 @@ class CityCategory extends BaseEntity {
     const FORM_TYPE = [
         'price' => 'Amount',
         'description' => 'TextArea',
+        'featuredImage' => 'Image_1',
+    ];
+
+    const FORM_REQUIRED = [
+        'categoryId',
+        'price'
     ];
 
     const INDEX_FIELD = [
@@ -36,6 +42,12 @@ class CityCategory extends BaseEntity {
     const FORM_SELECT_LIST = [
         'categoryId' => 'GetCategoryList',
     ];
+
+    function getFeaturedImageAttribute($value) {
+        if (empty($value)) return [];
+
+        return json_decode($value);
+    }
 
     public function category(){
         return $this->belongsTo(Category::class, 'categoryId');

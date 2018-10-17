@@ -6,6 +6,7 @@ use App\Entity\City;
 use App\Entity\CityCategory;
 use App\Http\Controllers\CMSCore\Controller;
 use App\Service\CMSCore\CRUDService;
+use App\Service\CMSCore\ImageService;
 use App\Service\UrlService;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -25,11 +26,31 @@ class CityCategoryController extends Controller {
     public function save($parentId, $id) {
         $data = Input::all();
 
+        $savedData = [
+            'price' => @$data['price'],
+            'description' => @$data['description'],
+            'featuredImage' => '',
+        ];
+
         $parent = City::get($parentId);
 
         $category = CityCategory::get($id);
 
-        $category->fill($data);
+        if (isset($data['featuredImage0'])){
+            if ($data['featuredImage0'] == 'DELETE_IMAGE'){
+                if (isset($category->featuredImage)) ImageService::delete($category->featuredImage);
+                $savedData['featuredImage'] = '';
+            } else if (!is_string($data['featuredImage0'])){
+                $savedData['featuredImage'] = ImageService::uploadImage($data['featuredImage0']);
+            } else {
+                $savedData['featuredImage'] = $data['featuredImage0'];
+            }
+        }
+
+
+        $savedData['featuredImage'] = json_encode((array)$savedData['featuredImage']);
+
+        $category->fill($savedData);
 
         $parent->categories()->save($category);
 
