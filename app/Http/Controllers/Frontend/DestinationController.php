@@ -109,8 +109,7 @@ class DestinationController extends FrontendController {
     }
 
 
-    public function ajaxDetailCityCategory() {
-        $data = Input::all();
+    public function ajaxDetailCityCategory() {$data = Input::all();
 
         $cityCategory = CityCategory::with(['category'])->find($data['cityCategoryId']);
 

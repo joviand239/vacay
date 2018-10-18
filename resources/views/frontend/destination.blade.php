@@ -72,7 +72,7 @@
                                     <a href="{!! route('destination-detail', ['url' => @$item->url]) !!}" class="destination-card">
                                         <div class="image-wrapper">
 
-                                            <img src="{!! getImageUrlSize(imageStringToArray(@$item->featuredImage)[0], 'full') !!}" alt="{!! @$item->name !!}">
+                                            <img src="{!! getImageUrlSize(@imageStringToArray(@$item->featuredImage)[0], 'full') !!}" alt="{!! @$item->name !!}">
                                         </div>
 
 
