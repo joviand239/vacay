@@ -12,7 +12,7 @@
 <!-- Light Slider -->
 
 <!-- Light Gallery -->
-<link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url('/') }}/assets/frontend/library/lightgallery/css/video-js.css">
 <link rel="stylesheet" href="{{ url('/') }}/assets/frontend/library/lightgallery/css/lightgallery.css">
 <!-- Light Gallery -->
 

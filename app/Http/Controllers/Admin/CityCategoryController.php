@@ -26,33 +26,29 @@ class CityCategoryController extends Controller {
     public function save($parentId, $id) {
         $data = Input::all();
 
-        $savedData = [
-            'price' => @$data['price'],
-            'description' => @$data['description'],
-            'featuredImage' => '',
-        ];
-
-        $parent = City::get($parentId);
-
         $category = CityCategory::get($id);
+
+        $featuredImage = '';
 
         if (isset($data['featuredImage0'])){
             if ($data['featuredImage0'] == 'DELETE_IMAGE'){
                 if (isset($category->featuredImage)) ImageService::delete($category->featuredImage);
-                $savedData['featuredImage'] = '';
+                $featuredImage = '';
             } else if (!is_string($data['featuredImage0'])){
-                $savedData['featuredImage'] = ImageService::uploadImage($data['featuredImage0']);
+                $featuredImage = ImageService::uploadImage($data['featuredImage0']);
             } else {
-                $savedData['featuredImage'] = $data['featuredImage0'];
+                $featuredImage = $data['featuredImage0'];
             }
         }
 
+        $featuredImage = json_encode((array)$featuredImage);
 
-        $savedData['featuredImage'] = json_encode((array)$savedData['featuredImage']);
-
-        $category->fill($savedData);
-
-        $parent->categories()->save($category);
+        $category->cityId = @$parentId;
+        $category->categoryId = (isset($data['categoryId'])) ? @$data['categoryId'] : @$category->categoryId;
+        $category->price = @$data['price'];
+        $category->description = @$data['description'];
+        $category->featuredImage = @$featuredImage;
+        $category->save();
 
         return redirect(route('admin.city', ['id' => $parentId]));
     }

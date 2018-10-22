@@ -34,7 +34,7 @@ class City extends BaseEntity {
         'name' => 'Text',
         'type' => 'Text',
         'tagline' => 'Text',
-        'description' => 'TextArea',
+        'description' => 'Wysiwyg',
         'featuredImage' => 'Image_1',
         'gallery' => 'Image_0',
         'hasIteneraryGraphics' => 'Select',

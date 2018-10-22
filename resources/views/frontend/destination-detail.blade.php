@@ -28,69 +28,60 @@
                 </p>
 
 
-                <h1 class="default-title mb-30">Categories</h1>
+                @if(count(@$page->categories))
+                    <h1 class="default-title mb-30">Categories</h1>
+                    <div class="row mb-50">
+                        @foreach(@$page->categories as $category)
+                            <div class="col-md-2 col-6 mb-30">
+                                <div class="category-box">
+                                    <img class="icon" src="{!! getImageUrlSize(@$category->category->icon[0], 'full') !!}" alt="{!! @$category->category->name !!}">
+                                    <h3 class="name">{!! @$category->category->name !!}</h3>
 
+                                    <div class="hoverlay">
+                                        <a class="btn main-btn white btn-quick-view" data-id="{!! @$category->id !!}">QUICK VIEW <i class="fa fa-angle-right"></i></a>
 
-                <div class="row mb-50">
-
-                    @foreach(@$page->categories as $category)
-                        <div class="col-md-2 col-6 mb-30">
-                            <div class="category-box">
-                                <img class="icon" src="{!! getImageUrlSize(@$category->category->icon[0], 'full') !!}" alt="{!! @$category->category->name !!}">
-                                <h3 class="name">{!! @$category->category->name !!}</h3>
-
-
-                                <div class="hoverlay">
-                                    <a class="btn main-btn white btn-quick-view" data-id="{!! @$category->id !!}">QUICK VIEW <i class="fa fa-angle-right"></i></a>
-
-                                    <a href="{!! route('booking', ['url' => @$page->url, 'categoryData' => @$category->id]) !!}" class="btn main-btn white">BOOK NOW <i class="fa fa-angle-right"></i></a>
+                                        <a href="{!! route('booking', ['url' => @$page->url, 'categoryData' => @$category->id]) !!}" class="btn main-btn white">BOOK NOW <i class="fa fa-angle-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                @endif
 
+                @if(count(@$page->gallery))
+                    <h1 class="default-title mb-30">Gallery</h1>
+                    <ul class="photo-slider">
+                        @foreach(@$page->gallery as $item)
+                            <li data-thumb="{!! getImageUrlSize(@$item, 'sm') !!}" data-src="{!! getImageUrlSize(@$item, 'full') !!}">
+                                <img src="{!! getImageUrlSize(@$item, 'full') !!}">
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+
+            </div>
+        </div>
+
+        @if(count(@$page->testimonials))
+            <div class="testimonial-section default-section">
+                <div class="container">
+                    <h1 class="default-title mb-30">Experience</h1
+                    <ul id="testimonial-slider">
+                        @foreach(@$page->testimonials as $item)
+                            <li class="item">
+                                <p class="testi">
+                                    {!! @$item->details !!}
+                                </p>
+
+                                <p class="owner">
+                                    {!! @$item->name !!} - {!! @$item->designation !!}
+                                </p>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
-
-                <h1 class="default-title mb-30">Gallery</h1>
-
-                <ul class="photo-slider">
-                    @foreach(@$page->gallery as $item)
-                        <li data-thumb="{!! getImageUrlSize(@$item, 'sm') !!}" data-src="{!! getImageUrlSize(@$item, 'full') !!}">
-                            <img src="{!! getImageUrlSize(@$item, 'full') !!}">
-                        </li>
-                    @endforeach
-                </ul>
-
-
             </div>
-        </div>
-
-        <div class="testimonial-section default-section">
-
-            <div class="container">
-
-                <h1 class="default-title mb-30">Experience</h1>
-
-
-
-                <ul id="testimonial-slider">
-                    @foreach(@$page->testimonials as $item)
-                        <li class="item">
-                            <p class="testi">
-                                {!! @$item->details !!}
-                            </p>
-
-                            <p class="owner">
-                                {!! @$item->name !!} - {!! @$item->designation !!}
-                            </p>
-                        </li>
-                    @endforeach
-                </ul>
-
-
-            </div>
-
-        </div>
+        @endif
 
 
         @if(@$page->hasIteneraryGraphics == \App\Util\Constant::YES)

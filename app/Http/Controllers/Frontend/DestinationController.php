@@ -87,7 +87,7 @@ class DestinationController extends FrontendController {
         }
 
 
-        $list = \DB::select(\DB::raw($query . $joinQuery));
+        $list = \DB::select(\DB::raw($query . $joinQuery . ' where c.deletedAt is null'));
 
 
 

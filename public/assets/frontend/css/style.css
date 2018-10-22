@@ -397,7 +397,7 @@ nav.navbar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10%;
+    padding: 10px;
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -407,12 +407,22 @@ nav.navbar {
       transition: all 0.5s ease;
       -webkit-transition: all 0.5s ease;
       -moz-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease; }
+      -o-transition: all 0.5s ease;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2; }
     .destination-card .text-wrapper .link-caret {
       color: white; }
     .destination-card .text-wrapper .name {
       font-weight: 700;
-      font-style: italic; }
+      font-style: italic;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2; }
 
 .testimonial-section.text-center .lSSlideOuter .lSPager.lSpg {
   text-align: center; }
@@ -1367,7 +1377,7 @@ input.valid, select.valid {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10%; }
+    padding: 10px; }
     #destination .destination-card .text-wrapper .country {
       margin: 0px; }
     #destination .destination-card .text-wrapper .name {
