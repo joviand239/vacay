@@ -152,7 +152,7 @@
 
                 if (featuredImage) {
                     if (featuredImage[0] != '') {
-                        var featuredImageLink = mainUrl+'/assets/upload/md/'+featuredImage[0];
+                        var featuredImageLink = mainUrl+'/assets/upload/full/'+featuredImage[0];
 
                         wrapper.find('.featured-image').attr('src', featuredImageLink);
                     } else {

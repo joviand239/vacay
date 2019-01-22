@@ -121,7 +121,7 @@
 
 
     <div class="copyright">
-        WEBSITE BY JSWORKS © COPYRIGHT 2018 VACAY!
+       © COPYRIGHT 2019 VACAY!
     </div>
 
 </footer>
